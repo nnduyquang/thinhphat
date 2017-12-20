@@ -1,0 +1,21 @@
+@import "m-category";
+@import "m-menu-blur";
+#menu{
+  #menu-top{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f7f7f7;
+    .menu-top-l{
+      float: left;
+    }
+    .menu-top-r{
+      float: right;
+    }
+    .menu-top-l,.menu-top-r{
+      span{
+        font-size: 16px;
+        font-weight: bolder;
+      }
+    }
+  }
+}
