@@ -12,46 +12,74 @@
                     </div>
                     <div class="list-item">
                         <a href="#">
-                            <div class="one-item col-md-3">
-                                <div class="wrap-item">
-                                    {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
-                                    <div class="item-detail">
-                                        <span class="title">Bút Bi Thiên Long</span>
-                                        <span class="price">1.000.000</span>
-                                    </div>
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
                                 </div>
                             </div>
                         </a>
                         <a href="#">
-                            <div class="one-item col-md-3">
-                                <div class="wrap-item">
-                                    {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
-                                    <div class="item-detail">
-                                        <span class="title">Bút Bi Thiên Long</span>
-                                        <span class="price">1.000.000</span>
-                                    </div>
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
                                 </div>
                             </div>
                         </a>
                         <a href="#">
-                            <div class="one-item col-md-3">
-                                <div class="wrap-item">
-                                    {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
-                                    <div class="item-detail">
-                                        <span class="title">Bút Bi Thiên Long</span>
-                                        <span class="price">1.000.000</span>
-                                    </div>
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
                                 </div>
                             </div>
                         </a>
                         <a href="#">
-                            <div class="one-item col-md-3">
-                                <div class="wrap-item">
-                                    {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
-                                    <div class="item-detail">
-                                        <span class="title">Bút Bi Thiên Long</span>
-                                        <span class="price">1.000.000</span>
-                                    </div>
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="one-item col-md-3 col-xs-6">
+                                {{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}
+                                <div class="item-detail">
+                                    <span class="title">Bút Bi Thiên Long</span>
+                                    <p class="price">1.000.000</p>
                                 </div>
                             </div>
                         </a>
