@@ -10,7 +10,7 @@
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width">
     {{ Html::style('css/core.common.css') }}
-    {{--{{ Html::style('css/core.frontend.css') }}--}}
+    {{ Html::style('css/core.frontend.css') }}
     {{ Html::style('css/frontend.css') }}
     @yield('styles')
 </head>
@@ -31,7 +31,7 @@
     @include('frontend.common.footer.footer')
 </div>
 {{ Html::script('js/core.common.js') }}
-{{--{{ Html::script('js/core.scripts.js') }}--}}
+{{ Html::script('js/core.frontend.js') }}
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

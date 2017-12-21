@@ -5,6 +5,9 @@ mix.styles([
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
 ], '../js/core.common.js')
     .styles([
+        'bower_components/nivo-slider/jquery.nivo.slider.pack.js',
+    ], '../js/core.frontend.js')
+    .styles([
         'bower_components/bootstrap/dist/css/bootstrap.min.css',
         'bower_components/font-awesome/css/font-awesome.min.css',
     ], '../css/core.common.css')
@@ -14,3 +17,9 @@ mix.styles([
         'bower_components/bootstrap/fonts/**',
         'bower_components/font-awesome/fonts/**'
     ], '../fonts')
+    .styles([
+        'bower_components/nivo-slider/nivo-slider.css',
+    ], '../css/core.frontend.css')
+    .copy([
+        'bower_components/nivo-slider/themes',
+    ], '../css/themes', false)
