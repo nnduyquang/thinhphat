@@ -1,0 +1,96 @@
+#hp-content-list-product {
+  margin-top: 20px;
+  .one-category {
+    .title-top {
+      h3.header-title {
+        font-size: 15px;
+        line-height: 1.8;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-bottom: 1px solid #F68C22;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        span {
+          color: #444;
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px 10px 20px;
+          width: 30%;
+          background-color: #204243;
+          a {
+            float: left;
+            color: white;
+          }
+        }
+        span:after {
+          content: '';
+          position: absolute;
+          left: 100%;
+          top: 0;
+          border-left: 25px solid #204243;
+          border-top: 27px solid transparent;
+          border-bottom: 20px solid transparent;
+        }
+        //span:before {
+        //  content: "\f00b";
+        //  padding: 10px;
+        //  background-color: #706363;
+        //  color: #fff;
+        //  display: inline-block;
+        //  font: normal normal normal 14px/1 FontAwesome;
+        //  font-size: inherit;
+        //  text-rendering: auto;
+        //  -webkit-font-smoothing: antialiased;
+        //  -moz-osx-font-smoothing: grayscale;
+        //  transform: translate(0, 0);
+        //  margin-right: 10px;
+        //}
+        a.view-all {
+          float: right;
+          margin-right: 10px;
+          padding: 10px 20px 10px 20px;
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .list-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-self:stretch;
+      justify-content: space-between;
+      .one-item {
+        width: 100%;
+        .wrap-item {
+          border: 1px solid;
+          img {
+            width: 100%;
+          }
+          .item-detail {
+            .title {
+              font-weight: bold;
+              width: 100%;
+              display: block;
+            }
+            .price {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #hp-content-list-product {
+    .one-category {
+      .list-item {
+        display: block;
+      }
+    }
+  }
+}
