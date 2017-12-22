@@ -1,0 +1,130 @@
+#detail {
+  #detail-top {
+    .detail-top-breadcrumb {
+      margin-bottom: 20px;
+      ul {
+        display: block;
+        margin-top: 20px;
+        li {
+          display: inline-block;
+          a {
+            color: #333333;
+          }
+        }
+      }
+    }
+    .detail-content {
+      h1 {
+        font-weight: 400;
+        line-height: 26px;
+        font-size: 24px;
+      }
+      img {
+        width: 100%;
+      }
+      .price-sale {
+        display: block;
+        font-size: 24px;
+        line-height: 2;
+        color: red;
+        width: 100%;
+      }
+      .price-nosale {
+        display: block;
+        width: 100%;
+        span {
+          text-decoration: line-through;
+        }
+      }
+      .price-saving {
+        display: block;
+        width: 100%;
+      }
+      .btn-confirm {
+        background-color: #204243;
+        border-color: #204243;
+        border-radius: 0px;
+        color: white;
+        text-transform: uppercase;
+        margin-top: 20px;
+        font-size: 36px;
+      }
+    }
+  }
+  #detail-mid {
+
+    margin-top: 20px;
+    #detail-mid-l {
+      .content {
+        border-top: 2px solid #1e3446;
+        box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);;
+        padding: 20px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+    }
+    #detail-mid-r {
+      .content {
+        border-top: 2px solid #1e3446;
+
+        box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);;
+        padding: 20px;
+        h3 {
+          padding: 0;
+          font-size: 16px;
+          line-height: 1.1em;
+          font-weight: 700;
+          border: none;
+          text-transform: none;
+          margin-bottom: 20px;
+          text-indent: 0;
+        }
+        .one-item {
+          margin-bottom: 20px;
+          a {
+            transition: all 500ms ease;
+            img {
+              width: 100%;
+            }
+            .title {
+              display: block;
+              font-size: 15px;
+              font-weight: 700;
+              height: 33px;
+              overflow: hidden;
+              color: #4c4849;
+              text-decoration: none;
+              line-height: 17px;
+              white-space: normal;
+              z-index: 3;
+              cursor: pointer;
+              width: 100%;
+              line-height: 1.2;
+            }
+            .price-sale {
+              color: red;
+              line-height: 1.5;
+              .discount {
+                color: white;
+                background-color: red;
+                margin-left: 15px;
+              }
+            }
+            .price-saving {
+              text-decoration: line-through;
+              display: block;
+            }
+          }
+
+        }
+        .one-item:hover {
+          box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
+        }
+
+      }
+    }
+  }
+  #detail-bottom {
+    margin-top: 20px;
+  }
+}

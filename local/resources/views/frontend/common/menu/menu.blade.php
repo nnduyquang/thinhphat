@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="col-md-12">
                         <ul class="menu-list-l">
-                            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Trang chủ</a></li>
+                            <li><a href="{{URL::to('/')}}"><i class="fa fa-home" aria-hidden="true"></i>Trang chủ</a></li>
                             <li class="sub-menu"><i class="fa fa-lightbulb-o" aria-hidden="true"></i><a href="#">Đèn
                                     Trang Trí</a>
                                 <ul>

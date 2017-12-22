@@ -1,0 +1,51 @@
+#hp-content-bottom {
+  .hp-bot-box {
+    padding: 15px 15px 15px 10px;
+    transition: all 500ms ease;
+    position: relative;
+    .text1 {
+      font-size: 24px;
+      line-height: 26px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: -4px;
+      span {
+        font-size: 15px;
+        font-weight: 300;
+        display: block;
+        text-transform: capitalize;
+        margin-top: -2px;
+      }
+    }
+    i{
+      position: absolute;
+      right: 10px;
+      font-size: 37px;
+      color: white;
+    }
+  }
+  .hp-bot-box.color1 {
+    background-color: #1abc9c;
+  }
+  .hp-bot-box.color2 {
+    background-color: #2980b9;
+  }
+  .hp-bot-box.color3 {
+    background-color: #2ecc71;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hp-content-bottom {
+    .hp-bot-box {
+      margin-bottom: 10px;
+      .text1 {
+        font-size: 20px;
+        //.one-item {
+        //  width: 50%;
+        //}
+      }
+    }
+  }
+}
