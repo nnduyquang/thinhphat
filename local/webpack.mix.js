@@ -23,3 +23,44 @@ mix.styles([
     .copy([
         'bower_components/nivo-slider/themes',
     ], '../css/themes', false)
+// =============================================================
+// BACKEND
+    .styles([
+        'bower_components/Ionicons/css/ionicons.min.css',
+        'bower_components/admin-lte/dist/css/AdminLTE.min.css',
+        'bower_components/admin-lte/dist/css/skins/skin-blue.min.css',
+        'bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css',
+    ], '../css/core.backend.css')
+    .styles([
+        'resources/assets/sass/be.common.scss',
+        'resources/assets/sass/be.category.scss',
+    ], '../css/backend.css')
+    .styles([
+        'bower_components/admin-lte/dist/js/adminlte.min.js',
+        'bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js',
+    ], '../js/core.backend.js')
+    .styles([
+        'resources/assets/js/ulti.js',
+        'resources/assets/js/login.js',
+    ], '../js/login.js')
+    .styles([
+        'resources/assets/sass/be.login.scss',
+    ], '../css/login.css')
+    .styles([
+        'resources/assets/js/ulti.js',
+        'resources/assets/js/be.category.js'
+    ], '../js/backend.js')
+
+// CKEDITOR CHỈ CHẠY ĐOẠN NÀY 1 LẦN
+// ===================
+// .copy('bower_components/ckeditor/adapters', '../js/ckeditor/adapters',false)
+// .copy('bower_components/ckeditor/lang', '../js/ckeditor/lang',false)
+// .copy('bower_components/ckeditor/skins', '../js/ckeditor/skins',false)
+// .copy([
+//     'bower_components/ckeditor/ckeditor.js',
+//     'bower_components/ckeditor/config.js',
+//     'bower_components/ckeditor/contents.css',
+//     'bower_components/ckeditor/styles.js'
+// ], '../js/ckeditor',false)
+// .copy('bower_components/ckeditor/plugins', '../js/ckeditor/plugins',false)
+////////////////////////////////////////////////////////////////////////////////////////////////
