@@ -111,54 +111,54 @@ class PermissionTableSeeder extends Seeder
 //                'description' => 'Được Xóa Cấu Hình',
 //                'category_permission_id'=>4
 //            ],
-            [
-                'name' => 'category-list',
-                'display_name' => 'Xem Toàn Bộ Loại Sản Phẩm',
-                'description' => 'Được Xem Toàn Bộ Loại Sản Phẩm',
-                'category_permission_id'=>3
-            ],
-            [
-                'name' => 'category-create',
-                'display_name' => 'Tạo Loại Sản Phẩm Mới',
-                'description' => 'Được Tạo Loại Sản Phẩm Mới',
-                'category_permission_id'=>3
-            ],
-            [
-                'name' => 'category-edit',
-                'display_name' => 'Cập Nhật Loại Sản Phẩm',
-                'description' => 'Được Cập Nhật Loại Sản Phẩm',
-                'category_permission_id'=>3
-            ],
-            [
-                'name' => 'category-delete',
-                'display_name' => 'Xóa Loại Sản Phẩm',
-                'description' => 'Được Xóa Loại Sản Phẩm',
-                'category_permission_id'=>3
-            ],
 //            [
-//                'name' => 'product-list',
-//                'display_name' => 'Xem Toàn Bộ Sản Phẩm',
-//                'description' => 'Được Xem Toàn Bộ Sản Phẩm',
-//                'category_permission_id'=>6
+//                'name' => 'category-list',
+//                'display_name' => 'Xem Toàn Bộ Loại Sản Phẩm',
+//                'description' => 'Được Xem Toàn Bộ Loại Sản Phẩm',
+//                'category_permission_id'=>3
 //            ],
 //            [
-//                'name' => 'product-create',
-//                'display_name' => 'Tạo Sản Phẩm Mới',
-//                'description' => 'Được Tạo Sản Phẩm Mới',
-//                'category_permission_id'=>6
+//                'name' => 'category-create',
+//                'display_name' => 'Tạo Loại Sản Phẩm Mới',
+//                'description' => 'Được Tạo Loại Sản Phẩm Mới',
+//                'category_permission_id'=>3
 //            ],
 //            [
-//                'name' => 'product-edit',
-//                'display_name' => 'Cập Nhật Sản Phẩm',
-//                'description' => 'Được Cập Nhật Sản Phẩm',
-//                'category_permission_id'=>6
+//                'name' => 'category-edit',
+//                'display_name' => 'Cập Nhật Loại Sản Phẩm',
+//                'description' => 'Được Cập Nhật Loại Sản Phẩm',
+//                'category_permission_id'=>3
 //            ],
 //            [
-//                'name' => 'product-delete',
-//                'display_name' => 'Xóa Sản Phẩm',
-//                'description' => 'Được Xóa Sản Phẩm',
-//                'category_permission_id'=>6
+//                'name' => 'category-delete',
+//                'display_name' => 'Xóa Loại Sản Phẩm',
+//                'description' => 'Được Xóa Loại Sản Phẩm',
+//                'category_permission_id'=>3
 //            ],
+            [
+                'name' => 'product-list',
+                'display_name' => 'Xem Toàn Bộ Sản Phẩm',
+                'description' => 'Được Xem Toàn Bộ Sản Phẩm',
+                'category_permission_id'=>4
+            ],
+            [
+                'name' => 'product-create',
+                'display_name' => 'Tạo Sản Phẩm Mới',
+                'description' => 'Được Tạo Sản Phẩm Mới',
+                'category_permission_id'=>4
+            ],
+            [
+                'name' => 'product-edit',
+                'display_name' => 'Cập Nhật Sản Phẩm',
+                'description' => 'Được Cập Nhật Sản Phẩm',
+                'category_permission_id'=>4
+            ],
+            [
+                'name' => 'product-delete',
+                'display_name' => 'Xóa Sản Phẩm',
+                'description' => 'Được Xóa Sản Phẩm',
+                'category_permission_id'=>4
+            ],
         ];
         foreach ($permission as $key => $value) {
             Permission::create($value);

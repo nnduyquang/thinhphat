@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2017 at 01:28 AM
+-- Generation Time: Dec 26, 2017 at 11:00 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -36,6 +36,8 @@ CREATE TABLE `categories` (
   `seo_description` text COLLATE utf8mb4_unicode_ci,
   `isActive` tinyint(1) NOT NULL DEFAULT '0',
   `order` int(11) NOT NULL DEFAULT '1',
+  `level` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `parent_id` int(10) UNSIGNED DEFAULT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -61,7 +63,8 @@ CREATE TABLE `category_permissions` (
 INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Role', '2017-12-23 13:04:28', '2017-12-23 13:04:28'),
 (2, 'User', '2017-12-23 13:04:28', '2017-12-23 13:04:28'),
-(3, 'Loại Sản Phẩm', '2017-12-24 02:03:30', '2017-12-24 02:03:30');
+(3, 'Loại Sản Phẩm', '2017-12-24 02:03:30', '2017-12-24 02:03:30'),
+(4, 'Sản Phẩm', '2017-12-26 08:57:53', '2017-12-26 08:57:53');
 
 -- --------------------------------------------------------
 
@@ -83,7 +86,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2017_12_23_195635_create_entrust_setup_tables', 2),
-(4, '2017_12_24_085328_create_categories_table', 3);
+(4, '2017_12_24_085328_create_categories_table', 3),
+(5, '2017_12_26_140629_create_products_table', 4);
 
 -- --------------------------------------------------------
 
@@ -129,7 +133,11 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 (9, 'category-list', 'Xem Toàn Bộ Loại Sản Phẩm', 'Được Xem Toàn Bộ Loại Sản Phẩm', 3, '2017-12-24 02:04:45', '2017-12-24 02:04:45'),
 (10, 'category-create', 'Tạo Loại Sản Phẩm Mới', 'Được Tạo Loại Sản Phẩm Mới', 3, '2017-12-24 02:04:45', '2017-12-24 02:04:45'),
 (11, 'category-edit', 'Cập Nhật Loại Sản Phẩm', 'Được Cập Nhật Loại Sản Phẩm', 3, '2017-12-24 02:04:45', '2017-12-24 02:04:45'),
-(12, 'category-delete', 'Xóa Loại Sản Phẩm', 'Được Xóa Loại Sản Phẩm', 3, '2017-12-24 02:04:45', '2017-12-24 02:04:45');
+(12, 'category-delete', 'Xóa Loại Sản Phẩm', 'Được Xóa Loại Sản Phẩm', 3, '2017-12-24 02:04:45', '2017-12-24 02:04:45'),
+(13, 'product-list', 'Xem Toàn Bộ Sản Phẩm', 'Được Xem Toàn Bộ Sản Phẩm', 4, '2017-12-26 08:58:57', '2017-12-26 08:58:57'),
+(14, 'product-create', 'Tạo Sản Phẩm Mới', 'Được Tạo Sản Phẩm Mới', 4, '2017-12-26 08:58:57', '2017-12-26 08:58:57'),
+(15, 'product-edit', 'Cập Nhật Sản Phẩm', 'Được Cập Nhật Sản Phẩm', 4, '2017-12-26 08:58:57', '2017-12-26 08:58:57'),
+(16, 'product-delete', 'Xóa Sản Phẩm', 'Được Xóa Sản Phẩm', 4, '2017-12-26 08:58:57', '2017-12-26 08:58:57');
 
 -- --------------------------------------------------------
 
@@ -159,6 +167,29 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (10, 1),
 (11, 1),
 (12, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `isActive` tinyint(1) NOT NULL DEFAULT '0',
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
+  `seo_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_description` text COLLATE utf8mb4_unicode_ci,
+  `price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order` int(11) NOT NULL DEFAULT '1',
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -269,6 +300,14 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_role_role_id_foreign` (`role_id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `products_user_id_foreign` (`user_id`),
+  ADD KEY `products_category_id_foreign` (`category_id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -302,17 +341,22 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -345,6 +389,13 @@ ALTER TABLE `permissions`
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `role_user`

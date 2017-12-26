@@ -25,12 +25,12 @@ class CategoryPermissionsSeeder extends Seeder
 //            [
 //                'name' => 'Cấu Hình', //
 //            ],
-            [
-                'name' => 'Loại Sản Phẩm', //
-            ]
 //            [
-//                'name' => 'Sản Phẩm', //
-//            ],
+//                'name' => 'Loại Sản Phẩm', //
+//            ]
+            [
+                'name' => 'Sản Phẩm', //
+            ],
 
         ];
         foreach ($category_permission as $key => $value) {
