@@ -4,8 +4,8 @@
             {{ Html::image('images/temp/temp_hp_content_top_1.jpg','',array('class'=>'hp-content-top-img')) }}
             <span class="box-text color1">
                 <span class="text1">
-                    <span>Thiết Bị Văn Phòng Hiện Đại</span>
-                    MÁY TÍNH - MÁY CHIẾU
+                    <span>Không Gian Sang Trọng</span>
+                    TÔN VINH ĐẶNG CẤP
                 </span>
             </span>
         </a>
@@ -15,8 +15,8 @@
             {{ Html::image('images/temp/temp_hp_content_top_2.jpg','',array('class'=>'hp-content-top-img')) }}
             <span class="box-text color1">
                 <span class="text1">
-                    <span>Thiết Bị Giáo Dục</span>
-                    BÀN GHẾ - PHÒNG MÁY
+                    <span>Độ Sáng Linh Hoạt</span>
+ẤM ÁP LAN TỎA
                 </span>
             </span>
         </a>
@@ -26,8 +26,8 @@
             {{ Html::image('images/temp/temp_hp_content_top_3.jpg','',array('class'=>'hp-content-top-img')) }}
             <span class="box-text color1">
                 <span class="text1">
-                    <span>Thư Viện Điện Tử</span>
-                    E - LIBRARY
+                    <span>Mẫu Đèn Đa Dạng</span>
+                    LUÔN CẬP NHẬT XU THẾ MỚI
                 </span>
             </span>
         </a>

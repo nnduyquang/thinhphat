@@ -56,7 +56,18 @@
                                                                     {{ Html::image($data->image,'',array('class'=>'no-style')) }}
                                                                     <div class="item-detail">
                                                                         <span class="title">{{$data->name}}</span>
-                                                                        <p class="price">1.000.000</p>
+                                                                        @if($data->price!=0)
+                                                                            <span class="price-sale">{{$data->final_price}} VND
+                                                                                @if($data->sale!=0)
+                                                                                    <span class="discount">Giảm {{$data->sale}}%</span>
+                                                                                @endif
+                                        </span>
+                                                                            @if($data->sale!=0)
+                                                                                <span class="price-saving">{{$data->price}} VND</span>
+                                                                            @endif
+                                                                        @else
+                                                                            <span class="price-contact">Liên Hệ</span>
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             </div>

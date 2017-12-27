@@ -55,14 +55,14 @@ mix.styles([
     ], '../css/login.css')
 // CKEDITOR CHỈ CHẠY ĐOẠN NÀY 1 LẦN
 // ===================
-// .copy('bower_components/ckeditor/adapters', '../js/ckeditor/adapters',false)
-// .copy('bower_components/ckeditor/lang', '../js/ckeditor/lang',false)
-// .copy('bower_components/ckeditor/skins', '../js/ckeditor/skins',false)
-// .copy([
-//     'bower_components/ckeditor/ckeditor.js',
-//     'bower_components/ckeditor/config.js',
-//     'bower_components/ckeditor/contents.css',
-//     'bower_components/ckeditor/styles.js'
-// ], '../js/ckeditor',false)
-// .copy('bower_components/ckeditor/plugins', '../js/ckeditor/plugins',false)
+.copy('bower_components/ckeditor/adapters', '../js/ckeditor/adapters',false)
+.copy('bower_components/ckeditor/lang', '../js/ckeditor/lang',false)
+.copy('bower_components/ckeditor/skins', '../js/ckeditor/skins',false)
+.copy([
+    'bower_components/ckeditor/ckeditor.js',
+    'bower_components/ckeditor/config.js',
+    'bower_components/ckeditor/contents.css',
+    'bower_components/ckeditor/styles.js'
+], '../js/ckeditor',false)
+.copy('bower_components/ckeditor/plugins', '../js/ckeditor/plugins',false)
 ////////////////////////////////////////////////////////////////////////////////////////////////

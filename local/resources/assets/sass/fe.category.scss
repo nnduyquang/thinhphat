@@ -85,12 +85,24 @@
             line-height: 1.38;
             color: rgb(123, 123, 123);
           }
-          .price {
-            color: #d21f30;
-            font-size: 17px;
-            font-weight: bold;
-            padding: 10px 0 0;
-            text-align: left;
+          .price-sale {
+            color: red;
+            line-height: 1.5;
+            .discount {
+              color: white;
+              background-color: red;
+              margin-left: 15px;
+            }
+          }
+          .price-saving {
+            text-decoration: line-through;
+            display: block;
+          }
+          .price-contact{
+            color: red;
+            font-size: 21px;
+            margin-top: 10px;
+            display: block;
           }
         }
       }

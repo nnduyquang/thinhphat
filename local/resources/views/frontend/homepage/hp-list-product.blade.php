@@ -11,11 +11,6 @@
                                     @foreach($data[0]['list_subMenu'] as $key2=>$data2)
                                     <li><a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a></li>
                                     @endforeach
-                                    {{--<li><a href="">Máy Chiếu</a></li>--}}
-                                    {{--<li><a href="">Máy In</a></li>--}}
-                                    {{--<li><a href="">Máy Photocopy</a></li>--}}
-                                    {{--<li><a href="">Bàn Văn Phòng</a></li>--}}
-                                    {{--<li><a href="">Ghế Ngồi Văn Phòng</a></li>--}}
                                     <li><a class="view-all" href="#">Xem Tất Cả</a></li>
                                 </ul>
 
@@ -29,74 +24,22 @@
                                     {{ Html::image($data2->image,'',array('class'=>'no-style')) }}
                                     <div class="item-detail">
                                         <span class="title">{{$data2->name}}</span>
-                                        <p class="price">1.000.000</p>
+                                        @if($data2->price!=0)
+                                            <span class="price-sale">{{$data2->final_price}} VND
+                                                @if($data2->sale!=0)
+                                                    <span class="discount">Giảm {{$data2->sale}}%</span>
+                                                @endif
+                                        </span>
+                                            @if($data2->sale!=0)
+                                                <span class="price-saving">{{$data2->price}} VND</span>
+                                            @endif
+                                        @else
+                                            <span class="price-contact">Liên Hệ</span>
+                                        @endif
                                     </div>
                                 </div>
                             </a>
                             @endforeach
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="one-item col-md-3 col-xs-6">--}}
-                                    {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                                    {{--<div class="item-detail">--}}
-                                        {{--<span class="title">Bút Bi Thiên Long</span>--}}
-                                        {{--<p class="price">1.000.000</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
                         </div>
                     </div>
                 @endforeach

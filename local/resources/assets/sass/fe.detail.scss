@@ -40,6 +40,12 @@
         display: block;
         width: 100%;
       }
+      .price-contact {
+        color: red;
+        font-size: 21px;
+        margin-top: 10px;
+        display: block;
+      }
       .btn-confirm {
         background-color: #204243;
         border-color: #204243;
@@ -113,6 +119,12 @@
             }
             .price-saving {
               text-decoration: line-through;
+              display: block;
+            }
+            .price-contact {
+              color: red;
+              font-size: 21px;
+              margin-top: 10px;
               display: block;
             }
           }
