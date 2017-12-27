@@ -1,9 +1,7 @@
-@extends('backend.admin.master')
+@extends('backend.master')
 @section('styles')
-    {{ Html::style('css/be.product.css') }}
 @stop
 @section('scripts')
-    {{ Html::script('js/be.product.js',array('async' => 'async') ) }}
 @stop
 @section('container')
     <div class="row">
@@ -66,7 +64,7 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->path }}</td>
             <td>{{ $product->category->name }}</td>
-            <td>{{ Html::image($product->image,'',array('id'=>'showHinhSanPham','class'=>'showHinhSanPham'))}}</td>
+            <td>{{ Html::image($product->image,'',array('id'=>'showHinhSanPham','class'=>'show-image-index'))}}</td>
             <td>{{ $product->isActive }}</td>
             <td>{{ $product->users->name }}</td>
             <td>{{ $product->created_at }}</td>

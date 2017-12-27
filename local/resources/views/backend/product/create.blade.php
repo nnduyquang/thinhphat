@@ -1,12 +1,7 @@
-@extends('backend.admin.master')
+@extends('backend.master')
 @section('styles')
-    {{ Html::style('css/be.product.css') }}
-    {{ Html::style('css/bootstrap-toggle.min.css') }}
 @stop
 @section('scripts')
-    {{ Html::script('js/bootstrap-toggle.min.js',array('async' => 'async') ) }}
-    {{ Html::script('js/ulti.js',array('async' => 'async') ) }}
-    {{ Html::script('js/be.product.js',array('async' => 'async') ) }}
 @stop
 @section('container')
     <div class="row">
@@ -30,61 +25,72 @@
         </div>
     @endif
     {!! Form::open(array('route' => 'product.store','method'=>'POST')) !!}
-    <div class="row">
-        <div class="col-md-6">
-            <div class="col-md-12">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <strong>Tên Loại Sản Phẩm:</strong>
-                    {!! Form::text('name', null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                    <strong>Tên Sản Phẩm:</strong>
+                    {!! Form::text('name',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                 </div>
-            </div>
-            <div class="col-md-4">
                 <div class="form-group">
-                    <strong>Thứ tự:</strong>
-                    {!! Form::text('product_order', null, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
+                    <strong>Mô Tả Sản Phẩm:</strong>
+                    {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-product','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
-            </div>
-            <div class="col-md-12">
+                <div class="line-break"></div>
+                <h3>SEO</h3>
+                <div class="form-group">
+                    <strong>Tiêu Đề (title):</strong>
+                    {!! Form::text('seo_title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                </div>
+                <div class="form-group">
+                    <strong>Mô Tả (description):</strong>
+                    {!! Form::textarea('seo_description',null,array('placeholder' => '','id'=>'seo-description-product','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                </div>
                 <div class="form-group">
                     <strong>Kích Hoạt:</strong>
                     <input name="product_is_active" data-on="Có" data-off="Không" type="checkbox" data-toggle="toggle">
                 </div>
-            </div>
-            <div class="col-md-12">
                 <div class="form-group">
-                    <strong>Loại Sản Phẩm:</strong><br>
-                    @foreach($categories as $key=>$category)
-                            <div class="col-md-6">
-                                {{ Form::radio('idCategory', $category->id) }}{{ $category->name}}</br>
-                            </div>
-                    @endforeach
+                    <div class="form-inline">
+                        <strong>Thứ tự:</strong>
+                        {!! Form::text('order', null, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
                     <strong>Hình Đại Diện: </strong>
-                    {!! Form::text('image', null, array('class' => 'form-control','id'=>'path')) !!}
-                    {!! Form::button('Browses', array('id' => 'btnBrowse','class'=>'btn btn-primary')) !!}
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    {!! Form::text('image', null, array('class' => 'form-control','id'=>'pathImageSanPham')) !!}
+                    <br>
+                    {!! Form::button('Tìm', array('id' => 'btnBrowseImageSanPham','class'=>'btn btn-primary')) !!}
+                </div>
+                <div class="form-group">
+                    {{ Html::image('','',array('id'=>'showHinhSanPham','class'=>'show-image'))}}
+                </div>
+                <div class="form-group">
+                    <strong>Loại Sản Phẩm</strong>
+                    {!! Form::select('category',$dd_categories, null,array('class' => 'form-control')) !!}
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
                         <div class="form-group">
-                            {{ Html::image('','',array('id'=>'showHinhSanPham','class'=>'showHinhSanPham'))}}
+                            <strong>Giá: </strong>
+                            {!! Form::text('price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                         </div>
                     </div>
-
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group">
+                            <strong>% Giảm Giá: </strong>
+                            {!! Form::text('sale',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Mô Tả:</strong>
-                {!! Form::textarea('content-product',null, array('placeholder' => 'Mô Tả','id'=>'content-product','class' => 'form-control','rows'=>'20','style'=>'resize:none')) !!}
+            <div class="col-md-12" style="text-align:  center;">
+                <button id="btnDanhMuc" type="submit" class="btn btn-primary">Tạo Mới Sản Phẩm</button>
             </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button id="btnDanhMuc" type="submit" class="btn btn-primary">Tạo Mới Sản Phẩm</button>
         </div>
     </div>
     {!! Form::close() !!}

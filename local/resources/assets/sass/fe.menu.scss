@@ -1,5 +1,6 @@
 @import "m-category";
 @import "m-menu-blur";
+@import "fe.phoneanimation";
 
 #menu {
   #menu-top {
@@ -26,7 +27,7 @@
     }
   }
   #menu-list {
-    background-color: #204243;
+    background-color: #0c4294;
     margin-top: 20px;
     ul.menu-list-l {
       display: block;
@@ -60,7 +61,7 @@
           top: 100%;
           left: 0;
           z-index: 9;
-          width: 260px;
+          width: 325px;
           li {
             display: block;
             padding-left: 10px;

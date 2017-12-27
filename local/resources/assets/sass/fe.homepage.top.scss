@@ -1,50 +1,61 @@
-#hp-content-top{
+#hp-content-top {
   margin-top: 20px;
-  a{
-    position: relative;
-    img{
-      width: 100%;
-    }
-    span.box-text{
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      transition: all 500ms ease;
-      //transition: visibility 0s 0.5s, all 0.5s linear;
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-      opacity: 1;
-      .text1{
-        font-size: 24px;
-        line-height: 26px;
-        color: #fff;
-        text-transform: uppercase;
+  .hp-content-box {
+    //margin-bottom: 20px;
+    a {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      span.box-text {
         display: block;
-        font-weight: 900;
-        span{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: all 500ms ease;
+        //transition: visibility 0s 0.5s, all 0.5s linear;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        opacity: 1;
+        .text1 {
+          font-size: 24px;
+          line-height: 26px;
+          color: #fff;
+          text-transform: uppercase;
           display: block;
-          font-size: 14px;
-          line-height: 20px;
-          font-weight: 400;
+          font-weight: 900;
+          span {
+            display: block;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+          }
         }
       }
+      span.box-text.color1 {
+        background-color: #0c4294;
+      }
+      span.box-text.color2 {
+        background-color: #54b096;
+      }
+      span.box-text.color3 {
+        background-color: #3498db;
+      }
     }
-    span.box-text.color1{
-      background-color: #9b59b6;
-    }
-    span.box-text.color2{
-      background-color: #54b096;
-    }
-    span.box-text.color3{
-      background-color: #3498db;
+    a:hover {
+      span.box-text {
+        bottom: 20px;
+        opacity: 0;
+      }
     }
   }
-  a:hover{
-    span.box-text{
-      bottom:20px;
-      opacity: 0;
+}
+
+@media screen and(max-width: 415px) {
+  #hp-content-top {
+    .hp-content-box {
+      margin-bottom: 20px;
     }
   }
 }

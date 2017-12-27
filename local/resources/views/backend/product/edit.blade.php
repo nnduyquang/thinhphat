@@ -1,4 +1,4 @@
-@extends('backend.admin.master')
+@extends('backend.master')
 @section('styles')
     {{ Html::style('css/be.product.css') }}
     {{ Html::style('css/bootstrap-toggle.min.css') }}
@@ -30,69 +30,82 @@
         </div>
     @endif
     {!! Form::model($product,array('route' => ['product.update',$product->id],'method'=>'PATCH')) !!}
-    <div class="row">
-        <div class="col-md-6">
-            <div class="col-md-12">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <strong>Tên Loại Sản Phẩm:</strong>
-                    {!! Form::text('name', null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                    <strong>Tên Sản Phẩm:</strong>
+                    {!! Form::text('name',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                 </div>
-            </div>
-            <div class="col-md-4">
                 <div class="form-group">
-                    <strong>Thứ tự:</strong>
-                    {!! Form::text('product_order', $product->order, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
+                    <strong>Mô Tả Sản Phẩm:</strong>
+                    {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-product','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
-            </div>
-            <div class="col-md-12">
+                <div class="line-break"></div>
+                <h3>SEO</h3>
+                <div class="form-group">
+                    <strong>Tiêu Đề (title):</strong>
+                    {!! Form::text('seo_title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                </div>
+                <div class="form-group">
+                    <strong>Mô Tả (description):</strong>
+                    {!! Form::textarea('seo_description',null,array('placeholder' => '','id'=>'seo-description-product','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                </div>
                 <div class="form-group">
                     <strong>Kích Hoạt:</strong>
-                    <input {{$product->isActive==1?'checked':''}}  name="product_is_active" data-on="Có" data-off="Không"
+                    <input {{$product->isActive==1?'checked':''}}  name="product_is_active" data-on="Có"
+                           data-off="Không"
                            type="checkbox" data-toggle="toggle">
                 </div>
-            </div>
-            <div class="col-md-12">
                 <div class="form-group">
-                    <strong>Loại Sản Phẩm:</strong><br>
-                    {{ Form::hidden('hd-email-receive', $product->category_id) }}
-                    @foreach($categories as $key=>$category)
-                        @if($category->id===$product->category_id)
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                {{ Form::radio('idCategory', $category->id,true) }}{{ $category->name}}<br>
-                            </div>
-                        @else
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                {{ Form::radio('idCategory', $category->id,false) }}{{ $category->name}}<br>
-                            </div>
-                        @endif
-                    @endforeach
+                    <div class="form-inline">
+                        <strong>Thứ tự:</strong>
+                        {!! Form::text('order', $product->order, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <span>Hình Đại Diện: </span>
-                    {!! Form::text('image', url('/').'/'.$product->image, array('class' => 'form-control','id'=>'path')) !!}
-                    {!! Form::button('Browses', array('id' => 'btnBrowse','class'=>'btn btn-primary')) !!}
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <strong>Hình Đại Diện: </strong>
+                    {!! Form::text('image', url('/').'/'.$product->image, array('class' => 'form-control','id'=>'pathImageSanPham')) !!}
+                    <br>
+                    {!! Form::button('Tìm', array('id' => 'btnBrowseImageSanPham','class'=>'btn btn-primary')) !!}
+                </div>
+                <div class="form-group">
+                    {{ Html::image($product->image,'',array('id'=>'showHinhSanPham','class'=>'show-image'))}}
+                </div>
+                <div class="form-group">
+                    <strong>Loại Sản Phẩm</strong>
+                    <select class="form-control" name="category">'
+                        @foreach($dd_categories as $key=>$data) {
+                        @if($data['index']===$product->category_id)
+                            <option value="{{$data['index']}}" selected>{{$data['value']}}</option>
+                        @else
+                            <option value="{{$data['index']}}">{{$data['value']}}</option>
+                        @endif
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
                         <div class="form-group">
-                            {{ Html::image($product->image,'',array('id'=>'showHinhSanPham','class'=>'showHinhSanPham'))}}
+                            <strong>Giá: </strong>
+                            {!! Form::text('price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                         </div>
                     </div>
-
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group">
+                            <strong>% Giảm Giá: </strong>
+                            {!! Form::text('sale',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Mô Tả:</strong>
-                {!! Form::textarea('content-product',$product->content, array('placeholder' => 'Mô Tả','id'=>'content-product','class' => 'form-control','rows'=>'20','style'=>'resize:none')) !!}
+            <div class="col-md-12" style="text-align:  center;">
+                <button id="btnDanhMuc" type="submit" class="btn btn-primary">Cập Nhật Sản Phẩm</button>
             </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button id="btnDanhMuc" type="submit" class="btn btn-primary">Tạo Mới Sản Phẩm</button>
         </div>
     </div>
     {!! Form::close() !!}

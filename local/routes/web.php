@@ -11,19 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.homepage.index');
-});
-Route::get('/category', function () {
-    return view('frontend.category.category');
-});
+Route::get('/','HomepageController@showHomepage');
+Route::get('/danh-muc/{pathCategory}','feCategoryController@getDetailCategory');
+Route::get('/category', 'HomepageController@getFrontendContentCategory');
 
-Route::get('/category/detail', function () {
-    return view('frontend.detail.detail');
-});
+Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
 
 /////////////////////////////////////////////
-/// Backend
+/// BACKEND
 
 Route::get('/sml_login', function () {
     return view('backend.login.login');
@@ -55,4 +50,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/category/{id}/edit', ['as' => 'category.edit', 'uses' => 'CategoryController@edit', 'middleware' => ['permission:category-edit']]);
     Route::patch('sml_admin/category/{id}', ['as' => 'category.update', 'uses' => 'CategoryController@update', 'middleware' => ['permission:category-edit']]);
     Route::delete('sml_admin/category/{id}', ['as' => 'category.destroy', 'uses' => 'CategoryController@destroy', 'middleware' => ['permission:category-delete']]);
+
+    //PRODUCT
+    Route::get('sml_admin/product', ['as' => 'product.index', 'uses' => 'ProductController@index', 'middleware' => ['permission:product-list|product-create|product-edit|product-delete']]);
+    Route::post('sml_admin/product/create', ['as' => 'product.store', 'uses' => 'ProductController@store', 'middleware' => ['permission:product-create']]);
+    Route::post('sml_admin/product', ['as' => 'product.search', 'uses' => 'ProductController@search']);
+    Route::get('sml_admin/product/create', ['as' => 'product.create', 'uses' => 'ProductController@create', 'middleware' => ['permission:product-create']]);
+    Route::get('sml_admin/product/{id}/edit', ['as' => 'product.edit', 'uses' => 'ProductController@edit', 'middleware' => ['permission:product-edit']]);
+    Route::patch('sml_admin/product/{id}', ['as' => 'product.update', 'uses' => 'ProductController@update', 'middleware' => ['permission:product-edit']]);
+    Route::delete('sml_admin/product/{id}', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy', 'middleware' => ['permission:product-delete']]);
 });

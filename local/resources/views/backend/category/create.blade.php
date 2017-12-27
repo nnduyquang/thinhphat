@@ -34,8 +34,13 @@
                 </div>
                 <div class="form-group">
                     <strong>Mô Tả Ngắn:</strong>
-                    {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                    {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-category','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
+                <div class="form-group">
+                    <strong>Menu Cấp</strong>
+                    {!! Form::select('parent',$dd_categories, null,array('class' => 'form-control')) !!}
+                </div>
+
                 <div class="line-break"></div>
                 <h3>SEO</h3>
                 <div class="form-group">
@@ -44,7 +49,7 @@
                 </div>
                 <div class="form-group">
                     <strong>Mô Tả (description):</strong>
-                    {!! Form::textarea('seo_description',null,array('placeholder' => '','id'=>'seo-description','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                    {!! Form::textarea('seo_description',null,array('placeholder' => '','id'=>'seo-description-category','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
                 <div class="form-group">
                     <strong>Kích Hoạt:</strong>

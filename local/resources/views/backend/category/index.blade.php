@@ -21,33 +21,8 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    {{--{!! Form::open(array('route' => 'news.search','method'=>'POST','id'=>'formSearchNews')) !!}--}}
-    {{--<div class="col-md-12">--}}
-        {{--<div class="row">--}}
-            {{--<div class="form-group">--}}
-                {{--<div class="col-md-6">--}}
-                    {{--<div class="row">--}}
-                        {{--{!! Form::text('txtSearch',null, array('class' => 'form-control','id'=>'txtSearch')) !!}--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-6">--}}
-                    {{--{!! Form::button('Tìm Kiếm', array('id' => 'btnSearchTinTuc','class'=>'btn btn-primary')) !!}--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-    {{--{!! Form::close() !!}--}}
-    {{--@if(!empty($keywords))--}}
-        {{--<div id="showKeySearch" class="col-md-12">--}}
-            {{--<div class="row wrap-search">--}}
-                {{--<i class="fa fa-caret-right" aria-hidden="true"></i>{{$keywords}} <a href="{{ route('news.search') }}">X</a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--{{ Form::hidden('hdKeyword', $keywords) }}--}}
-    {{--@endif--}}
     <table class="table table-bordered">
         <tr>
-            <th>TT</th>
             <th>Tên Loại Sản Phẩm</th>
             <th>Path</th>
             <th>Hình Đại Diện</th>
@@ -60,11 +35,10 @@
             <th width="280px">Action</th>
         </tr>
         @foreach ($categories as $key => $category)
-            <td>{{ ++$i }}</td>
             <td>{{ $category->name }}</td>
             <td>{{ $category->path }}</td>
-            <td>{{ Html::image($category->image,'',array('id'=>'showHinhLoaiSanPham','class'=>'showHinhLoaiSanPham'))}}</td>
-            <td>{{ $category->category_order }}</td>
+            <td>{{ Html::image($category->image,'',array('id'=>'showHinhLoaiSanPham','class'=>'show-image-index'))}}</td>
+            <td>{{ $category->order }}</td>
             <td>{{ $category->isActive }}</td>
             <td>{{ $category->users->name }}</td>
             <td>{{ $category->created_at }}</td>
@@ -83,5 +57,5 @@
             </tr>
         @endforeach
     </table>
-    {!! $categories->links() !!}
+    {{--{!! $categories->links() !!}--}}
 @stop

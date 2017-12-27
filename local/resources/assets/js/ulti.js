@@ -17,13 +17,13 @@ function getBaseURL() {
     }
 }
 
-function selectFileWithKCFinder(elementPath,showHinhId) {
+function selectFileWithKCFinder(elementPath, showHinhId) {
     window.KCFinder = {
         callBack: function (url) {
             var output = document.getElementById(elementPath);
             output.value = url;
-            $('#'+showHinhId).show();
-            $('#'+showHinhId).fadeIn("fast").attr('src', url);
+            $('#' + showHinhId).show();
+            $('#' + showHinhId).fadeIn("fast").attr('src', url);
             window.KCFinder = null;
         }
     };
@@ -31,22 +31,24 @@ function selectFileWithKCFinder(elementPath,showHinhId) {
         'status=0, toolbar=0, location=0, menubar=0, directories=0, ' +
         'resizable=1, scrollbars=0, width=800, height=600'
     );
-    if ($('#'+elementPath).val() == '')
-        $('#'+showHinhId).hide();
+    if ($('#' + elementPath).val() == '')
+        $('#' + showHinhId).hide();
     else
-        $('#'+showHinhId).show();
+        $('#' + showHinhId).show();
 }
 
-function integratedCKEDITOR(elementName,height){
-    CKEDITOR.replace(elementName, {
-        height: height,
-        language: 'vi',
-        format_tags: 'p;h1;h2;h3;pre',
-        filebrowserBrowseUrl: '../../js/kcfinder/browse.php?type=files',
-        filebrowserImageBrowseUrl: '../../js/kcfinder/browse.php?type=images',
-        filebrowserFlashBrowseUrl: '../../js/kcfinder/browse.php?type=flash',
-        filebrowserUploadUrl: '../../js/kcfinder/upload.php?type=files',
-        filebrowserImageUploadUrl: '../../js/kcfinder/upload.php?type=images',
-        filebrowserFlashUploadUrl: '../../js/kcfinder/upload.php?type=flash'
-    });
+function integratedCKEDITOR(elementID, height) {
+    if ($('#' + elementID).length) {
+        CKEDITOR.replace(elementID, {
+            height: height,
+            language: 'vi',
+            format_tags: 'p;h1;h2;h3;pre',
+            filebrowserBrowseUrl: '../../js/kcfinder/browse.php?type=files',
+            filebrowserImageBrowseUrl: '../../js/kcfinder/browse.php?type=images',
+            filebrowserFlashBrowseUrl: '../../js/kcfinder/browse.php?type=flash',
+            filebrowserUploadUrl: '../../js/kcfinder/upload.php?type=files',
+            filebrowserImageUploadUrl: '../../js/kcfinder/upload.php?type=images',
+            filebrowserFlashUploadUrl: '../../js/kcfinder/upload.php?type=flash'
+        });
+    }
 }

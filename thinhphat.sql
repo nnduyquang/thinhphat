@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2017 at 11:00 AM
+-- Generation Time: Dec 27, 2017 at 01:38 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -42,6 +42,20 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `image`, `description`, `path`, `seo_title`, `seo_description`, `isActive`, `order`, `level`, `parent_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Phòng Khách', 'images/uploads/images/danhmuc/temp_list_category_banne_phongkhach.jpg', '<p>Ph&ograve;ng Kh&aacute;ch</p>', 'phong-khach', 'Phòng Khách', '<p>Ph&ograve;ng Kh&aacute;ch</p>', 1, 1, 0, NULL, 1, '2017-12-26 13:03:40', '2017-12-26 13:03:40'),
+(2, 'Phòng Ngủ', 'images/uploads/images/danhmuc/temp_list_category_banne_phongngu.jpg', '<p>Ph&ograve;ng Ngủ</p>', 'phong-ngu', 'Phòng Ngủ', '<p>Ph&ograve;ng Ngủ</p>', 1, 2, 0, NULL, 1, '2017-12-26 13:04:17', '2017-12-26 13:04:17'),
+(3, 'Gian Bếp', 'images/uploads/images/danhmuc/temp_list_category_banne_gianbep.jpg', '<p>Gian Bếp</p>', 'gian-bep', 'Gian Bếp', '<p>Gian Bếp</p>', 1, 3, 0, NULL, 1, '2017-12-26 13:04:42', '2017-12-26 13:04:42'),
+(4, 'Hành Lang', 'images/uploads/images/danhmuc/temp_list_category_banne_hanhlang.jpg', '<p>H&agrave;nh Lang</p>', 'hanh-lang', 'Hành Lang', '<p>H&agrave;nh Lang</p>', 1, 4, 0, NULL, 1, '2017-12-26 13:05:04', '2017-12-26 13:05:04'),
+(5, 'Showroom - Nhà Hàng', 'images/uploads/images/danhmuc/temp_list_category_banne_showroom.jpg', '<p>Showroom - Nh&agrave; H&agrave;ng</p>', 'showroom-nha-hang', 'Showroom - Nhà Hàng', '<p>Showroom - Nh&agrave; H&agrave;ng</p>', 1, 5, 0, NULL, 1, '2017-12-26 13:05:29', '2017-12-26 13:05:29'),
+(6, 'Tranh Nghệ Thuật', 'images/uploads/images/danhmuc/temp_list_category_banne_tranhnghethuat.jpg', '<p>Tranh Nghệ Thuật</p>', 'tranh-nghe-thuat', 'Tranh Nghệ Thuật', '<p>Tranh Nghệ Thuật</p>', 1, 6, 0, NULL, 1, '2017-12-26 13:05:59', '2017-12-26 13:05:59'),
+(7, 'Thiết Bị Khác', 'images/uploads/images/danhmuc/temp_list_category_banne_thietbikhac.jpg', '<p>Thiết Bị Kh&aacute;c</p>', 'thiet-bi-khac', 'Thiết Bị Khác', '<p>Thiết Bị Kh&aacute;c</p>', 1, 7, 0, NULL, 1, '2017-12-26 13:06:19', '2017-12-26 13:06:19'),
+(8, 'Đồ Trang Trí', 'images/uploads/images/danhmuc/temp_list_category_banne_dotrangtri.jpg', '<p>Đồ Trang Tr&iacute;</p>', 'do-trang-tri', 'Đồ Trang Trí', '<p>Đồ Trang Tr&iacute;</p>', 1, 8, 0, NULL, 1, '2017-12-26 13:06:40', '2017-12-26 13:06:40');
 
 -- --------------------------------------------------------
 
@@ -166,7 +180,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (9, 1),
 (10, 1),
 (11, 1),
-(12, 1);
+(12, 1),
+(13, 1),
+(14, 1),
+(15, 1),
+(16, 1);
 
 -- --------------------------------------------------------
 
@@ -183,13 +201,33 @@ CREATE TABLE `products` (
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `seo_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_description` text COLLATE utf8mb4_unicode_ci,
-  `price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '0',
+  `sale` int(11) NOT NULL DEFAULT '0',
+  `final_price` int(11) DEFAULT '0',
   `order` int(11) NOT NULL DEFAULT '1',
   `user_id` int(10) UNSIGNED NOT NULL,
   `category_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `path`, `isActive`, `image`, `description`, `seo_title`, `seo_description`, `price`, `sale`, `final_price`, `order`, `user_id`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 'HL0171806 L', 'hl0171806-l', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach1.jpg', '<p>HL0171806 L</p>', 'HL0171806 L', '<p>HL0171806 L</p>', '12400000', 30, 8680000, 1, 1, 1, '2017-12-26 13:58:02', '2017-12-26 14:00:23'),
+(2, 'HL0171806 M', 'hl0171806-m', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach1.jpg', '<p>HL0171806 M</p>', 'HL0171806 M', '<p>HL0171806 M</p>', '8910000', 30, 6237000, 2, 1, 1, '2017-12-26 14:00:09', '2017-12-26 14:00:09'),
+(3, 'HL0151042', 'hl0151042', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach2.jpg', '<p>HL0151042</p>', 'HL0151042', '<p>HL0151042</p>', '8360000', 30, 5852000, 2, 1, 1, '2017-12-26 14:02:31', '2017-12-26 14:02:31'),
+(4, 'HL0161072', 'hl0161072', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach3.jpg', '<p>HL0161072</p>', 'HL0161072', '<p>HL0161072</p>', '10750000', 30, 7525000, 4, 1, 1, '2017-12-26 14:16:57', '2017-12-26 14:16:57'),
+(5, 'HL018018-10+5', 'hl018018-105', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach5.jpg', '<p>HL018018-10+5</p>', 'HL018018-10+5', '<p>HL018018-10+5</p>', '12000000', 30, 8400000, 6, 1, 1, '2017-12-26 14:18:22', '2017-12-26 14:20:24'),
+(6, 'HL088070-10+5', 'hl088070-105', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach4.jpg', '<p>HL088070-10+5</p>', 'HL088070-10+5', '<p>HL088070-10+5</p>', '15600000', 30, 10920000, 7, 1, 1, '2017-12-26 14:20:02', '2017-12-26 14:20:02'),
+(7, 'HL088006-10+5', 'hl088006-105', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach6.jpg', '<p>HL088006-10+5</p>', 'HL088006-10+5', '<p>HL088006-10+5</p>', '15000000', 30, 10500000, 1, 1, 1, '2017-12-26 14:21:38', '2017-12-26 14:21:38'),
+(8, 'HL0121056 L', 'hl0121056-l', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach7.jpg', '<p>HL0121056 L</p>', 'HL0121056 L', '<p>HL0121056 L</p>', '7300000', 30, 5110000, 1, 1, 1, '2017-12-26 14:24:02', '2017-12-26 14:24:02'),
+(9, 'HL0121056 M', 'hl0121056-m', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach8.jpg', '<p>HL0121056 M</p>', 'HL0121056 M', '<p>HL0121056 M</p>', '5860000', 30, 4102000, 1, 1, 1, '2017-12-26 14:24:47', '2017-12-26 14:24:47'),
+(10, 'HL1086048-H2', 'hl1086048-h2', 1, 'images/uploads/images/sanpham/phongngu/phongngu1.jpg', '<p>HL1086048-H2</p>', 'HL1086048-H2', '<p>HL1086048-H2</p>', '4750000', 30, 3325000, 1, 1, 2, '2017-12-26 14:32:32', '2017-12-26 14:32:32'),
+(11, 'HL093333-7-61191', 'hl093333-7-61191', 1, 'images/uploads/images/sanpham/phongngu/phongngu2.png', '<p>HL093333-7-61191</p>', 'HL093333-7-61191', '<p>HL093333-7-61191</p>', '3450000', 30, 2415000, 1, 1, 2, '2017-12-26 14:40:18', '2017-12-26 14:40:18'),
+(12, 'HL093333-7-61174', 'hl093333-7-61174', 1, 'images/uploads/images/sanpham/phongngu/phongngu3.png', '<p>HL093333-7-61174</p>', 'HL093333-7-61174', '<p>HL093333-7-61174</p>', '4000000', 30, 2800000, 1, 1, 2, '2017-12-26 14:42:30', '2017-12-26 14:42:30');
 
 -- --------------------------------------------------------
 
@@ -211,7 +249,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin', 'administer the website and manage users', '2017-12-23 13:01:45', '2017-12-23 13:01:45');
+(1, 'admin', 'admin', '<p>administer the website and manage users</p>', '2017-12-23 13:01:45', '2017-12-26 12:27:57');
 
 -- --------------------------------------------------------
 
@@ -336,7 +374,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `category_permissions`
 --
@@ -356,7 +394,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `roles`
 --
