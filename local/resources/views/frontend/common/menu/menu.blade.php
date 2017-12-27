@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="container">
                     <div class="menu-top-l">
-                        <span>Liên Hệ: 0909.999.999</span>
+                        <span>Liên Hệ: 0965322239</span>
                     </div>
                     <div class="menu-top-r">
-                        <span>Địa Chỉ: 49/74/1D Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span>
+                        <span>Địa Chỉ: 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>
                     </div>
                 </div>
             </div>

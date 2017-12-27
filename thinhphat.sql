@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2017 at 01:38 AM
+-- Generation Time: Dec 27, 2017 at 07:59 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -227,7 +227,8 @@ INSERT INTO `products` (`id`, `name`, `path`, `isActive`, `image`, `description`
 (9, 'HL0121056 M', 'hl0121056-m', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach8.jpg', '<p>HL0121056 M</p>', 'HL0121056 M', '<p>HL0121056 M</p>', '5860000', 30, 4102000, 1, 1, 1, '2017-12-26 14:24:47', '2017-12-26 14:24:47'),
 (10, 'HL1086048-H2', 'hl1086048-h2', 1, 'images/uploads/images/sanpham/phongngu/phongngu1.jpg', '<p>HL1086048-H2</p>', 'HL1086048-H2', '<p>HL1086048-H2</p>', '4750000', 30, 3325000, 1, 1, 2, '2017-12-26 14:32:32', '2017-12-26 14:32:32'),
 (11, 'HL093333-7-61191', 'hl093333-7-61191', 1, 'images/uploads/images/sanpham/phongngu/phongngu2.png', '<p>HL093333-7-61191</p>', 'HL093333-7-61191', '<p>HL093333-7-61191</p>', '3450000', 30, 2415000, 1, 1, 2, '2017-12-26 14:40:18', '2017-12-26 14:40:18'),
-(12, 'HL093333-7-61174', 'hl093333-7-61174', 1, 'images/uploads/images/sanpham/phongngu/phongngu3.png', '<p>HL093333-7-61174</p>', 'HL093333-7-61174', '<p>HL093333-7-61174</p>', '4000000', 30, 2800000, 1, 1, 2, '2017-12-26 14:42:30', '2017-12-26 14:42:30');
+(12, 'HL093333-7-61174', 'hl093333-7-61174', 1, 'images/uploads/images/sanpham/phongngu/phongngu3.png', '<p>HL093333-7-61174</p>', 'HL093333-7-61174', '<p>HL093333-7-61174</p>', '4000000', 30, 2800000, 1, 1, 2, '2017-12-26 14:42:30', '2017-12-26 14:42:30'),
+(13, 'HL04116', 'hl04116', 1, 'images/uploads/images/sanpham/phongngu/phongngu4.jpg', '<p>HL04116</p>', 'HL04116', '<p>HL04116</p>', '3250000', 30, 2275000, 1, 1, 2, '2017-12-27 03:06:01', '2017-12-27 03:06:01');
 
 -- --------------------------------------------------------
 
@@ -394,7 +395,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `roles`
 --

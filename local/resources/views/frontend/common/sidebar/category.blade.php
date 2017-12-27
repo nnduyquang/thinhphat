@@ -1,6 +1,6 @@
 <div id="menu-category" class="col-md-12 hidden-sm hidden-xs">
     <div class="row">
-        <h3><span>Danh Mục Sản Phẩm</span></h3>
+        <h3><span>Danh Mục Đèn Trang Trí</span></h3>
         <ul class="main-list-item">
             @for($i=0;$i<count($menu_sidebar);$i++)
                 @if($menu_sidebar[$i]->level==0)

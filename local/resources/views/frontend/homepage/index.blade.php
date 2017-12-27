@@ -1,12 +1,12 @@
 @extends('frontend.master')
 @section('title')
-    Thiết Bị Văn Phòng
+    Đẳng Cấp Đèn Chiếu Sáng Thịnh Phát
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}
 @stop
 @section('description')
-    Thiết Bị Văn Phòng. ☎ Hotline: 0999 999 999
+    Công Ty Thiết Bị Chiếu Sáng Đẳng Cấp. ☎ Hotline: 0965 322 239
 @stop
 @section('container')
     <div id="homepage-top" class="col-md-12">

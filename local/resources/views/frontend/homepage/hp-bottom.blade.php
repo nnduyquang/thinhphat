@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="hp-bot-box color1">
-                    <span class="text1">Gọi Hotline: 0907468264
+                    <span class="text1">Gọi Hotline: 0965.322.239
                         <span>Làm Việc Từ Thứ 2 Đến Thứ 7:8am- 5pm</span>
                     </span>
                         <i class="fa fa-phone" aria-hidden="true"></i>

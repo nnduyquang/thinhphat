@@ -39,7 +39,7 @@
                                     @else
                                         <span class="price-contact">Liên Hệ</span>
                                     @endif
-                                    <input class="btn-confirm btn" type="button" value="0907468264">
+                                    <input class="btn-confirm btn" type="button" value="0965322239">
                                 </div>
                             </div>
                         </div>

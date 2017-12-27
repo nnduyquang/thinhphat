@@ -5,7 +5,7 @@
             <span class="box-text color1">
                 <span class="text1">
                     <span>Không Gian Sang Trọng</span>
-                    TÔN VINH ĐẶNG CẤP
+                    TÔN VINH ĐẲNG CẤP
                 </span>
             </span>
         </a>

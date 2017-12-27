@@ -22,14 +22,14 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h3>Ngân Gia</h3>
+                    <h3>Thịnh Phát</h3>
                     <ul>
 
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>49/74/1D Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span></a></li>
                         <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Chăm sóc khách hàng: </br>
-                                    (028) 9999 9999</br>
+                                    0965322239</br>
                                     Từ 8h00 - 17h00 các ngày thứ 2 đến thứ 7</span></a></li>
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>sales@ngangia.com.vn</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>dentrangtrithinhphat@gmail.com</span></a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
