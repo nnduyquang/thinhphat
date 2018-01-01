@@ -28,8 +28,17 @@ class CategoryPermissionsSeeder extends Seeder
 //            [
 //                'name' => 'Loại Sản Phẩm', //
 //            ]
+//            [
+//                'name' => 'Sản Phẩm', //
+//            ],
+//            [
+//                'name' => 'Page', //
+//            ],
+//            [
+//                'name' => 'Post', //
+//            ],
             [
-                'name' => 'Sản Phẩm', //
+                'name' => 'Catalogue', //
             ],
 
         ];

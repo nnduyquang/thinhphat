@@ -44,7 +44,9 @@ mix.styles([
     .styles([
         'resources/assets/js/ulti.js',
         'resources/assets/js/be.category.js',
-        'resources/assets/js/be.product.js'
+        'resources/assets/js/be.product.js',
+        'resources/assets/js/be.page.js',
+        'resources/assets/js/be.catalogue.js',
     ], '../js/backend.js')
     .styles([
         'resources/assets/js/ulti.js',

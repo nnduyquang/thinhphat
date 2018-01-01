@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,9 @@ class feCategoryController extends Controller
         $menu_sidebar = [];
         self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
         self::getAllProductByCategory($category, $list_product);
-        return view('frontend.category.category', compact('category','sub_Category','list_product','menu_sidebar','menu_horizon'));
+        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
+        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
+        return view('frontend.category.category', compact('category','sub_Category','list_product','menu_sidebar','menu_horizon','catalogues'));
     }
 
     public function getAllProductByCategory($category, &$list_product)

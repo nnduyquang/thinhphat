@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class feProductController extends Controller
             }
         }
         $order_product = collect($order_product)->sortByDESC('created_at')->take(4);
-        return view('frontend.detail.detail', compact('product', 'menu_sidebar', 'order_product','menu_horizon'));
+        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
+        return view('frontend.detail.detail', compact('product', 'menu_sidebar', 'order_product','menu_horizon','catalogues'));
     }
 
     public function showCategoryDropDown($dd_categories, $parent_id = 0, &$newArray)

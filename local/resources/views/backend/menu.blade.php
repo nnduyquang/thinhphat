@@ -9,6 +9,8 @@
     @if(Auth::user()->can('role-list'))
         <li><a href="{{ route('roles.index') }}"><i class="fa fa-link"></i> <span>Quyền</span></a></li>
     @endif
+    <li><a href="{{route('page.index') }}"><i class="fa fa-link"></i> <span>Trang</span></a></li>
+    <li><a href="{{route('catalogue.index') }}"><i class="fa fa-link"></i> <span>Báo Giá Và Catalogue</span></a></li>
     <li><a href="{{ route('category.index') }}"><i class="fa fa-link"></i> <span>Loại Sản Phẩm</span></a></li>
     <li><a href="{{ route('product.index') }}"><i class="fa fa-link"></i> <span>Sản Phẩm</span></a></li>
 </ul>

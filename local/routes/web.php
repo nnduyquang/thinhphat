@@ -17,6 +17,8 @@ Route::get('/category', 'HomepageController@getFrontendContentCategory');
 
 Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
 
+Route::get('/catalogue/{pathCatalogue}', 'HomepageController@getDetailCatalogue');
+
 /////////////////////////////////////////////
 /// BACKEND
 
@@ -59,4 +61,23 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/product/{id}/edit', ['as' => 'product.edit', 'uses' => 'ProductController@edit', 'middleware' => ['permission:product-edit']]);
     Route::patch('sml_admin/product/{id}', ['as' => 'product.update', 'uses' => 'ProductController@update', 'middleware' => ['permission:product-edit']]);
     Route::delete('sml_admin/product/{id}', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy', 'middleware' => ['permission:product-delete']]);
+
+    //PAGE
+    Route::get('sml_admin/page', ['as' => 'page.index', 'uses' => 'PageController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
+    Route::post('sml_admin/page/create', ['as' => 'page.store', 'uses' => 'PageController@store', 'middleware' => ['permission:page-create']]);
+    Route::post('sml_admin/page', ['as' => 'page.search', 'uses' => 'PageController@search']);
+    Route::get('sml_admin/page/create', ['as' => 'page.create', 'uses' => 'PageController@create', 'middleware' => ['permission:page-create']]);
+    Route::get('sml_admin/page/{id}/edit', ['as' => 'page.edit', 'uses' => 'PageController@edit', 'middleware' => ['permission:page-edit']]);
+    Route::patch('sml_admin/page/{id}', ['as' => 'page.update', 'uses' => 'PageController@update', 'middleware' => ['permission:page-edit']]);
+    Route::delete('sml_admin/page/{id}', ['as' => 'page.destroy', 'uses' => 'PageController@destroy', 'middleware' => ['permission:page-delete']]);
+
+    //CATALOGUE
+    Route::get('sml_admin/catalogue', ['as' => 'catalogue.index', 'uses' => 'CatalogueController@index', 'middleware' => ['permission:catalogue-list|catalogue-create|catalogue-edit|catalogue-delete']]);
+    Route::post('sml_admin/catalogue/create', ['as' => 'catalogue.store', 'uses' => 'CatalogueController@store', 'middleware' => ['permission:catalogue-create']]);
+    Route::post('sml_admin/catalogue', ['as' => 'catalogue.search', 'uses' => 'CatalogueController@search']);
+    Route::get('sml_admin/catalogue/create', ['as' => 'catalogue.create', 'uses' => 'CatalogueController@create', 'middleware' => ['permission:catalogue-create']]);
+    Route::get('sml_admin/catalogue/{id}/edit', ['as' => 'catalogue.edit', 'uses' => 'CatalogueController@edit', 'middleware' => ['permission:catalogue-edit']]);
+    Route::patch('sml_admin/catalogue/{id}', ['as' => 'catalogue.update', 'uses' => 'CatalogueController@update', 'middleware' => ['permission:catalogue-edit']]);
+    Route::delete('sml_admin/catalogue/{id}', ['as' => 'catalogue.destroy', 'uses' => 'CatalogueController@destroy', 'middleware' => ['permission:catalogue-delete']]);
+
 });

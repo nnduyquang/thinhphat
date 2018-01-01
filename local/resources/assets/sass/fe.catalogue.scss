@@ -1,0 +1,41 @@
+#catalogue {
+  .title-top {
+    h3.header-title {
+      font-size: 15px;
+      line-height: 1.8;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: 1px solid #F68C22;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 15px;
+      span {
+        color: white;
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px 10px 20px;
+        //width: 30%;
+        background-color: #204243;
+      }
+      span:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 0;
+        border-left: 25px solid #204243;
+        border-top: 27px solid transparent;
+        border-bottom: 20px solid transparent;
+      }
+    }
+    p.description {
+      text-align: justify;
+      line-height: 1.5;
+    }
+  }
+  .content-catalogue {
+    margin-top: 30px;
+    img {
+      width: 100% !important;
+    }
+  }
+}
