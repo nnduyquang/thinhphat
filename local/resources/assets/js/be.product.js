@@ -6,3 +6,4 @@ if ($('#btnBrowseImageSanPham').length) {
         selectFileWithKCFinder('pathImageSanPham','showHinhSanPham');
     }
 };
+integrateSearch('btnSearchProduct','formSearchProduct')

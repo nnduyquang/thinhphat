@@ -12,6 +12,8 @@ class feProductController extends Controller
     public function getDetailProduct($pathCategory, $pathProduct)
     {
         $product = Product::where('path', '=', $pathProduct)->first();
+        $product->price=number_format($product->price, 0, ',', '.');
+        $product->final_price=number_format($product->final_price, 0, ',', '.');
         $list_sidebar = Category::select('id', 'name', 'level', 'parent_id','path')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
         $menu_horizon= Category::where('level', '=', 0)->orderBy('order')->get();
         $menu_sidebar = [];
@@ -46,6 +48,8 @@ class feProductController extends Controller
         $list = Product::where('category_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
             $data2->path = $category->path . '/san-pham/' . $data2->path;
+            $data2->price=number_format($data2->price, 0, ',', '.');
+            $data2->final_price=number_format($data2->final_price, 0, ',', '.');
             array_push($list_product, $data2);
         }
         $sub = Category::where('parent_id', '=', $category->id)->get();

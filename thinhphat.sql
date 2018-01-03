@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jan 01, 2018 at 10:32 AM
+-- Generation Time: Jan 03, 2018 at 04:06 PM
 -- Server version: 10.1.18-MariaDB
 -- PHP Version: 5.6.20
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `image`, `description`, `path`, `seo_title`, `seo_description`, `isActive`, `order`, `level`, `parent_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Đèn Trang Trí - Đèn Chiếu Sáng', 'images/uploads/images/danhmuc/temp_list_category_banne_phongkhach.jpg', '<p>Đ&egrave;n Trang Tr&iacute; - Đ&egrave;n Chiếu S&aacute;ng</p>', 'den-trang-tri-den-chieu-sang', 'Đèn Trang Trí - Đèn Chiếu Sáng', '<p>Đ&egrave;n Trang Tr&iacute; - Đ&egrave;n Chiếu S&aacute;ng</p>', 1, 1, 0, 0, 1, '2017-12-26 13:03:40', '2018-01-01 02:58:18'),
+(1, 'Đèn Trang Trí - Đèn Chiếu Sáng', 'images/uploads/images/danhmuc/den_trnag_tri.jpg', '<p>Đ&egrave;n Trang Tr&iacute; - Đ&egrave;n Chiếu S&aacute;ng</p>', 'den-trang-tri-den-chieu-sang', 'Đèn Trang Trí - Đèn Chiếu Sáng', '<p>Đ&egrave;n Trang Tr&iacute; - Đ&egrave;n Chiếu S&aacute;ng</p>', 1, 1, 0, 0, 1, '2017-12-26 13:03:40', '2018-01-03 03:41:48'),
 (2, 'Thiết Bị Điện', 'images/uploads/images/danhmuc/temp_list_category_banne_phongngu.jpg', '<p>Thiết Bị Điện</p>', 'thiet-bi-dien', 'Thiết Bị Điện', '<p>Thiết Bị Điện</p>', 1, 2, 0, 0, 1, '2017-12-26 13:04:17', '2018-01-01 03:04:37'),
 (3, 'Thiết Bị Nước - Thiết Bị Vệ Sinh', 'images/uploads/images/danhmuc/temp_list_category_banne_gianbep.jpg', '<p>Thiết Bị Nước - Thiết Bị Vệ Sinh</p>', 'thiet-bi-nuoc-thiet-bi-ve-sinh', 'Thiết Bị Nước - Thiết Bị Vệ Sinh', '<p>Thiết Bị Nước - Thiết Bị Vệ Sinh</p>', 1, 3, 0, 0, 1, '2017-12-26 13:04:42', '2018-01-01 03:05:20'),
 (4, 'Thiết Bị Nhà Bếp', 'images/uploads/images/danhmuc/temp_list_category_banne_hanhlang.jpg', '<p>Thiết Bị Nh&agrave; Bếp</p>', 'thiet-bi-nha-bep', 'Thiết Bị Nhà Bếp', '<p>Thiết Bị Nh&agrave; Bếp</p>', 1, 4, 0, 0, 1, '2017-12-26 13:05:04', '2018-01-01 03:06:05'),
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `category_permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `category_permissions_name_unique` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `category_permissions`
@@ -114,7 +114,8 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 (3, 'Loại Sản Phẩm', '2017-12-24 02:03:30', '2017-12-24 02:03:30'),
 (4, 'Sản Phẩm', '2017-12-26 08:57:53', '2017-12-26 08:57:53'),
 (5, 'Page', '2017-12-30 12:21:43', '2017-12-30 12:21:43'),
-(6, 'Post', '2017-12-30 12:21:44', '2017-12-30 12:21:44');
+(6, 'Post', '2017-12-30 12:21:44', '2017-12-30 12:21:44'),
+(7, 'Catalogue', '2018-01-01 04:06:39', '2018-01-01 04:06:39');
 
 -- --------------------------------------------------------
 
@@ -170,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_unique` (`name`),
   KEY `permissions_category_permission_id_foreign` (`category_permission_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `permissions`
@@ -200,7 +201,11 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 (21, 'post-list', 'Xem Toàn Bộ Bài Viết', 'Được Xem Toàn Bộ Bài Viết', 6, '2017-12-30 12:24:39', '2017-12-30 12:24:39'),
 (22, 'post-create', 'Tạo Bài Viết Mới', 'Được Tạo Bài Viết Mới', 6, '2017-12-30 12:24:39', '2017-12-30 12:24:39'),
 (23, 'post-edit', 'Cập Nhật Bài Viết', 'Được Cập Nhật Bài Viết', 6, '2017-12-30 12:24:39', '2017-12-30 12:24:39'),
-(24, 'post-delete', 'Xóa Bài Viết', 'Được Xóa Bài Viết', 6, '2017-12-30 12:24:39', '2017-12-30 12:24:39');
+(24, 'post-delete', 'Xóa Bài Viết', 'Được Xóa Bài Viết', 6, '2017-12-30 12:24:39', '2017-12-30 12:24:39'),
+(26, 'catalogue-list', 'Xem Toàn Bộ Catalogue', 'Được Xem Toàn Bộ Catalogue', 7, '2018-01-01 04:08:33', '2018-01-01 04:08:33'),
+(27, 'catalogue-create', 'Tạo Catalogue Mới', 'Được Tạo Catalogue Mới', 7, '2018-01-01 04:08:33', '2018-01-01 04:08:33'),
+(28, 'catalogue-edit', 'Cập Nhật Catalogue', 'Được Cập Nhật Catalogue', 7, '2018-01-01 04:08:33', '2018-01-01 04:08:33'),
+(29, 'catalogue-delete', 'Xóa Catalogue', 'Được Xóa Catalogue', 7, '2018-01-01 04:08:33', '2018-01-01 04:08:33');
 
 -- --------------------------------------------------------
 
@@ -243,7 +248,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (21, 1),
 (22, 1),
 (23, 1),
-(24, 1);
+(24, 1),
+(26, 1),
+(27, 1),
+(28, 1),
+(29, 1);
 
 -- --------------------------------------------------------
 
@@ -267,14 +276,18 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `posts_user_id_foreign` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `seo_title`, `seo_description`, `post_type`, `isActive`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Giới Thiệu', 'gioi-thieu', '<p>123</p>', '<p>123</p>', '0', '123', '<p>123</p>', 0, 1, 1, '2018-01-01 02:22:24', '2018-01-01 02:22:24');
+(1, 'Giới Thiệu', 'gioi-thieu', '<p>123</p>', '<p>123</p>', '0', '123', '<p>123</p>', 0, 1, 1, '2018-01-01 02:22:24', '2018-01-01 02:22:24'),
+(2, 'Catalogue Đèn Trang Trí', 'catalogue-den-trang-tri', '<p>Catalogue Đ&egrave;n Trang Tr&iacute;</p>', '<p>Catalogue Đ&egrave;n Trang Tr&iacute;</p>', 'images/uploads/images/danhmuc/temp_list_category_banne_dotrangtri.jpg', 'Catalogue Đèn Trang Trí', '<p>Catalogue Đ&egrave;n Trang Tr&iacute;</p>', 2, 1, 1, '2018-01-01 04:16:07', '2018-01-01 04:16:07'),
+(3, 'Catalogue Thiết Bị Điện', 'catalogue-thiet-bi-dien', '<p>Catalogue Thiết Bị Điện</p>', '<p>Catalogue Thiết Bị Điện</p>', 'images/uploads/images/danhmuc/temp_list_category_banne_dotrangtri.jpg', 'Catalogue Thiết Bị Điện', '<p>Catalogue Thiết Bị Điện</p>', 2, 1, 1, '2018-01-01 04:16:40', '2018-01-01 04:16:40'),
+(4, 'Catalogue Thiết Bị Nước - WC', 'catalogue-thiet-bi-nuoc-wc', '<p>Catalogue Thiết Bị Nước - WC</p>', '<p>Catalogue Thiết Bị Nước - WC</p>', 'images/uploads/images/danhmuc/temp_list_category_banne_dotrangtri.jpg', 'Catalogue Thiết Bị Nước - WC', '<p>Catalogue Thiết Bị Nước - WC</p>', 2, 1, 1, '2018-01-01 04:17:04', '2018-01-01 04:17:04'),
+(5, 'Catalogue Thiết Bị Nhà Bếp', 'catalogue-thiet-bi-nha-bep', '<p>Catalogue Thiết Bị Nh&agrave; Bếp</p>', '<p>Catalogue Thiết Bị Nh&agrave; Bếp</p>', 'images/uploads/images/danhmuc/temp_list_category_banne_dotrangtri.jpg', 'Catalogue Thiết Bị Nhà Bếp', '<p>Catalogue Thiết Bị Nh&agrave; Bếp</p>', 2, 1, 1, '2018-01-01 04:17:31', '2018-01-01 04:17:31');
 
 -- --------------------------------------------------------
 

@@ -223,4 +223,10 @@ class CategoryController extends Controller
             }
         }
     }
+    public function search(Request $request)
+    {
+        $keywords = preg_replace('/\s+/', ' ', $request->input('txtSearch'));
+        $categories = Category::where('name', 'like', '%' . $keywords . '%')->orderBy('id', 'DESC')->get();
+        return view('backend.category.index', compact('categories', 'keywords'));
+    }
 }

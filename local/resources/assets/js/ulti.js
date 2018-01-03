@@ -52,3 +52,12 @@ function integratedCKEDITOR(elementID, height) {
         });
     }
 }
+function integrateSearch(elementID,formID){
+    $('#'+elementID).click(function () {
+        if ($('#txtSearch').val().trim() == '')
+            return;
+        if ($('#txtSearch').val().trim().replace(/ +(?= )/g, '') == $("input[name='hdKeyword']").val())
+            return;
+        $('#'+formID).submit();
+    });
+}

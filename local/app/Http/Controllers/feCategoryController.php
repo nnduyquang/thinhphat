@@ -28,6 +28,8 @@ class feCategoryController extends Controller
         $list = Product::where('category_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
             $data2->path=$category->path.'/san-pham/'.$data2->path;
+            $data2->price=number_format($data2->price, 0, ',', '.');
+            $data2->final_price=number_format($data2->final_price, 0, ',', '.');
             array_push($list_product, $data2);
         }
         $sub = Category::where('parent_id', '=', $category->id)->get();

@@ -30,7 +30,8 @@
             <div class="container">
                 <div class="row">
                     @include('frontend.homepage.hp-top')
-                    @include('frontend.homepage.hp-list-product')
+                    {{--@include('frontend.homepage.hp-list-product')--}}
+                    @include('frontend.homepage.hp-list-product2')
                     @include('frontend.homepage.hp-bottom')
                 </div>
             </div>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="container">
                     <div class="menu-top-l">
-                        <span>Liên Hệ: 0965322239</span>
+                        <span>Liên Hệ: 0965.322.239</span>
                     </div>
                     <div class="menu-top-r">
                         <span>Địa Chỉ: 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>

@@ -4,6 +4,8 @@
     //margin-bottom: 20px;
     a {
       position: relative;
+      margin-right: 5px;
+      display: block;
       img {
         width: 100%;
       }
@@ -56,6 +58,9 @@
   #hp-content-top {
     .hp-content-box {
       margin-bottom: 20px;
+      a {
+        margin-right: 0px;
+      }
     }
   }
 }
