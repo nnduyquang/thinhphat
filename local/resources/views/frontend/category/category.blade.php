@@ -41,7 +41,10 @@
                                                     <div class="row">
                                                         @foreach($sub_Category as $key=>$data)
                                                             <div class="col-md-3 col-xs-6">
-                                                                <a href="{{URL::to('danh-muc/'.$data->path)}}">{{ Html::image($data->image,'',array('class'=>'no-style')) }}</a>
+                                                                <div class="row">
+                                                                    {{--<a href="{{URL::to('danh-muc/'.$data->path)}}">{{ Html::image($data->image,'',array('class'=>'no-style')) }}</a>--}}
+                                                                    <a href="{{URL::to('danh-muc/'.$data->path)}}"><span>{{$data->name}}</span></a>
+                                                                </div>
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -57,13 +60,16 @@
                                                                     <div class="item-detail">
                                                                         <span class="title">{{$data->name}}</span>
                                                                         @if($data->price!=0)
-                                                                            <span class="price-sale">{{$data->final_price}} VND
+                                                                            <span class="price-sale">{{$data->final_price}}
+                                                                                VND
                                                                                 @if($data->sale!=0)
-                                                                                    <span class="discount">Giảm {{$data->sale}}%</span>
+                                                                                    <span class="discount">Giảm {{$data->sale}}
+                                                                                        %</span>
                                                                                 @endif
                                         </span>
                                                                             @if($data->sale!=0)
-                                                                                <span class="price-saving">{{$data->price}} VND</span>
+                                                                                <span class="price-saving">{{$data->price}}
+                                                                                    VND</span>
                                                                             @endif
                                                                         @else
                                                                             <span class="price-contact">Liên Hệ</span>
