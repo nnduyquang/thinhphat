@@ -22,7 +22,7 @@
     @include('frontend.common.menu.m-menu')
     @include('frontend.common.menu.menu')
     @yield('slider')
-    <div id="wrap-container">
+    <div id="wrap-container" class="col-md-12">
         @yield('container')
     </div>
 </div>

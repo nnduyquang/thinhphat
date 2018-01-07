@@ -14,9 +14,9 @@ class HomepageController extends Controller
         $list_sidebar = Category::select('id', 'name', 'level', 'parent_id','path')->where(function($query){
             $query->where('level', '=', 0)->orWhere('level', '=', 1);
         })->where('isActive','=',1)->orderBy('order')->get();
-        $menu_horizon= Category::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
         $menu_sidebar = [];
         self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
+//        dd($menu_sidebar)->toArray();
         $list_sidebar2 = Category::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
         $list_product = [];
         $final_array = [];
@@ -26,6 +26,7 @@ class HomepageController extends Controller
             array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(8),"list_subMenu"=>$list_subMenu]));
             $list_product = [];
         }
+        $menu_horizon= Category::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
         $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
         return view('frontend.homepage.index', compact('menu_sidebar','final_array','menu_horizon','catalogues'));
     }

@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
+@font-face {
+  font-family: UTMAVO;
+  src: url('../fonts/utm-avo.ttf');
+}
 @import "reset";
 @import "fe.menu";
 @import "fe.sidebar";

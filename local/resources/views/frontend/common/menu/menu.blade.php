@@ -4,21 +4,30 @@
             <div class="row">
                 <div class="container">
                     <div class="menu-top-l">
-                        <span>Liên Hệ: 0965.322.239</span>
+                        {{ Html::image('images/temp/logo.png','',array('class'=>'no-style')) }}
+                        <ul class="menu-list-r">
+                            <li><a href="#" id="clickSearch"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                            <li>
+                                {!! Form::open(array('method'=>'POST','id'=>'formSearch')) !!}
+                                {!! Form::text('key-search', '', array('placeholder' => 'Tìm Kiếm','class' => 'form-control','id'=>'searchInput')) !!}
+                                {!! Form::close() !!}
+                            </li>
+                        </ul>
                     </div>
                     <div class="menu-top-r">
-                        <span>Địa Chỉ: 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0965.322.239 - 0901.196.676</span>
+                        <span><i class="fa fa-home" aria-hidden="true"></i> 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="menu-banner" class="col-md-12">
-            <div class="row">
-                <div class="container">
-                    {{ Html::image('images/temp/temp_banner_menu.jpg','',array('class'=>'no-style')) }}
-                </div>
-            </div>
-        </div>
+        {{--<div id="menu-banner" class="col-md-12">--}}
+            {{--<div class="row">--}}
+                {{--<div class="container">--}}
+                    {{--{{ Html::image('images/temp/temp_banner_menu.jpg','',array('class'=>'no-style')) }}--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div id="menu-list" class="col-md-12">
             <div class="row">
                 <div class="container">
@@ -32,6 +41,7 @@
                                     @endforeach
                                 </ul>
                             </li>
+                            <li><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Khuyến Mãi</a>
                             <li class="sub-menu"><i class="fa fa-gift" aria-hidden="true"></i><a href="#">Báo Giá Và Catalogue</a>
                                 <ul>
                                     @foreach($catalogues as $key=>$data)
@@ -43,14 +53,14 @@
                             </li>
                             <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Liên Hệ</a></li>
                         </ul>
-                        <ul class="menu-list-r">
-                            <li><a href="#" id="clickSearch"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                            <li>
-                                {!! Form::open(array('method'=>'POST','id'=>'formSearch')) !!}
-                                {!! Form::text('key-search', '', array('placeholder' => 'Tìm Kiếm','class' => 'form-control','id'=>'searchInput')) !!}
-                                {!! Form::close() !!}
-                            </li>
-                        </ul>
+                        {{--<ul class="menu-list-r">--}}
+                            {{--<li><a href="#" id="clickSearch"><i class="fa fa-search" aria-hidden="true"></i></a></li>--}}
+                            {{--<li>--}}
+                                {{--{!! Form::open(array('method'=>'POST','id'=>'formSearch')) !!}--}}
+                                {{--{!! Form::text('key-search', '', array('placeholder' => 'Tìm Kiếm','class' => 'form-control','id'=>'searchInput')) !!}--}}
+                                {{--{!! Form::close() !!}--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
                     </div>
                 </div>
             </div>

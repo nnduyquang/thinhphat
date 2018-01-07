@@ -23,8 +23,8 @@
                             </div>
                             <div class="category-top col-md-12">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        @include('frontend.common.sidebar.category')
+                                    <div class="col-md-3">
+                                        @include('frontend.common.sidebar.category2')
                                     </div>
                                     <div class="col-md-8">
                                         <div class="row">
@@ -53,31 +53,25 @@
                                             <div class="list-item col-md-12">
                                                 <div class="row">
                                                     @foreach($list_product as $key=>$data)
-                                                        <a href="{{URL::to($data->path)}}">
                                                             <div class="one-item col-md-3 col-xs-6">
-                                                                <div class="row">
+                                                                <a href="{{URL::to($data->path)}}">
                                                                     {{ Html::image($data->image,'',array('class'=>'no-style')) }}
+                                                                    @if($data->sale!=0)
+                                                                        <span class="discount">{{$data->sale}}%</span>
+                                                                    @endif
                                                                     <div class="item-detail">
                                                                         <span class="title">{{$data->name}}</span>
                                                                         @if($data->price!=0)
-                                                                            <span class="price-sale">{{$data->final_price}}
-                                                                                VND
-                                                                                @if($data->sale!=0)
-                                                                                    <span class="discount">Giảm {{$data->sale}}
-                                                                                        %</span>
-                                                                                @endif
-                                        </span>
+                                                                            <span class="price-sale">{{$data->final_price}}₫</span>
                                                                             @if($data->sale!=0)
-                                                                                <span class="price-saving">{{$data->price}}
-                                                                                    VND</span>
+                                                                                <span class="price-saving">{{$data->price}}₫</span>
                                                                             @endif
                                                                         @else
                                                                             <span class="price-contact">Liên Hệ</span>
                                                                         @endif
                                                                     </div>
-                                                                </div>
+                                                                </a>
                                                             </div>
-                                                        </a>
                                                     @endforeach
                                                 </div>
                                             </div>

@@ -22,13 +22,14 @@
                             <a href="{{URL::to($data2->path)}}">
                                 <div class="one-item col-md-3 col-xs-6">
                                     {{ Html::image($data2->image,'',array('class'=>'no-style')) }}
+                                    @if($data2->sale!=0)
+                                        <span class="discount">Giảm {{$data2->sale}}%</span>
+                                    @endif
                                     <div class="item-detail">
                                         <span class="title">{{$data2->name}}</span>
                                         @if($data2->price!=0)
                                             <span class="price-sale">{{$data2->final_price}} VND
-                                                @if($data2->sale!=0)
-                                                    <span class="discount">Giảm {{$data2->sale}}%</span>
-                                                @endif
+
                                         </span>
                                             @if($data2->sale!=0)
                                                 <span class="price-saving">{{$data2->price}} VND</span>

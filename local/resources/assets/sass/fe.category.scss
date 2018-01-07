@@ -55,7 +55,7 @@
         span {
           display: block;
           padding: 20px;
-          background-color: rgba(12, 66, 148, 0.83);
+          background-color: #4a7071;
           margin-bottom: 10px;
           margin-right: 5px;
           text-align: center;
@@ -80,9 +80,22 @@
         margin-bottom: 20px;
         padding-bottom: 20px;
         height: 250px;
+        position: relative;
+        .discount {
+          position: absolute;
+          color: white;
+          background-color: #ff9c33;
+          padding: 0 10px;
+          height: 22px;
+          line-height: 22px;
+          margin-left: 5px;
+          left: 10px;
+          top: 20px;
+          font-size: 12px;
+        }
         img {
-          width: 145px;
-          height: 145px;
+          width: 180px;
+          height: 180px;
         }
         .item-detail {
           .title {
@@ -102,17 +115,14 @@
             color: rgb(123, 123, 123);
           }
           .price-sale {
-            color: red;
+            color: #f69419;
             line-height: 1.5;
-            .discount {
-              color: white;
-              background-color: red;
-              margin-left: 15px;
-            }
+            font-weight: bold;
           }
           .price-saving {
             text-decoration: line-through;
-            display: block;
+            color: #cccccc;
+
           }
           .price-contact {
             color: red;
