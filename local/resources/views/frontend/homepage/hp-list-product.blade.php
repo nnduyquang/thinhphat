@@ -1,5 +1,4 @@
 <div id="hp-content-list-product" class="col-md-12">
-    <div class="row">
         <div class="container">
             <div class="row">
                 @foreach($final_array as $key=>$data)
@@ -46,5 +45,4 @@
                 @endforeach
             </div>
         </div>
-    </div>
 </div>

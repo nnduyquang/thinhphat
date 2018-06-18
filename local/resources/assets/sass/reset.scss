@@ -8,6 +8,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Anton|Baloo+Bhai|Fira+Sans+Extra+Condensed|Oswald|Roboto+Condensed');
+
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
@@ -15,7 +17,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  font-family: UTMAVO!important;
+  font-family: 'Roboto Condensed', sans-serif!important;
 }
 
 ol, ul {

@@ -1,14 +1,16 @@
 #menu-category-2 {
+  margin-top: 13px;
   .one-category {
     margin-bottom: 10px;
 
     h3 {
+      text-align: center;
+      padding:5px 0px;
       display: block;
-      //padding: 10px;
-      background-color: #284445;
+      background-color: #05577a;
       a {
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 13.8px;
         color: white;
         font-weight: bold;
         display: block;
@@ -30,7 +32,9 @@
           font-size: 14px;
         }
         a:hover{
+          color:white;
           padding-left: 20px;
+          background-color: #ff9c33;
         }
       }
     }
