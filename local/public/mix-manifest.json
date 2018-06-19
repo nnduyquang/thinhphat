@@ -1,5 +1,6 @@
 {
     "/../../css/frontend.css": "/../../css/frontend.css",
+    "/../../css/backend.css": "/../../css/backend.css",
     "/C:/xampp/htdocs/thinhphat/js/core.common.js": "/C:/xampp/htdocs/thinhphat/js/core.common.js",
     "/C:/xampp/htdocs/thinhphat/css/core.common.css": "/C:/xampp/htdocs/thinhphat/css/core.common.css",
     "/C:/xampp/htdocs/thinhphat/js/core.frontend.js": "/C:/xampp/htdocs/thinhphat/js/core.frontend.js",
@@ -13,12 +14,8 @@
     "/C:/xampp/htdocs/thinhphat/css/core.frontend.css": "/C:/xampp/htdocs/thinhphat/css/core.frontend.css",
     "/C:/xampp/htdocs/thinhphat/css/core.backend.css": "/C:/xampp/htdocs/thinhphat/css/core.backend.css",
     "/C:/xampp/htdocs/thinhphat/js/core.backend.js": "/C:/xampp/htdocs/thinhphat/js/core.backend.js",
-    "/C:/xampp/htdocs/thinhphat/css/backend.css": "/C:/xampp/htdocs/thinhphat/css/backend.css",
     "/C:/xampp/htdocs/thinhphat/js/backend.js": "/C:/xampp/htdocs/thinhphat/js/backend.js",
+    "/C:/xampp/htdocs/thinhphat/js/ulti.js": "/C:/xampp/htdocs/thinhphat/js/ulti.js",
     "/C:/xampp/htdocs/thinhphat/js/login.js": "/C:/xampp/htdocs/thinhphat/js/login.js",
-    "/C:/xampp/htdocs/thinhphat/css/login.css": "/C:/xampp/htdocs/thinhphat/css/login.css",
-    "/C:/xampp/htdocs/thinhphat/js/ckeditor/ckeditor.js": "/C:/xampp/htdocs/thinhphat/js/ckeditor/ckeditor.js",
-    "/C:/xampp/htdocs/thinhphat/js/ckeditor/config.js": "/C:/xampp/htdocs/thinhphat/js/ckeditor/config.js",
-    "/C:/xampp/htdocs/thinhphat/js/ckeditor/contents.css": "/C:/xampp/htdocs/thinhphat/js/ckeditor/contents.css",
-    "/C:/xampp/htdocs/thinhphat/js/ckeditor/styles.js": "/C:/xampp/htdocs/thinhphat/js/ckeditor/styles.js"
+    "/C:/xampp/htdocs/thinhphat/css/login.css": "/C:/xampp/htdocs/thinhphat/css/login.css"
 }

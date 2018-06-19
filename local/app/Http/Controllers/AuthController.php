@@ -23,6 +23,13 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->intended('sml_login');
+        return redirect()->intended('admin/sml_login');
+    }
+    public function checklogin(){
+        if(Auth::check()){
+            return view('backend.admin.dashboard.index');
+        }else{
+            return view('backend.login.login1');
+        }
     }
 }

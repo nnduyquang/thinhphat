@@ -35,36 +35,23 @@ mix.styles([
     .styles([
         'bower_components/admin-lte/dist/js/adminlte.min.js',
         'bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js',
+
     ], '../js/core.backend.js')
+    .sass('resources/assets/sass/backend.scss', '../../css/backend.css').options({processCssUrls: false})
     .styles([
-        'resources/assets/sass/be.common.scss',
-        'resources/assets/sass/be.category.scss',
-        'resources/assets/sass/be.product.scss',
-    ], '../css/backend.css')
-    .styles([
-        'resources/assets/js/ulti.js',
-        'resources/assets/js/be.category.js',
-        'resources/assets/js/be.product.js',
+        'resources/assets/js/be.common.js',
         'resources/assets/js/be.page.js',
-        'resources/assets/js/be.catalogue.js',
+        'resources/assets/js/be.post.js',
+        'resources/assets/js/be.menu.js',
+        'resources/assets/js/be.categoryproduct.js',
     ], '../js/backend.js')
     .styles([
         'resources/assets/js/ulti.js',
-        'resources/assets/js/login.js',
+    ], '../js/ulti.js')
+    .styles([
+        'resources/assets/js/login1.js',
     ], '../js/login.js')
     .styles([
         'resources/assets/sass/be.login.scss',
     ], '../css/login.css')
-// CKEDITOR CHỈ CHẠY ĐOẠN NÀY 1 LẦN
-// ===================
-.copy('bower_components/ckeditor/adapters', '../js/ckeditor/adapters',false)
-.copy('bower_components/ckeditor/lang', '../js/ckeditor/lang',false)
-.copy('bower_components/ckeditor/skins', '../js/ckeditor/skins',false)
-.copy([
-    'bower_components/ckeditor/ckeditor.js',
-    'bower_components/ckeditor/config.js',
-    'bower_components/ckeditor/contents.css',
-    'bower_components/ckeditor/styles.js'
-], '../js/ckeditor',false)
-.copy('bower_components/ckeditor/plugins', '../js/ckeditor/plugins',false)
-////////////////////////////////////////////////////////////////////////////////////////////////
+

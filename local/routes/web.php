@@ -25,17 +25,15 @@ Route::get('/catalogue/{pathCatalogue}', 'HomepageController@getDetailCatalogue'
 Route::get('/sml_login', function () {
     return view('backend.login.login');
 });
+Route::get('/admin/sml_login', 'AuthController@checklogin');
 Route::post('sml_login', 'AuthController@login')->name('login');
-Route::get('sml_logout', 'AuthController@logout')->name('logout');
+Route::get('/admin/sml_logout', 'AuthController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
-    //DASHBOARD
     Route::get('sml_admin/dashboard', function () {
-        return view('backend.dashboard.index');
+        return view('backend.admin.dashboard.index');
     })->name('dashboard');
-    //USER
     Route::resource('sml_admin/users', 'UserController');
-
     //ROLE
     Route::get('sml_admin/roles', ['as' => 'roles.index', 'uses' => 'RoleController@index', 'middleware' => ['permission:role-list|role-create|role-edit|role-delete']]);
     Route::post('sml_admin/roles/create', ['as' => 'roles.store', 'uses' => 'RoleController@store', 'middleware' => ['permission:role-create']]);
@@ -44,24 +42,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('sml_admin/roles/{id}', ['as' => 'roles.update', 'uses' => 'RoleController@update', 'middleware' => ['permission:role-edit']]);
     Route::delete('sml_admin/roles/{id}', ['as' => 'roles.destroy', 'uses' => 'RoleController@destroy', 'middleware' => ['permission:role-delete']]);
     Route::get('sml_admin/roles/{id}', ['as' => 'roles.show', 'uses' => 'RoleController@show']);
-
-    //CATEGORY
-    Route::get('sml_admin/category', ['as' => 'category.index', 'uses' => 'CategoryController@index', 'middleware' => ['permission:category-list|category-create|category-edit|category-delete']]);
-    Route::post('sml_admin/category', ['as' => 'category.search', 'uses' => 'CategoryController@search']);
-    Route::post('sml_admin/category/create', ['as' => 'category.store', 'uses' => 'CategoryController@store', 'middleware' => ['permission:category-create']]);
-    Route::get('sml_admin/category/create', ['as' => 'category.create', 'uses' => 'CategoryController@create', 'middleware' => ['permission:category-create']]);
-    Route::get('sml_admin/category/{id}/edit', ['as' => 'category.edit', 'uses' => 'CategoryController@edit', 'middleware' => ['permission:category-edit']]);
-    Route::patch('sml_admin/category/{id}', ['as' => 'category.update', 'uses' => 'CategoryController@update', 'middleware' => ['permission:category-edit']]);
-    Route::delete('sml_admin/category/{id}', ['as' => 'category.destroy', 'uses' => 'CategoryController@destroy', 'middleware' => ['permission:category-delete']]);
-
-    //PRODUCT
-    Route::get('sml_admin/product', ['as' => 'product.index', 'uses' => 'ProductController@index', 'middleware' => ['permission:product-list|product-create|product-edit|product-delete']]);
-    Route::post('sml_admin/product/create', ['as' => 'product.store', 'uses' => 'ProductController@store', 'middleware' => ['permission:product-create']]);
-    Route::post('sml_admin/product', ['as' => 'product.search', 'uses' => 'ProductController@search']);
-    Route::get('sml_admin/product/create', ['as' => 'product.create', 'uses' => 'ProductController@create', 'middleware' => ['permission:product-create']]);
-    Route::get('sml_admin/product/{id}/edit', ['as' => 'product.edit', 'uses' => 'ProductController@edit', 'middleware' => ['permission:product-edit']]);
-    Route::patch('sml_admin/product/{id}', ['as' => 'product.update', 'uses' => 'ProductController@update', 'middleware' => ['permission:product-edit']]);
-    Route::delete('sml_admin/product/{id}', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy', 'middleware' => ['permission:product-delete']]);
 
     //PAGE
     Route::get('sml_admin/page', ['as' => 'page.index', 'uses' => 'PageController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
@@ -72,13 +52,47 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('sml_admin/page/{id}', ['as' => 'page.update', 'uses' => 'PageController@update', 'middleware' => ['permission:page-edit']]);
     Route::delete('sml_admin/page/{id}', ['as' => 'page.destroy', 'uses' => 'PageController@destroy', 'middleware' => ['permission:page-delete']]);
 
-    //CATALOGUE
-    Route::get('sml_admin/catalogue', ['as' => 'catalogue.index', 'uses' => 'CatalogueController@index', 'middleware' => ['permission:catalogue-list|catalogue-create|catalogue-edit|catalogue-delete']]);
-    Route::post('sml_admin/catalogue/create', ['as' => 'catalogue.store', 'uses' => 'CatalogueController@store', 'middleware' => ['permission:catalogue-create']]);
-    Route::post('sml_admin/catalogue', ['as' => 'catalogue.search', 'uses' => 'CatalogueController@search']);
-    Route::get('sml_admin/catalogue/create', ['as' => 'catalogue.create', 'uses' => 'CatalogueController@create', 'middleware' => ['permission:catalogue-create']]);
-    Route::get('sml_admin/catalogue/{id}/edit', ['as' => 'catalogue.edit', 'uses' => 'CatalogueController@edit', 'middleware' => ['permission:catalogue-edit']]);
-    Route::patch('sml_admin/catalogue/{id}', ['as' => 'catalogue.update', 'uses' => 'CatalogueController@update', 'middleware' => ['permission:catalogue-edit']]);
-    Route::delete('sml_admin/catalogue/{id}', ['as' => 'catalogue.destroy', 'uses' => 'CatalogueController@destroy', 'middleware' => ['permission:catalogue-delete']]);
+    //CATEGORY POST
+    Route::get('sml_admin/danh-muc-bai-viet', ['as' => 'categorypost.index', 'uses' => 'CategoryPostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
+    Route::post('sml_admin/danh-muc-bai-viet/create', ['as' => 'categorypost.store', 'uses' => 'CategoryPostController@store', 'middleware' => ['permission:page-create']]);
+//    Route::post('sml_admin/danh-muc-bai-vie', ['as' => 'categorypost.search', 'uses' => 'TuyenDungController@search']);
+    Route::get('sml_admin/danh-muc-bai-viet/create', ['as' => 'categorypost.create', 'uses' => 'CategoryPostController@create', 'middleware' => ['permission:page-create']]);
+    Route::get('sml_admin/danh-muc-bai-viet/{id}/edit', ['as' => 'categorypost.edit', 'uses' => 'CategoryPostController@edit', 'middleware' => ['permission:page-edit']]);
+    Route::patch('sml_admin/danh-muc-bai-viet/{id}', ['as' => 'categorypost.update', 'uses' => 'CategoryPostController@update', 'middleware' => ['permission:page-edit']]);
+    Route::delete('sml_admin/danh-muc-bai-viet/{id}', ['as' => 'categorypost.destroy', 'uses' => 'CategoryPostController@destroy', 'middleware' => ['permission:page-delete']]);
+
+    //POST
+    Route::get('sml_admin/post', ['as' => 'post.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
+    Route::post('sml_admin/post/create', ['as' => 'post.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']]);
+    Route::post('sml_admin/post', ['as' => 'post.search', 'uses' => 'PostController@search']);
+    Route::get('sml_admin/post/create', ['as' => 'post.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']]);
+    Route::get('sml_admin/post/{id}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']]);
+    Route::patch('sml_admin/post/{id}', ['as' => 'post.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']]);
+    Route::delete('sml_admin/post/{id}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']]);
+
+    //CATEGORY PRODUCT
+    Route::get('sml_admin/danh-muc-san-pham', ['as' => 'categoryproduct.index', 'uses' => 'CategoryProductController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
+    Route::post('sml_admin/danh-muc-san-pham/search', ['as' => 'categoryproduct.search', 'uses' => 'CategoryProductController@search']);
+    Route::post('sml_admin/danh-muc-san-pham/paste', ['as' => 'categoryproduct.paste', 'uses' => 'CategoryProductController@paste']);
+    Route::post('sml_admin/danh-muc-san-pham/create', ['as' => 'categoryproduct.store', 'uses' => 'CategoryProductController@store', 'middleware' => ['permission:page-create']]);
+//    Route::post('sml_admin/danh-muc-bai-vie', ['as' => 'categorypost.search', 'uses' => 'TuyenDungController@search']);
+    Route::get('sml_admin/danh-muc-san-pham/create', ['as' => 'categoryproduct.create', 'uses' => 'CategoryProductController@create', 'middleware' => ['permission:page-create']]);
+    Route::get('sml_admin/danh-muc-san-pham/{id}/edit', ['as' => 'categoryproduct.edit', 'uses' => 'CategoryProductController@edit', 'middleware' => ['permission:page-edit']]);
+    Route::patch('sml_admin/danh-muc-san-pham/{id}', ['as' => 'categoryproduct.update', 'uses' => 'CategoryProductController@update', 'middleware' => ['permission:page-edit']]);
+    Route::delete('sml_admin/danh-muc-san-pham/{id}', ['as' => 'categoryproduct.destroy', 'uses' => 'CategoryProductController@destroy', 'middleware' => ['permission:page-delete']]);
+
+    //PRODUCT
+    Route::get('sml_admin/san-pham', ['as' => 'product.index', 'uses' => 'ProductController@index', 'middleware' => ['permission:product-list|product-create|product-edit|product-delete']]);
+    Route::post('sml_admin/san-pham/create', ['as' => 'product.store', 'uses' => 'ProductController@store', 'middleware' => ['permission:product-create']]);
+    Route::post('sml_admin/san-pham/search', ['as' => 'product.search', 'uses' => 'ProductController@search']);
+    Route::post('sml_admin/san-pham/past', ['as' => 'product.paste', 'uses' => 'ProductController@paste']);
+    Route::get('sml_admin/san-pham/create', ['as' => 'product.create', 'uses' => 'ProductController@create', 'middleware' => ['permission:product-create']]);
+    Route::get('sml_admin/san-pham/{id}/edit', ['as' => 'product.edit', 'uses' => 'ProductController@edit', 'middleware' => ['permission:product-edit']]);
+    Route::patch('sml_admin/san-pham/{id}', ['as' => 'product.update', 'uses' => 'ProductController@update', 'middleware' => ['permission:product-edit']]);
+    Route::delete('sml_admin/san-pham/{id}', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy', 'middleware' => ['permission:product-delete']]);
+
+    //CONFIG
+    Route::get('sml_admin/config/', ['as' => 'config.index', 'uses' => 'ConfigController@getConfig']);
+    Route::post('sml_admin/config/', ['as' => 'config.store', 'uses' => 'ConfigController@saveConfig']);
 
 });

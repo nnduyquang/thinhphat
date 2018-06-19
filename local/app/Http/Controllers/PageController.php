@@ -15,8 +15,8 @@ class PageController extends Controller
      */
     public function index(Request $request)
     {
-        $pages = Post::where('post_type','=',0)->orderBy('id', 'DESC')->get();
-        return view('backend.page.index', compact('pages'))
+        $pages = Post::where('post_type','=',IS_POST)->orderBy('id', 'DESC')->get();
+        return view('backend.admin.page.index', compact('pages'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('backend.page.create', compact('roles'));
+        return view('backend.admin.page.create', compact('roles'));
     }
 
     /**
@@ -44,6 +44,7 @@ class PageController extends Controller
         $content = $request->input('content');
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
+        $seoKeywords=$request->input('seo_keywords');
         $isActive = $request->input('page_is_active');
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
@@ -61,11 +62,14 @@ class PageController extends Controller
         if ($seoDescription) {
             $page->seo_description = $seoDescription;
         }
+        if ($seoKeywords) {
+            $page->seo_keywords = $seoKeywords;
+        }
         $page->title = $title;
         $page->path = chuyen_chuoi_thanh_path($title);
         $page->image = $image;
         $page->content = $content;
-        $page->post_type = 0;
+        $page->post_type = IS_PAGE;
         $page->user_id = Auth::user()->id;
         $page->save();
         return redirect()->route('page.index')
@@ -92,7 +96,7 @@ class PageController extends Controller
     public function edit($id)
     {
         $page = Post::find($id);
-        return view('backend.page.edit', compact('page'));
+        return view('backend.admin.page.edit', compact('page'));
     }
 
     /**
@@ -110,6 +114,7 @@ class PageController extends Controller
         $content = $request->input('content');
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
+        $seoKeywords=$request->input('seo_keywords');
         $isActive = $request->input('page_is_active');
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
@@ -127,11 +132,14 @@ class PageController extends Controller
         if ($seoDescription) {
             $page->seo_description = $seoDescription;
         }
+        if ($seoKeywords) {
+            $page->seo_keywords = $seoKeywords;
+        }
         $page->title = $title;
         $page->path = chuyen_chuoi_thanh_path($title);
         $page->image = $image;
         $page->content = $content;
-        $page->post_type = 0;
+        $page->post_type = IS_PAGE;
         $page->user_id = Auth::user()->id;
         $page->save();
         return redirect()->route('page.index')
@@ -155,7 +163,7 @@ class PageController extends Controller
     {
         $keywords = preg_replace('/\s+/', ' ', $request->input('txtSearch'));
         $pages = Post::where('title', 'like', '%' . $keywords . '%')->orderBy('id', 'DESC')->paginate(5);
-        return view('backend.page.index', compact('pages', 'keywords'))
+        return view('backend.admin.page.index', compact('pages', 'keywords'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 }
