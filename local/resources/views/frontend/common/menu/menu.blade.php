@@ -14,10 +14,10 @@
                     </ul>
                 </div>
                 <div class="menu-top-r col-md-4 text-right ">
-                    <ul>
+                    <ul class="list-unstyled">
                         <li><span><i class="fa fa-phone" aria-hidden="true"></i> 0965.322.239 - 0901.196.676</span></li>
                         <li><span>
-                                    {{ Html::image('images/uploads/icon/placeholder.png','',array('style'=>'with:15px;height:15px')) }}
+                                <i class="fas fa-map-marker"></i>
                                 55/4 KP3 HÀ HUY GIÁP, Q.12, TPHCM</span></li>
                     </ul>
 

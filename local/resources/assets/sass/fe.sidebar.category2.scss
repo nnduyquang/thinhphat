@@ -1,3 +1,5 @@
+
+
 #menu-category-2 {
   margin-top: 13px;
   .one-category {
@@ -7,7 +9,7 @@
       text-align: center;
       padding:5px 0px;
       display: block;
-      background-color: #05577a;
+      background: linear-gradient(to right, #02526f, #284445);
       a {
         text-transform: uppercase;
         font-size: 13.8px;
@@ -18,6 +20,7 @@
       }
     }
     ul.list-sub-item {
+      list-style-type: none;
       display: block;
       box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
       li {

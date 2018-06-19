@@ -10,11 +10,15 @@
       color: white;
       font-weight: 700;
       margin-bottom: 15px;
+      span{
+        color:#F68C22 ;
+      }
     }
     img{
       width: 100%;
     }
     ul {
+      list-style-type: none;
       //margin-left: 5px;
       //font-size: 13px;
       li {
@@ -36,11 +40,12 @@
   }
   .footer-bottom {
     background-color: #282828;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding:20px;
     span {
-      color: #5a5a5a;
+      font-size: 14px;
+      color: white;
       float: right;
+      color:white;
     }
   }
 }

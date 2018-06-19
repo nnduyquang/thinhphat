@@ -1,5 +1,5 @@
 //RESET CSS
-@import url('https://fonts.googleapis.com/css?family=Asap+Condensed|Baloo+Chettan|Cuprum|Francois+One|Prompt|Saira+Semi+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Anton|Arsenal|Asap+Condensed|Cuprum|Fira+Sans+Extra+Condensed');
 @font-face {
   font-family: UTMAVO;
   src: url('../fonts/utm-avo.ttf');
@@ -20,7 +20,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  font-family: UTMAVO!important;
+  font-family: 'Asap Condensed', sans-serif!important;
+
 }
 
 //ol, ul {

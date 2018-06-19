@@ -63,6 +63,7 @@
       justify-content: center;
       height: 49px;
       color: #05577a;
+
       span {
         margin-right: 10px;
       }
@@ -81,8 +82,10 @@
     }
   }
   #menu-list {
-    background-color: #05577a;
+    //background-color: #05577a;
+    background: linear-gradient(to right, #02384c, #284445);
     ul.menu-list-l {
+      list-style-type: none;
       display: block;
       float: left;
       li {
@@ -138,6 +141,7 @@
       }
     }
     ul.menu-list-r {
+
       font-size: 16px;
       display: block;
       float: right;

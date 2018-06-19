@@ -26,9 +26,11 @@
                             <div class="row">
                                 @foreach($data[0]['list_product'] as $key2=>$data2)
 
-                                    <div class="one-item col-md-3 col-xs-6">
+                                    <div class="one-item col-md-4 col-xs-6">
                                         <a href="{{URL::to($data2->path)}}">
-                                            {{ Html::image($data2->image,'',array('class'=>'no-style')) }}
+                                            <div class="d-flex justify-content-center" style="width:100%;text-align: center;height: 200px;overflow: hidden;">
+                                            {{ Html::image($data2->image,'',array('style'=>'max-width:80%;width:auto;max-height:200px;margin:auto;overflow:hidden')) }}
+                                            </div>
                                             @if($data2->sale!=0)
                                                 <span class="discount">- {{$data2->sale}}
                                                     %</span>
@@ -36,13 +38,14 @@
                                             <div class="item-detail">
                                                 <span class="title">{{$data2->name}}</span>
                                                 @if($data2->price!=0)
+                                                    <div class="d-flex align-items-center justify-content-between" style="width: 100%">
                                                     @if($data2->sale!=0)
-                                                        <span class="price-saving">{{$data2->price}}
+                                                        <span class="price-saving float-left">{{$data2->price}}
                                                             ₫</span>
                                                     @endif
                                                     <span class="price-sale">{{$data2->final_price}}
                                                         ₫</span>
-
+                                                    </div>
                                                 @else
                                                     <span class="price-contact">Liên Hệ</span>
                                                 @endif
@@ -54,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 hp-one-item-more">
-                            <span><a href="">xem thêm</a></span>
+                            <span><a href="">XEM THÊM</a></span>
                         </div>
 
                     </div>

@@ -20,8 +20,8 @@
 
                 </div>
                 <div class="col-md-9">
-                    @include('frontend.common.slider.slider')
 
+                    @include('frontend.common.slider.slider')
                     @include('frontend.homepage.hp-bannermenu')
 
                     <div id="homepage-content">
