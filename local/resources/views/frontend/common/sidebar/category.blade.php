@@ -1,5 +1,4 @@
-<div id="menu-category" class="col-md-12 hidden-sm hidden-xs">
-    <div class="row">
+<div id="menu-category" class="hidden-sm hidden-xs">
         <h3><span>Danh Mục Đèn Trang Trí</span></h3>
         <ul class="main-list-item">
             @for($i=0;$i<count($menu_sidebar);$i++)
@@ -18,8 +17,7 @@
                             @break
                         @else
                             @if($menu_sidebar[$i+1]->parent_id==$menu_sidebar[$i]->id)
-                                <div class="nav-sub col-md-4">
-                                    <div class="row">
+                                <div class="nav-sub">
                                         <h3>{{$menu_sidebar[$i]->name}}</h3>
                                         <ul class="sub-menu-item">
                                             @foreach($menu_sidebar as $key=>$dataSubmenu)
@@ -29,12 +27,10 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                </div>
                             @endif
                         @endif
                     </li>
                 @endif
             @endfor
         </ul>
-    </div>
 </div>
