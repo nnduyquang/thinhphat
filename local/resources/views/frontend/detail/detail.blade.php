@@ -102,8 +102,10 @@
                         </div>
                         <div id="detail-mid-r">
                             <div class="content">
-                                <h3>CÓ THỂ BẠN QUAN TÂM</h3>
-                                <div class="row mt-4">
+                                <div class="row">
+                                    <div class="col-md-12 p-0">
+                                        <p class="d-block bg-light p-2 mt-1">SẢN PHẨM LIÊN QUAN</p>
+                                    </div>
                                     <div class="owl-carousel owl-theme">
                                         @foreach($order_product as $key=>$data)
                                             <a href="{{URL::to($data->path)}}">
