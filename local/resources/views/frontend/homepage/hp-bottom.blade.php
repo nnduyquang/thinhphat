@@ -5,6 +5,7 @@
         height: 100%;
         text-align: center;
         align-items: center;
+        box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
     }
     div#fe_h_bottom .col-md-4 p{
         display: flex;
@@ -39,7 +40,7 @@
         font-size: 0;
         width: 0;
         height: 0;
-        border-top: 100px solid #fff;
+        border-top: 90px solid #fff;
         border-bottom: 50px solid transparent;
         border-left: 0px solid transparent;
         border-right: 30px solid transparent;

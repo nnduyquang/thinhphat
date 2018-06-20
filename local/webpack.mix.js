@@ -1,4 +1,15 @@
 const {mix} = require('laravel-mix');
+const webpack = require('webpack');
+
+//...
+plugins: [
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+    }),
+],
+//...
 mix.styles([
     //JS DÙNG CHUNG CHO FRONEND VÀ BACKEND
     'bower_components/jquery/dist/jquery.min.js',

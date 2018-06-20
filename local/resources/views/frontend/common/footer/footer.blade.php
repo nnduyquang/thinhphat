@@ -1,7 +1,6 @@
 <style>
     ul.fe_contact li{
         padding: 2px 0;
-
     }
 </style>
 <div id="footer">
