@@ -213,6 +213,7 @@
     background-color: white;
     box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
     span{
+      text-align: center;
       z-index: 5;
       font-size: 18px;
       line-height: 22px;
@@ -231,7 +232,7 @@
     width: 16%;
     height: 100%;
     z-index: 2;
-    background-color: rgba(217,222,222,0.6);
+    background-color: rgba(3,86,103,0.5);
   }
 
   .tkiem-nluong-hor-sha:after{
@@ -242,11 +243,11 @@
     z-index: 2;
     width: 0;
     height: 0;
-    border-top: 100px solid #d9dedf;
+    border-top: 90px solid #035667;
     border-bottom: 50px solid transparent;
     border-left: 0px solid transparent;
     border-right: 30px solid transparent;
-    opacity: 0.6;
+    opacity: 0.5;
 
   }
 
@@ -254,129 +255,8 @@
     margin-top: 20px;
   }
 }
-//Phần corasel
-.product-relative {
-  position: relative;
-  .nav-arrow {
-    transition: all 0.2s;
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    opacity: 0;
-    width: 100%;
-    button.owl-prev, button.owl-next {
-      border: 1px solid #e4e4e4;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      border-radius: 5px;
-      text-align: center;
-      background-color: white;
-      outline: none;
-      i {
-        color: #e4e4e4;
-        font-size: 30px;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
 
-      }
-    }
-    button.owl-prev {
-      float: left;
-      margin-left: -20px;
-    }
-    button.owl-next {
-      float: right;
-      margin-right: -20px;
-    }
-  }
-  &:hover {
-    .nav-arrow {
-      opacity: 1;
-      top: 50%;
-      //left: 50%;
-      transform: translate(0, -50%);
-    }
-  }
-  .owl-carousel {
-    .owl-stage {
-      display: flex;
-      .fe_pro_detailpro {
-        position: relative;
-        width: 92%;
-        margin: auto;
-        text-align: center;
-        background-color: #f9f9f9;
-        border: 2px solid #684f40;
-        vertical-align: middle;
-        transition: .3s;
-        a {
-          img {
-            padding: 25px 0 25px 0;
-            border: 7px solid white;
-            box-sizing: border-box;
-            width: 100%;
-            height: auto;
-          }
-        }
-        &:hover {
-          a {
-            img {
-              opacity: 0.6;
-            }
-          }
-          .pro-hover-info {
-            display: block;
-            opacity: 0.9;
-          }
-        }
-        .pro-hover-info {
-          display: none;
-          position: absolute;
-          top: 50%;
-          opacity: 0.3;
-          width: 100%;
-          height: 50%;
-          background-color: rgba(253, 184, 34, 0.9);
-          z-index: 3;
-          transition: .3s;
-          vertical-align: center;
-          text-align: center;
-          color: white;
-          span {
-            color: white;
-          }
-          p {
-            padding-top: 25px;
-          }
-          .btn-view-course {
-            position: absolute;
-            z-index: 1;
-            width: 43px;
-            height: 43px;
-            border-radius: 50%;
-            border: 3px solid #fdb822;
-            top: 0px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fdb822;
-            background-color: #fff;
-            transition: .3s;
-            line-height: 36px;
-            &:hover {
-              border: 3px solid #1b1e21;
-              background-color: #1b1e21;
-              color: white;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
 
 @media screen and (max-width: 768px) {
   #detail {

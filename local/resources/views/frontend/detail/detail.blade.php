@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="row mt-4">
-                            <div class="col-md-4 text-center position-relative">
+                            <div class="col-md-4 mb-3 text-center position-relative">
                                 <div style="width: 99%;margin: auto"
                                      class="p-2 d-flex align-items-center justify-content-between tkiem-nluong-hor">
                                     {{ Html::image('images/uploads/icon/F400024953-FIL-global-001.png','',array('style'=>'width:76px;height:auto')) }}
@@ -62,7 +62,7 @@
                                 <div class="tkiem-nluong-hor-sha"></div>
                             </div>
 
-                            <div class="col-md-4 text-center">
+                            <div class="col-md-4 mb-3 text-center">
                                 <div style="width: 99%;margin: auto"
                                      class="p-2 d-flex align-items-center justify-content-between tkiem-nluong-hor">
                                     {{ Html::image('images/uploads/icon/F400024953-FIL-global-002.png','',array('style'=>'width:76px;height:auto')) }}
@@ -72,7 +72,7 @@
                             </div>
 
 
-                            <div class="col-md-4 text-center">
+                            <div class="col-md-4 mb-3 text-center">
                                 <div style="width: 99%;margin: auto"
                                      class="p-2 d-flex align-items-center justify-content-between tkiem-nluong-hor">
                                     {{ Html::image('images/uploads/icon/led-energy.png','',array('style'=>'width:76px;height:auto')) }}
