@@ -1,13 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum|Dancing+Script|Pacifico|Sedgwick+Ave');
+
 #category {
+  div#category_banner .col-md-12 {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    p {
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      text-align: right;
+      font-size: 23px;
+      z-index: 2;
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Sedgwick Ave', cursive;
+      max-height: 93px;
+      overflow: hidden;
+      text-overflow:ellipsis ;
+      white-space: normal;
+      width: 30%;
+      padding-left: 10px;
+      span {
+        font-size: 13px;
+        font-family: 'Dancing Script', cursive;
+      }
+    }
+
+    .category-banner-blur {
+      position: absolute;
+      top: 0;
+      right: 16px;
+      height: 99%;
+      width: 32%;
+      background-color: rgba(00, 00, 00, 0.3);
+    }
+
+  }
   .category-breadcrumb {
+    margin-top: 15px;
+    //border-top: 2px solid #1e3446;
+    box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
+    background: linear-gradient(to right, #284445, #02526f);
+    margin-bottom: 6px;
+    padding: 13px 16px;
     ul {
       display: block;
-      margin-top: 20px;
       li {
         display: inline-block;
         a {
-          color: #333333;
+          color: white;
+          //background-color: #284445;
         }
+        &:nth-child(1) {
+          position: relative;
+          margin-right: 10px;
+          padding-right: 10px;
+        }
+        &:nth-child(1) a {
+          color: white;
+
+        }
+
+        &:nth-child(1):after {
+
+          right: 0;
+          content: '';
+          //content: "\f1ee";
+          //margin-left: 5px;
+          //font-family: FontAwesome;
+          //font-style: normal;
+          //font-weight: normal;
+          //text-decoration: inherit;
+          /*--adjust as necessary--*/
+          height: 200%;
+          color: #fff;
+          font-size: 18px;
+          position: absolute;
+          //top: 50%;
+          //transform: translateY(-50%);
+          left: 100%;
+          top: -50%;
+          background-color: #fff;
+          width: 3px;
+
+        }
+
       }
     }
   }
@@ -18,26 +98,64 @@
         line-height: 1.8;
         text-transform: uppercase;
         font-weight: bold;
+        padding-bottom: 8px;
         border-bottom: 1px solid #F68C22;
         margin-top: 10px;
-        margin-bottom: 10px;
-        padding-bottom: 15px;
+        margin-bottom: 20px;
         span {
           color: white;
           position: relative;
           display: inline-block;
           padding: 10px 20px 10px 20px;
-          //width: 30%;
-          background-color: #204243;
+          min-width: 268px;
+          width: auto;
+          //background-color: #05577a;
+          background: linear-gradient(to right, #02526f, #284445);
+          a {
+            float: left;
+            color: white;
+          }
         }
         span:after {
           content: '';
           position: absolute;
           left: 100%;
           top: 0;
-          border-left: 25px solid #204243;
-          border-top: 27px solid transparent;
-          border-bottom: 20px solid transparent;
+          width: 8px;
+          height: 100%;
+          background-color: #284445;
+          margin-left: 3px;
+          color: white;
+          //border-left: 25px solid #05577a;
+          //border-top: 23.5px solid transparent;
+          //border-bottom: 23.5px solid transparent;
+        }
+        span:before {
+          content: '';
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 8px;
+          height: 100%;
+          background-color: #05577a;
+          margin-left: 3px;
+          //border-left: 25px solid #05577a;
+          //border-top: 23.5px solid transparent;
+          //border-bottom: 23.5px solid transparent;
+        }
+        ul {
+          float: right;
+          padding-top: 10px;
+          li {
+            display: inline-block;
+            a {
+              font-size: 13px;
+              margin-right: 10px;
+            }
+            a.view-all {
+              margin-right: 10px;
+            }
+          }
         }
       }
       p.description {

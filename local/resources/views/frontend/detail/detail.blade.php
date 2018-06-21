@@ -14,12 +14,14 @@
                         @include('frontend.common.sidebar.category2')
                     </div>
                     <div class="col-md-8">
+
                         <div class="detail-top-breadcrumb">
                             <ul>
                                 <li><a href="#">TRANG CHỦ </a></li>
                                 <li><a href="#">{{$product->name}}</a></li>
                             </ul>
                         </div>
+
                         <div class="detail-content">
                             <div class="row">
                                 <div class="col-md-6">
@@ -42,10 +44,12 @@
                                             Check information lossrem ausom check inffomtation test for anything showw
                                             of on thiss
                                             content.
-                                            <br>
+
                                             check information lossrem ausom check inffomtation test for anything showw
                                             of on thiss
                                             content.
+
+
                                         </p></div>
                                     <input class="btn-confirm btn" type="button" value="Liên Hệ : 0965322239">
                                 </div>

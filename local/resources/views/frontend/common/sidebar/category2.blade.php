@@ -14,5 +14,17 @@
                 </div>
             @endif
         @endfor
+
+        <div class="col-md-12">
+            {{ Html::image('images/uploads/banner/black_and_white.jpg','',array('class'=>'no-style')) }}
+        </div>
+
+        <div class="col-md-12 mt-3">
+            {{ Html::image('images/uploads/banner/black_and_white2.jpg','',array('class'=>'no-style')) }}
+        </div>
+
+        <div class="col-md-12 mt-3">
+            {{ Html::image('images/uploads/banner/black_and_white3.jpg','',array('class'=>'no-style')) }}
+        </div>
     </div>
 </div>

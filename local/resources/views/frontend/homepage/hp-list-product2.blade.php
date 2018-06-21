@@ -60,12 +60,27 @@
                             <span><a href="">XEM THÊM</a></span>
                         </div>
 
+
+
                     </div>
                 </div>
+
+
 
             </div>
         </div>
     @endforeach
 
+        <div class="row mb-3">
+            <div class="col-md-12">
+                {{ Html::image('images/uploads/banner/middle_banner.jpg','',array('class'=>'no-style')) }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                {{ Html::image('images/uploads/banner/middle_banner2.jpg','',array('class'=>'no-style')) }}
+            </div>
+        </div>
 </div>
 

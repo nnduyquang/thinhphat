@@ -9,21 +9,23 @@
 @section('container')
     <div id="category">
         <div class="container">
-
-            <div class="category-breadcrumb">
-
-                <ul>
-                    <li><a href="#">Trang Chủ ></a></li>
-                    <li><a href="#">{{$category->name}}</a></li>
-                </ul>
-
-            </div>
             <div class="category-top">
                 <div class="row">
                     <div class="col-md-3">
                         @include('frontend.common.sidebar.category2')
                     </div>
                     <div class="col-md-8">
+                        <div class="row mt-3" id="category_banner">
+                            <div class="col-md-12">
+                                {{ Html::image('images/uploads/banner/Zino-banner.jpg','',array('class'=>'no-style')) }}
+                                <p>{{$category->name}} <br>
+                                    <span>Thời trang - Sang trọng - Đẳng cấp</span>
+                                </p>
+                                <div class="category-banner-blur"></div>
+                            </div>
+
+                        </div>
+
                         <div class="title-top">
                             <h3 class="header-title">
                                 <span>{{$category->name}}</span>
@@ -32,13 +34,14 @@
                                 {!! $category->description !!}
                             </p>
                         </div>
+
                         @if($sub_Category)
                             <div id="list-category">
                                 <div class="row">
                                     @foreach($sub_Category as $key=>$data)
                                         <div class="col-md-3 col-xs-6">
-                                                {{--<a href="{{URL::to('danh-muc/'.$data->path)}}">{{ Html::image($data->image,'',array('class'=>'no-style')) }}</a>--}}
-                                                <a href="{{URL::to('danh-muc/'.$data->path)}}"><span>{{$data->name}}</span></a>
+                                            {{--<a href="{{URL::to('danh-muc/'.$data->path)}}">{{ Html::image($data->image,'',array('class'=>'no-style')) }}</a>--}}
+                                            <a href="{{URL::to('danh-muc/'.$data->path)}}"><span>{{$data->name}}</span></a>
                                         </div>
                                     @endforeach
                                 </div>
@@ -72,9 +75,15 @@
                     </div>
                 </div>
             </div>
-            <div class="category-bottom">
-                @include('frontend.homepage.hp-bottom')
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="category-bottom">
+                        @include('frontend.homepage.hp-bottom')
+                    </div>
+                </div>
             </div>
+
         </div>
 
     </div>
