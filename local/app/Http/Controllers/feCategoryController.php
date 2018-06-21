@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+
+use App\CategoryItem;
 use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
@@ -10,11 +11,11 @@ use Illuminate\Http\Request;
 class feCategoryController extends Controller
 {
     public function getDetailCategory($pathCategory){
-        $category=Category::where('path','=',$pathCategory)->first();
-        $sub_Category=Category::where('parent_id','=',$category->id)->get();
-        $menu_horizon= Category::where('level', '=', 0)->orderBy('order')->get();
+        $category=CategoryItem::where('path','=',$pathCategory)->first();
+        $sub_Category=CategoryItem::where('parent_id','=',$category->id)->get();
+        $menu_horizon= CategoryItem::where('level', '=', 0)->orderBy('order')->get();
         $list_product=[];
-        $list_sidebar = Category::select('id', 'name', 'level', 'parent_id','path')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
+        $list_sidebar = CategoryItem::select('id', 'name', 'level', 'parent_id','path')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
         $menu_sidebar = [];
         self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
         self::getAllProductByCategory($category, $list_product);
@@ -25,14 +26,14 @@ class feCategoryController extends Controller
 
     public function getAllProductByCategory($category, &$list_product)
     {
-        $list = Product::where('category_id', '=', $category->id)->orderBy('created_at')->get();
+        $list = Product::where('category_product_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
             $data2->path=$category->path.'/san-pham/'.$data2->path;
             $data2->price=number_format($data2->price, 0, ',', '.');
             $data2->final_price=number_format($data2->final_price, 0, ',', '.');
             array_push($list_product, $data2);
         }
-        $sub = Category::where('parent_id', '=', $category->id)->get();
+        $sub = CategoryItem::where('parent_id', '=', $category->id)->get();
         foreach ($sub as $key => $data) {
             self::getAllProductByCategory($data, $list_product);
         }
