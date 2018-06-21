@@ -202,21 +202,6 @@ class ProductController extends Controller
         if (!IsNullOrEmptyString($code)) {
             $product->code = $code;
         }
-//        if (!IsNullOrEmptyString($price)) {
-//            $product->price = $price;
-//            if (!IsNullOrEmptyString($sale)) {
-//                $product->sale = $sale;
-//                if ($sale != 0 && $price != 0)
-//                    $product->final_price = (int)$price - ((int)$price * (int)$sale / 100);
-//                else
-//                    $product->final_price=0;
-//            }
-//        }
-//        else{
-//            $product->price=0;
-//            $product->sale = 0;
-//            $product->final_price=0;
-//        }
         if (!IsNullOrEmptyString($order)) {
             $product->order = $order;
         }
