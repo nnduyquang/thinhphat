@@ -21,8 +21,8 @@
   background: white;
   -webkit-transition: left 0.3s ease, -webkit-box-shadow 0.3s ease 0.2s;
   transition: left 0.3s ease, box-shadow 0.3s ease 0.2s;
-  -webkit-box-shadow: 0.5em 0 0 0 #284445, 0.6em 0 0 0 #284445;
-  box-shadow: 0.5em 0 0 0 #284445, 0.6em 0 0 0 #284445;
+  -webkit-box-shadow: 0.5em 0 0 0 $sub-color, 0.6em 0 0 0 $sub-color;
+  box-shadow: 0.5em 0 0 0 $sub-color, 0.6em 0 0 0 $sub-color;
 }
 .sidebar #close {
   //float: right;
@@ -34,8 +34,8 @@
 
 .sidebar.closed {
   left: -260px;
-  -webkit-box-shadow: 0 0 0 #284445;
-  box-shadow: 0 0 0 #284445;
+  -webkit-box-shadow: 0 0 0 #1ba8ff;
+  box-shadow: 0 0 0 #1ba8ff;
 }
 .sidebar h2 {
   padding: .5em;
@@ -99,17 +99,12 @@
 
 }
 .sidebar .background-sidebar{
-  background-image: url(../images/temps/310615.jpg);
-  height: calc(56px*3);
+  background-image: url(../images/logo/logo-suaxedapdien2.png);
+  height: calc(56px*4);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-color: #284445;
-  a{
-    i{
-      color: white;
-    }
-  }
+  background-color: white;
 }
 .footer a {
   color: #17a689;

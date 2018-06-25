@@ -9,7 +9,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     {{ Html::style('css/core.common.css') }}
     {{ Html::style('css/core.frontend.css') }}
     {{ Html::style('css/frontend.css') }}
@@ -23,14 +24,13 @@
     @include('frontend.common.menu.m-menu')
     @include('frontend.common.menu.menu')
     @yield('slider')
-    {{--<div id="wrap-container" class="col-md-12">--}}
-        @yield('container')
-    {{--</div>--}}
+    @yield('container')
+    <div class="footer">
+        @include('frontend.common.footer.footer')
+    </div>
 </div>
 @include('frontend.common.menu.m-sidebar')
-<div class="footer">
-    @include('frontend.common.footer.footer')
-</div>
+
 {{ Html::script('js/core.common.js') }}
 {{ Html::script('js/core.frontend.js') }}
 <script type="text/javascript">
@@ -54,11 +54,11 @@
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 {{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105806900-1"></script>--}}
 {{--<script>--}}
-    {{--window.dataLayer = window.dataLayer || [];--}}
-    {{--function gtag(){dataLayer.push(arguments)};--}}
-    {{--gtag('js', new Date());--}}
+{{--window.dataLayer = window.dataLayer || [];--}}
+{{--function gtag(){dataLayer.push(arguments)};--}}
+{{--gtag('js', new Date());--}}
 
-    {{--gtag('config', 'UA-105806900-1');--}}
+{{--gtag('config', 'UA-105806900-1');--}}
 {{--</script>--}}
 
 </body>

@@ -1,4 +1,4 @@
-<div id="menu-category-2" class="col-md-12 hidden-sm hidden-xs">
+<div id="menu-category-2" class="col-md-12 d-none d-md-block">
     <div class="row">
         @for($i=0;$i<count($menu_sidebar);$i++)
             @if($menu_sidebar[$i]->level==0)
