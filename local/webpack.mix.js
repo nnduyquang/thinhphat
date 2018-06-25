@@ -22,6 +22,7 @@ mix.styles([
     //FRONTEND
     .styles([
         'bower_components/nivo-slider/jquery.nivo.slider.pack.js',
+        'bower_components/owl.carousel/dist/owl.carousel.js',
     ], '../js/core.frontend.js')
     .sass('resources/assets/sass/frontend.scss', '../../css/frontend.css').options({processCssUrls: false})
     .styles('resources/assets/js/scripts.js', '../js/scripts.js')
@@ -31,6 +32,8 @@ mix.styles([
     ], '../fonts')
     .styles([
         'bower_components/nivo-slider/nivo-slider.css',
+        'bower_components/owl.carousel/dist/assets/owl.carousel.css',
+        'bower_components/owl.carousel/dist/assets/owl.theme.default.css',
     ], '../css/core.frontend.css')
     .copy([
         'bower_components/nivo-slider/themes',
