@@ -9,39 +9,42 @@
                                 <span><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">{{$data[0]['category']->name}}</a></span>
                             </h3>
                         </div>
-                        <div class="col-md-7">
-                            <div class="product-relative">
-                                <div class="owl-carousel owl-theme h-p-owl">
-                                    @foreach($data[0]['list_subMenu'] as $key2=>$data2)
-                                        <div class="one-product">
-                                            <div class="img-wrap">
+                        <div class="col-md-7 my-auto">
 
-                                                {{ Html::image($data2->image,'',array('class'=>'img-one-category ')) }}
-                                            </div>
-                                            <div class="">
-
-                                            </div>
-                                            <div class="info">
-                                                <h2 class="title card-title"><a
-                                                            href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}
-                                                    </a>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
                         </div>
                         <div class="col-md-2 my-auto">
 
                             <div class="row h-100">
-                                <div class="col-sm-12 my-auto">
+                                <div class="col-sm-12 my-auto text-right">
                                     <div class="card card-block">Xem Tất Cả</div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+                </div>
+                <div id="list-category">
+                    <div class="product-relative">
+                        <div class="owl-carousel owl-theme h-p-owl">
+                            @foreach($data[0]['list_subMenu'] as $key2=>$data2)
+                                <div class="one-product">
+                                    <div class="img-wrap">
+
+                                        {{ Html::image($data2->image,'',array('class'=>'img-one-category ')) }}
+                                    </div>
+                                    <div class="info">
+                                        <h2 class="title"><a
+                                                    href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}
+                                            </a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        {{--<div class="nav-arrow">--}}
+                        {{--</div>--}}
+                    </div>
+
                 </div>
                 <div id="list-product">
                     <div class="row">

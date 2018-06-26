@@ -32,7 +32,7 @@ $(document).ready(function () {
         plugins.owlCarouselHPListProduct.owlCarousel({
             dots: false,
             nav: true,
-            autoplay: false,
+            autoplay: true,
             navContainer: '.nav-arrow',
             loop: true,
             navText: ["<i class='fas fa-angle-left'></i>", "<i class='fas fa-angle-right'></i>"],
