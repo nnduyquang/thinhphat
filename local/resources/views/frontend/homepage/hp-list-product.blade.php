@@ -1,48 +1,119 @@
-<div id="hp-content-list-product" class="col-md-12">
-        <div class="container">
-            <div class="row">
-                @foreach($final_array as $key=>$data)
-                    <div class="one-category">
-                        <div class="title-top">
+<div id="hp-content-list-product">
+    <div class="container">
+        @foreach($final_array as $key=>$data)
+            <div class="one-category">
+                <div class="title-top">
+                    <div class="row justify-content-center h-100">
+                        <div class="col-md-3">
                             <h3 class="header-title">
                                 <span><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">{{$data[0]['category']->name}}</a></span>
-                                <ul>
-                                    @foreach($data[0]['list_subMenu'] as $key2=>$data2)
-                                    <li><a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a></li>
-                                    @endforeach
-                                    <li><a class="view-all" href="#">Xem Tất Cả</a></li>
-                                </ul>
-
                             </h3>
-                            {{ Html::image($data[0]['category']->image,'',array('class'=>'no-style')) }}
                         </div>
-                        <div class="list-item col-md-12">
-                            @foreach($data[0]['list_product'] as $key2=>$data2)
-                            <a href="{{URL::to($data2->path)}}">
-                                <div class="one-item col-md-3 col-xs-6">
-                                    {{ Html::image($data2->image,'',array('class'=>'no-style')) }}
-                                    @if($data2->sale!=0)
-                                        <span class="discount">Giảm {{$data2->sale}}%</span>
-                                    @endif
-                                    <div class="item-detail">
-                                        <span class="title">{{$data2->name}}</span>
-                                        @if($data2->price!=0)
-                                            <span class="price-sale">{{$data2->final_price}} VND
+                        <div class="col-md-7">
+                            <div class="product-relative">
+                                <div class="owl-carousel owl-theme h-p-owl">
+                                    @foreach($data[0]['list_subMenu'] as $key2=>$data2)
+                                        <div class="one-product">
+                                            <div class="img-wrap">
 
-                                        </span>
-                                            @if($data2->sale!=0)
-                                                <span class="price-saving">{{$data2->price}} VND</span>
-                                            @endif
-                                        @else
-                                            <span class="price-contact">Liên Hệ</span>
-                                        @endif
-                                    </div>
+                                                {{ Html::image($data2->image,'',array('class'=>'img-one-category ')) }}
+                                            </div>
+                                            <div class="">
+
+                                            </div>
+                                            <div class="info">
+                                                <h2 class="title card-title"><a
+                                                            href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
-                            </a>
-                            @endforeach
+                            </div>
+                        </div>
+                        <div class="col-md-2 my-auto">
+
+                            <div class="row h-100">
+                                <div class="col-sm-12 my-auto">
+                                    <div class="card card-block">Xem Tất Cả</div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                @endforeach
+                </div>
+                <div id="list-product">
+                    <div class="row">
+                        {{--<div class="m-list-product col-md-12 d-md-none d-lg-none">--}}
+                        {{--<div class="row">--}}
+                        {{--@foreach($data[0]['list_subMenu'] as $key2=>$data2)--}}
+                        {{--<div class="col-xs-6">--}}
+                        {{--<div class="row">--}}
+                        {{--<a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--@endforeach--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        @foreach($data[0]['list_product'] as $key2=>$data2)
+                            <div class="col-md-2 mb-4 pr-1 pl-1">
+                                <div class="card one-product h-100">
+                                    <a href="{{URL::to($data2->path)}}">
+                                        {{ Html::image($data2->image,'',array('class'=>'img-one-product')) }}
+                                    </a>
+                                    @if($data2->sale!=0)
+                                        <div class="discount">
+                                            <div class="ct">
+                                                <div class="lb">{{$data2->sale}}%</div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <div class="card-body">
+                                        <h2 class="title card-title">{{$data2->name}}</h2>
+                                    </div>
+                                    <div class="info card-footer">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-md-6 p-0 text-left"><i class="fas fa-gift"></i></div>
+                                            <div class="col-md-6 p-0 text-right">
+                                                @if($data2->price!=0)
+                                                    <span class="price-sale">
+                                                    @if($data2->sale!=0)
+                                                            {{$data2->price}} ₫
+                                                        @endif
+                                                    </span>
+                                                    <span class="price-original">{{$data2->final_price}}
+                                                        ₫</span>
+
+                                                @else
+                                                    <span class="price-contact">Liên Hệ</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        @endforeach
+                        {{--<div class="col-md-12 hp-one-item-more">--}}
+                        {{--<span><a href="">XEM THÊM</a></span>--}}
+                        {{--</div>--}}
+
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                {{ Html::image('images/uploads/banner/middle_banner.jpg','',array('class'=>'no-style')) }}
             </div>
         </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                {{ Html::image('images/uploads/banner/middle_banner2.jpg','',array('class'=>'no-style')) }}
+            </div>
+        </div>
+    </div>
 </div>
