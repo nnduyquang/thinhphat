@@ -10,9 +10,6 @@
         <div class="container">
             <div id="detail-top">
                 <div class="row">
-                    <div class="col-md-3">
-                        @include('frontend.common.sidebar.category2')
-                    </div>
                     <div class="col-md-8">
 
                         <div class="detail-top-breadcrumb">
@@ -141,6 +138,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+
                     </div>
                 </div>
             </div>

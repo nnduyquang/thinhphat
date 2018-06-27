@@ -32,19 +32,61 @@
             <div class="container">
                 <div class="col-md-12">
                     <ul class="menu-list-l">
-                        <li class="active"><a href="{{URL::to('/')}}"><i class="fa fa-home" aria-hidden="true"></i>Trang
-                                chủ</a></li>
-                        <li class="sub-menu"><i class="fa fa-lightbulb-o" aria-hidden="true"></i><a href="#">Danh Mục
-                                Sản Phẩm</a>
+                        <li class="active has-dropdown-item"><a href="#" data-toggle="dropdown"><i
+                                        class="fa fa-home" aria-hidden="true"></i>Danh Sách Sản Phẩm</a>
                             <ul>
-                                @foreach($menu_horizon as $key=>$data)
-                                    <li><a href="{{URL::to('danh-muc/'.$data->path)}}">{{$data->name}}</a></li>
-                                @endforeach
+                                <div class="arround">
+                                    @for($i=0;$i<count($menu_sidebar);$i++)
+                                        @if($menu_sidebar[$i]->level==0)
+                                            <li class="has-left-item"><a
+                                                        href="{{URL::to('danh-muc/'.$menu_sidebar[$i]->path)}}">{{$menu_sidebar[$i]->name}}</a>
+                                                <div class="list-sub-menu">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <ul>
+                                                                @foreach($menu_sidebar as $key=>$data)
+                                                                    @if($data->level==1 &&$data->parent_id==$menu_sidebar[$i]->id)
+                                                                        <li><a href="{{URL::to('danh-muc/'.$data->path)}}">{{$data->name}}</a></li>
+                                                                    @endif
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            {{ Html::image('images/temp/tmp_slider_left.png','',array('class'=>'h-100 pb-2')) }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endif
+                                    @endfor
+                                    {{--<li class="has-left-item"><a href="#">abc</a>--}}
+                                    {{--<div class="list-sub-menu">--}}
+                                    {{--<div class="row">--}}
+                                    {{--<div class="col-md-3">--}}
+                                    {{--<ul>--}}
+                                    {{--<li><a href="">avxc2-1</a></li>--}}
+                                    {{--<li><a href="">avxc2-2</a></li>--}}
+                                    {{--<li><a href="">avxc2-3</a></li>--}}
+
+                                    {{--</ul>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-3"></div>--}}
+                                    {{--<div class="col-md-3"></div>--}}
+                                    {{--<div class="col-md-3"></div>--}}
+                                    {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--</li>--}}
+                                    {{--<li><a href="#">abc</a></li>--}}
+                                    {{--<li><a href="#">abc</a></li>--}}
+                                    {{--<li><a href="#">abc</a></li>--}}
+                                </div>
                             </ul>
+
+
                         </li>
                         <li><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Khuyến Mãi</a>
-                        <li class="sub-menu"><i class="fa fa-gift" aria-hidden="true"></i><a href="#">Báo Giá Và
-                                Catalogue</a>
+                        <li class="sub-menu"><a href="#" data-toggle="dropdown"><i
+                                        class="fa fa-home" aria-hidden="true"></i>Báo Giá Và Catalogue</a>
                             <ul>
                                 @foreach($catalogues as $key=>$data)
                                     <li><a href="{{URL::to('catalogue/'.$data->path)}}">{{$data->title}}</a></li>

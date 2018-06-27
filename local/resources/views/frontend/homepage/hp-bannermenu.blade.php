@@ -37,42 +37,45 @@
     }
 
 </style>
-<div class="row p-0" id="fe_h_banner_menu">
-    <div class="col-md-4">
+<div id="fe_h_banner_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
 
-        <div>
-            <a href="">
-                {{ Html::image('images/uploads/banner/banner4.jpg','',array('style'=>'width:100%;height:auto')) }}
-                <div class="img-menu text-center">
-                    <p>ĐÈN PHÒNG NGỦ</p>
+                <div>
+                    <a href="">
+                        {{ Html::image('images/uploads/banner/banner4.jpg','',array('style'=>'width:100%;height:auto')) }}
+                        <div class="img-menu text-center">
+                            <p>ĐÈN PHÒNG NGỦ</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
 
-    </div>
-    <div class="col-md-4 ">
+            </div>
+            <div class="col-md-4 ">
 
-        <div>
-            <a href="">
-                {{ Html::image('images/uploads/banner/banner6.jpg','',array('style'=>'width:100%;height:auto')) }}
-                <div class="img-menu text-center">
-                    <p>ĐÈN BÀN LÀM VIỆC</p>
+                <div>
+                    <a href="">
+                        {{ Html::image('images/uploads/banner/banner6.jpg','',array('style'=>'width:100%;height:auto')) }}
+                        <div class="img-menu text-center">
+                            <p>ĐÈN BÀN LÀM VIỆC</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
 
-    </div>
-    <div class="col-md-4">
-        <a href="">
-            <div>
+            </div>
+            <div class="col-md-4">
                 <a href="">
-                {{ Html::image('images/uploads/banner/banner3.jpg','',array('style'=>'width:100%;height:auto')) }}
-                <div class="img-menu text-center">
-                    <p>ĐÈN PHÒNG KHÁCH</p>
-                </div>
+                    <div>
+                        <a href="">
+                            {{ Html::image('images/uploads/banner/banner3.jpg','',array('style'=>'width:100%;height:auto')) }}
+                            <div class="img-menu text-center">
+                                <p>ĐÈN PHÒNG KHÁCH</p>
+                            </div>
+                        </a>
+                    </div>
                 </a>
             </div>
-        </a>
+        </div>
     </div>
-
 </div>

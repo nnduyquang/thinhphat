@@ -1,7 +1,8 @@
 var plugins = {
     menu: $('.sidebar'),
     slider: $('#slider'),
-    owlCarouselHPListProduct: $('.h-p-owl')
+    owlCarouselHPListProduct: $('.h-p-owl'),
+    fixMenuOnScroll: $('#menu-list')
 };
 
 $(document).ready(function () {
@@ -74,10 +75,23 @@ $(document).ready(function () {
             controlNav: false,
         });
     }
+    function runFixMenuOnScroll(){
+        $(window).on("scroll", function (e) {
+            if ($(this).scrollTop() > 64) {
+                plugins.fixMenuOnScroll.addClass('fixed-top');
+            }
+            else{
+                plugins.fixMenuOnScroll.removeClass('fixed-top');
+            }
+        });
+    }
     if (plugins.slider.length) {
         runSlider();
     }
     if (plugins.owlCarouselHPListProduct.length) {
         runOwlCarouselHPListProduct();
+    }
+    if(plugins.fixMenuOnScroll.length){
+        runFixMenuOnScroll()
     }
 });

@@ -68,7 +68,7 @@ mix.styles([
     .styles([
         'resources/assets/sass/be.login.scss',
     ], '../css/login.css')
-    .copy([
-        'bower_components/font-awesome/web-fonts-with-css/webfonts/**'
-    ], '../webfonts')
+    // .copy([
+    //     'bower_components/font-awesome/web-fonts-with-css/webfonts/**'
+    // ], '../webfonts')
 

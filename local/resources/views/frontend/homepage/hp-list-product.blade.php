@@ -48,17 +48,6 @@
                 </div>
                 <div id="list-product">
                     <div class="row">
-                        {{--<div class="m-list-product col-md-12 d-md-none d-lg-none">--}}
-                        {{--<div class="row">--}}
-                        {{--@foreach($data[0]['list_subMenu'] as $key2=>$data2)--}}
-                        {{--<div class="col-xs-6">--}}
-                        {{--<div class="row">--}}
-                        {{--<a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--@endforeach--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
                         @foreach($data[0]['list_product'] as $key2=>$data2)
                             <div class="col-md-2 mb-4 pr-1 pl-1">
                                 <div class="card one-product h-100">
@@ -98,25 +87,28 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{--<div class="col-md-12 hp-one-item-more">--}}
-                        {{--<span><a href="">XEM THÊM</a></span>--}}
-                        {{--</div>--}}
 
                     </div>
                 </div>
             </div>
+            @if($data[0]['category']->id==1)
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ Html::image('images/uploads/banner/middle_banner.jpg','',array('class'=>'no-style')) }}
+                    </div>
+                </div>
+
+
+            @endif
+            @if($data[0]['category']->id==2)
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ Html::image('images/uploads/banner/middle_banner2.jpg','',array('class'=>'no-style')) }}
+                    </div>
+                </div>
+            @endif
         @endforeach
 
-        <div class="row mb-3">
-            <div class="col-md-12">
-                {{ Html::image('images/uploads/banner/middle_banner.jpg','',array('class'=>'no-style')) }}
-            </div>
-        </div>
 
-        <div class="row mb-3">
-            <div class="col-md-12">
-                {{ Html::image('images/uploads/banner/middle_banner2.jpg','',array('class'=>'no-style')) }}
-            </div>
-        </div>
     </div>
 </div>

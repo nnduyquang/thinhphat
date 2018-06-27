@@ -14,8 +14,8 @@
         float: left;
       }
       ul.menu-list-r {
-        margin-left:5px;
-        margin-top:5px;
+        margin-left: 5px;
+        margin-top: 5px;
         display: block;
         float: left;
         height: 59px;
@@ -89,7 +89,7 @@
       float: left;
       li {
         display: inline-block;
-        padding: 15px;
+
         position: relative;
         i {
           color: white;
@@ -97,19 +97,80 @@
           padding-right: 6px;
         }
         a {
+          padding: 15px;
           font-size: 15px;
           text-transform: uppercase;
           font-weight: bold;
           color: white;
+          display: block;
         }
-
+        &:hover {
+          background-color: #ff9c33;
+        }
+        &.active {
+          background-color: #ff9c33;
+        }
       }
-      li:hover {
-        background-color: #ff9c33;
-        //background-color: rgba(115, 217, 220, 0.97);
-      }
-      li.active {
-        background-color: #ff9c33;
+      li.has-dropdown-item {
+        position: relative;
+        ul {
+          position: absolute;
+          display: none;
+          background-color: white;
+          width: 100%;
+          box-shadow: 0 10px 30px 0 rgba(58, 87, 135, 0.58);
+          .arround {
+            position: relative;
+            li {
+              display: block;
+              a {
+                color: black;
+              }
+            }
+            li.has-left-item {
+              position: unset;
+              .list-sub-menu {
+                padding-left: 10px;
+                position: absolute;
+                display: none;
+                background-color: white;
+                width: 100%;
+                left: 100%;
+                top: 0;
+                height: 100%;
+                width: 400%;
+                border-left: 1px dotted grey;
+                ul {
+                  box-shadow: none;
+                  list-style-type: disc;
+                  columns: 3;
+                  list-style-position: inside;
+                  li {
+                    display: block;
+                    a {
+                      color: black;
+                      padding: 0;
+                      font-size: 14px;
+                      line-height: 2.5;
+                    }
+                  }
+                }
+              }
+              &:hover {
+                .list-sub-menu {
+                  display: block;
+                  box-shadow: 15px 11px 30px 0 rgba(58, 87, 135, 0.58);
+                }
+              }
+            }
+          }
+        }
+        &:hover {
+          ul {
+            display: block;
+            z-index: 999;
+          }
+        }
       }
       li.sub-menu {
         transition: all 0.2s;

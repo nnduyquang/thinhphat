@@ -11,10 +11,7 @@
         <div class="container">
             <div class="category-top">
                 <div class="row">
-                    <div class="col-md-3">
-                        @include('frontend.common.sidebar.category2')
-                    </div>
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="row mt-3" id="category_banner">
                             <div class="col-md-12">
                                 {{ Html::image('images/uploads/banner/Zino-banner.jpg','',array('class'=>'no-style')) }}
