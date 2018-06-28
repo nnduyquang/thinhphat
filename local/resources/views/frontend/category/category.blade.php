@@ -47,25 +47,45 @@
                         <div class="list-item">
                             <div class="row">
                                 @foreach($list_product as $key=>$data)
-                                    <div class="one-item col-md-3 col-xs-6">
-                                        <a href="{{URL::to($data->path)}}">
-                                            {{ Html::image($data->image,'',array('class'=>'no-style')) }}
+                                    <div class="col-md-2 col-6 mb-4 pr-1 pl-1">
+                                        <div class="card one-product h-100">
+                                            <a href="{{URL::to($data->path)}}">
+                                                {{ Html::image($data->image,'',array('class'=>'img-one-product')) }}
+                                            </a>
                                             @if($data->sale!=0)
-                                                <span class="discount">{{$data->sale}}%</span>
+                                                <div class="discount">
+                                                    <div class="ct">
+                                                        <div class="lb">{{$data->sale}}%</div>
+                                                    </div>
+                                                </div>
                                             @endif
-                                            <div class="item-detail">
-                                                <span class="title">{{$data->name}}</span>
-                                                @if($data->price!=0)
-                                                    <span class="price-sale">{{$data->final_price}}₫</span>
-                                                    @if($data->sale!=0)
-                                                        <span class="price-saving">{{$data->price}}₫</span>
-                                                    @endif
-                                                @else
-                                                    <span class="price-contact">Liên Hệ</span>
-                                                @endif
+                                            <div class="card-body">
+                                                <h2 class="title card-title">{{$data->name}}</h2>
                                             </div>
-                                        </a>
+                                            <div class="info card-footer">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col-md-6 p-0 text-left"><i class="fas fa-gift"></i>
+                                                    </div>
+                                                    <div class="col-md-6 p-0 text-right">
+                                                        @if($data->price!=0)
+                                                            <span class="price-sale">
+                                                    @if($data->sale!=0)
+                                                                    {{$data->price}} ₫
+                                                                @endif
+                                                    </span>
+                                                            <span class="price-original">{{$data->final_price}}
+                                                                ₫</span>
+
+                                                        @else
+                                                            <span class="price-contact">Liên Hệ</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
+
                                 @endforeach
                             </div>
                         </div>

@@ -28,7 +28,7 @@ class feProductController extends Controller
                 break;
             }
         }
-        $order_product = collect($order_product)->sortByDESC('created_at')->take(4);
+//        $order_product = collect($order_product)->sortByDESC('created_at')->take(4);
         $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
         return view('frontend.detail.detail', compact('product', 'menu_sidebar', 'order_product','menu_horizon','catalogues'));
     }
@@ -48,7 +48,7 @@ class feProductController extends Controller
     {
         $list = Product::where('category_product_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
-            $data2->path = $category->path . '/san-pham/' . $data2->path;
+            $data2->path = '/san-pham/'.$category->path . '/' . $data2->path;
             $data2->price=number_format($data2->price, 0, ',', '.');
             $data2->final_price=number_format($data2->final_price, 0, ',', '.');
             array_push($list_product, $data2);

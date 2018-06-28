@@ -14,7 +14,10 @@
 
                         <div class="detail-top-breadcrumb">
                             <ul>
-                                <li><a href="#">TRANG CHỦ </a></li>
+                                <li><a href="{{URL::to('/')}}">Trang Chủ </a></li>
+                                <li>
+                                    <a href="{{URL::to('danh-muc/'.$product->categoryproduct->path)}}">{{$product->categoryproduct->name}}</a>
+                                </li>
                                 <li><a href="#">{{$product->name}}</a></li>
                             </ul>
                         </div>
@@ -103,38 +106,53 @@
                         </div>
                         <div id="detail-mid-r">
                             <div class="content">
-                                <div class="row">
-                                    <div class="col-md-12 p-0">
-                                        <p class="d-block bg-light p-2 mt-1">SẢN PHẨM LIÊN QUAN</p>
-                                    </div>
-                                    <div class="owl-carousel owl-theme">
+                                <p class="d-block bg-light p-2 mt-1">SẢN PHẨM LIÊN QUAN</p>
+                                <div class="product-relative">
+                                    <div class="owl-carousel owl-theme p-d-owl">
                                         @foreach($order_product as $key=>$data)
-                                            <a href="{{URL::to($data->path)}}">
-                                                <div style="width: 99%;margin: auto;" class="shadow-sm p-3 one-item">
-
-                                                    {{ Html::image($data->image,'',array('style'=>'max-width:100%;width:auto;height:200px;margin:auto;overflow:hidden')) }}
-                                                    {{--@if($data->sale!=0)--}}
-                                                    {{--<span class="discount">- {{$data->sale}}%</span>--}}
-                                                    {{--@endif--}}
-
-                                                    <p class="title mt-2 text-center">{{$data->name}}</p>
-
-                                                    @if($data->price!=0)
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            @if($data->sale!=0)
-                                                                <span class="price-saving">{{$data->price}} ₫</span>
-                                                            @endif
-                                                            <span class="price-sale">{{$data->final_price}} ₫</span>
+                                            <div class="card one-product h-100">
+                                                <a href="{{URL::to($data->path)}}">
+                                                    {{ Html::image($data->image,'',array('class'=>'img-one-product')) }}
+                                                </a>
+                                                @if($data->sale!=0)
+                                                    <div class="discount">
+                                                        <div class="ct">
+                                                            <div class="lb">{{$data->sale}}%</div>
                                                         </div>
-                                                    @else
-                                                        <span class="price-contact">Liên Hệ</span>
-                                                    @endif
-
+                                                    </div>
+                                                @endif
+                                                <div class="card-body">
+                                                    <h2 class="title card-title">{{$data->name}}</h2>
                                                 </div>
-                                            </a>
-                                        @endforeach
+                                                <div class="info card-footer">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col-md-6 p-0 text-left"><i
+                                                                    class="fas fa-gift"></i></div>
+                                                        <div class="col-md-6 p-0 text-right">
+                                                            @if($data->price!=0)
+                                                                <span class="price-sale">
+                                                    @if($data->sale!=0)
+                                                                        {{$data->price}} ₫
+                                                                    @endif
+                                                    </span>
+                                                                <span class="price-original">{{$data->final_price}}
+                                                                    ₫</span>
 
+                                                            @else
+                                                                <span class="price-contact">Liên Hệ</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        @endforeach
                                     </div>
+                                    @if(count($order_product)>4)
+                                        <div class="nav-arrow">
+
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

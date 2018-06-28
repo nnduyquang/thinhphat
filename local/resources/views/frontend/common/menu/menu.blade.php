@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="menu-top-l col-md-8">
-                    {{ Html::image('images/uploads/logo2.png','',array('class'=>'no-style')) }}
+                    <a href="{{URL::to('/')}}">{{ Html::image('images/uploads/logo2.png','',array('class'=>'no-style')) }}
                     <ul class="menu-list-r">
                         <li><a href="#" id="clickSearch"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         <li>
@@ -59,26 +59,6 @@
                                             </li>
                                         @endif
                                     @endfor
-                                    {{--<li class="has-left-item"><a href="#">abc</a>--}}
-                                    {{--<div class="list-sub-menu">--}}
-                                    {{--<div class="row">--}}
-                                    {{--<div class="col-md-3">--}}
-                                    {{--<ul>--}}
-                                    {{--<li><a href="">avxc2-1</a></li>--}}
-                                    {{--<li><a href="">avxc2-2</a></li>--}}
-                                    {{--<li><a href="">avxc2-3</a></li>--}}
-
-                                    {{--</ul>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col-md-3"></div>--}}
-                                    {{--<div class="col-md-3"></div>--}}
-                                    {{--<div class="col-md-3"></div>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--</li>--}}
-                                    {{--<li><a href="#">abc</a></li>--}}
-                                    {{--<li><a href="#">abc</a></li>--}}
-                                    {{--<li><a href="#">abc</a></li>--}}
                                 </div>
                             </ul>
 

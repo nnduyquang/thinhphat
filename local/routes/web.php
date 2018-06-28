@@ -15,7 +15,7 @@ Route::get('/','HomepageController@showHomepage');
 Route::get('/danh-muc/{pathCategory}','feCategoryController@getDetailCategory');
 Route::get('/category', 'HomepageController@getFrontendContentCategory');
 
-Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
+Route::get('/san-pham/{pathCategory}/{pathProduct}', 'feProductController@getDetailProduct');
 
 Route::get('/catalogue/{pathCatalogue}', 'HomepageController@getDetailCatalogue');
 

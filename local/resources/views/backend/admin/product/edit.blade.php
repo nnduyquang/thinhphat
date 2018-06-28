@@ -80,6 +80,12 @@
                             {!! Form::text('final_price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <strong>Sản Phẩm Bán Chạy? </strong>
+                            <input {{$product->is_best_sale==1?'checked':''}} name="is_best_sale" data-on="Có" data-off="Không" type="checkbox" data-toggle="toggle">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

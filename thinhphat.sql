@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 25, 2018 lúc 03:46 AM
+-- Thời gian đã tạo: Th6 28, 2018 lúc 12:13 PM
 -- Phiên bản máy phục vụ: 10.1.31-MariaDB
 -- Phiên bản PHP: 7.0.29
 
@@ -317,6 +317,7 @@ CREATE TABLE `products` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `isActive` tinyint(1) NOT NULL DEFAULT '0',
+  `is_best_sale` tinyint(4) DEFAULT '0',
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `content` longtext COLLATE utf8mb4_unicode_ci,
@@ -338,20 +339,20 @@ CREATE TABLE `products` (
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `path`, `isActive`, `image`, `description`, `content`, `code`, `seo_title`, `seo_description`, `seo_keywords`, `price`, `sale`, `final_price`, `order`, `user_id`, `category_product_id`, `created_at`, `updated_at`) VALUES
-(1, 'HL0171806 L', 'hl0171806-l', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach1.jpg', '<p>\r\n	HL0171806 L\r\n</p>', '<p>\r\n	HL0171806 L\r\n</p>', 'HL0171806', 'HL0171806 L', 'HL0171806 L', 'HL0171806 L', '12400000', 30, 8680000, 1, 1, 8, '2017-12-26 13:58:02', '2018-06-21 02:31:05'),
-(2, 'HL0171806 M', 'hl0171806-m', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach1.jpg', '<p>\r\n	HL0171806 M\r\n</p>', '<p>\r\n	HL0171806\r\n</p>', 'HL0171806', 'HL0171806 M', 'HL0171806', 'HL0171806', '8910000', 30, 6237000, 2, 1, 8, '2017-12-26 14:00:09', '2018-06-21 02:30:35'),
-(3, 'HL0151042', 'hl0151042', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach2.jpg', '<p>\r\n	HL0151042\r\n</p>', '<p>\r\n	HL0151042\r\n</p>', 'HL0151042', 'HL0151042', 'HL0151042', 'HL0151042', '8360000', 30, 5852000, 2, 1, 8, '2017-12-26 14:02:31', '2018-06-21 02:29:53'),
-(4, 'HL0161072', 'hl0161072', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach3.jpg', '<p>\r\n	HL0161072\r\n</p>', NULL, NULL, 'HL0161072', '<p>HL0161072</p>', NULL, '10750000', 30, 7525000, 4, 1, 8, '2017-12-26 14:16:57', '2018-06-21 02:30:05'),
-(5, 'HL018018-10+5', 'hl018018-105', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach5.jpg', '<p>\r\n	HL018018-10+5\r\n</p>', '<p>\r\n	HL018018\r\n</p>', 'HL018018', 'HL018018-10+5', 'HL018018-10+5', 'HL018018-10+5', '12000000', 30, 8400000, 6, 1, 9, '2017-12-26 14:18:22', '2018-06-21 02:28:48'),
-(6, 'HL088070-10+5', 'hl088070-105', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach4.jpg', '<p>\r\n	HL088070-10+5\r\n</p>', '<p>\r\n	HL088070\r\n</p>', 'HL088070', 'HL088070-10+5', 'HL088070', 'HL088070', '15600000', 30, 10920000, 7, 1, 9, '2017-12-26 14:20:02', '2018-06-21 02:28:16'),
-(7, 'HL088006-10+5', 'hl088006-105', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach6.jpg', '<p>\r\n	HL088006-10+5\r\n</p>', '<p>\r\n	HL088006-10+5\r\n</p>', NULL, 'HL088006-10+5', 'HL088006-10+5', 'HL088006-10+5', '15000000', 30, 10500000, 1, 1, 9, '2017-12-26 14:21:38', '2018-06-21 02:27:43'),
-(8, 'HL0121056 L', 'hl0121056-l', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach7.jpg', '<p>\r\n	HL0121056 L\r\n</p>', NULL, NULL, 'HL0121056 L', '<p>HL0121056 L</p>', NULL, '7300000', 30, 5110000, 1, 1, 8, '2017-12-26 14:24:02', '2018-06-21 02:26:38'),
-(9, 'HL0121056 M', 'hl0121056-m', 1, 'images/uploads/images/sanpham/phongkhach/phongkhach8.jpg', '<p>\r\n	HL0121056 M\r\n</p>', NULL, NULL, 'HL0121056 M', '<p>HL0121056 M</p>', NULL, '5860000', 30, 4102000, 1, 1, 8, '2017-12-26 14:24:47', '2018-06-21 02:26:15'),
-(10, 'HL1086048-H2', 'hl1086048-h2', 1, 'images/uploads/images/sanpham/phongngu/phongngu1.jpg', '<p>\r\n	HL1086048-H2\r\n</p>', '<p>\r\n	HL1086048-H2\r\n</p>', NULL, 'HL1086048-H2', 'HL1086048-H2', 'HL1086048-H2', '4750000', 30, 3325000, 1, 1, 6, '2017-12-26 14:32:32', '2018-06-21 02:25:00'),
-(11, 'HL093333-7-61191', 'hl093333-7-61191', 1, 'images/uploads/images/sanpham/phongngu/phongngu2.png', '<p>\r\n	HL093333-7-61191\r\n</p>', '<p>\r\n	HL093333\r\n</p>', 'HL093333', 'HL093333-7-61191', 'HL093333-7-61191', NULL, '3450000', 30, 2415000, 1, 1, 15, '2017-12-26 14:40:18', '2018-06-21 02:24:30'),
-(12, 'HL093333-7-61174', 'hl093333-7-61174', 1, 'images/uploads/images/sanpham/phongngu/phongngu3.png', '<p>\r\n	HL093333-7-61174\r\n</p>', NULL, NULL, 'HL093333-7-61174', 'HL093333-7-61174', NULL, '4000000', 30, 2800000, 1, 1, 15, '2017-12-26 14:42:30', '2018-06-21 02:24:08'),
-(13, 'HL04116', 'hl04116', 1, 'images/uploads/images/sanpham/phongngu/phongngu4.jpg', '<p>\r\n	HL04116\r\n</p>', NULL, NULL, 'HL04116', '<p>HL04116</p>', NULL, '3250000', 30, 2275000, 1, 1, 6, '2017-12-27 03:06:01', '2018-06-21 02:22:49');
+INSERT INTO `products` (`id`, `name`, `path`, `isActive`, `is_best_sale`, `image`, `description`, `content`, `code`, `seo_title`, `seo_description`, `seo_keywords`, `price`, `sale`, `final_price`, `order`, `user_id`, `category_product_id`, `created_at`, `updated_at`) VALUES
+(1, 'HL0171806 L', 'hl0171806-l', 1, 0, 'images/uploads/images/sanpham/phongkhach/phongkhach1.jpg', '<p>\r\n	HL0171806 L\r\n</p>', '<p>\r\n	HL0171806 L\r\n</p>', 'HL0171806', 'HL0171806 L', 'HL0171806 L', 'HL0171806 L', '12400000', 30, 8680000, 1, 1, 8, '2017-12-26 13:58:02', '2018-06-21 02:31:05'),
+(2, 'HL0171806 M', 'hl0171806-m', 1, 0, 'images/uploads/images/sanpham/phongkhach/phongkhach1.jpg', '<p>\r\n	HL0171806 M\r\n</p>', '<p>\r\n	HL0171806\r\n</p>', 'HL0171806', 'HL0171806 M', 'HL0171806', 'HL0171806', '8910000', 30, 6237000, 2, 1, 8, '2017-12-26 14:00:09', '2018-06-21 02:30:35'),
+(3, 'HL0151042', 'hl0151042', 1, 0, 'images/uploads/images/sanpham/phongkhach/phongkhach2.jpg', '<p>\r\n	HL0151042\r\n</p>', '<p>\r\n	HL0151042\r\n</p>', 'HL0151042', 'HL0151042', 'HL0151042', 'HL0151042', '8360000', 30, 5852000, 2, 1, 8, '2017-12-26 14:02:31', '2018-06-21 02:29:53'),
+(4, 'HL0161072', 'hl0161072', 1, 1, 'images/uploads/images/sanpham/phongkhach/phongkhach3.jpg', '<p>\r\n	HL0161072\r\n</p>', NULL, NULL, 'HL0161072', '<p>HL0161072</p>', NULL, '10750000', 30, 7525000, 4, 1, 8, '2017-12-26 14:16:57', '2018-06-28 07:26:27'),
+(5, 'HL018018-10+5', 'hl018018-105', 1, 0, 'images/uploads/images/sanpham/phongkhach/phongkhach5.jpg', '<p>\r\n	HL018018-10+5\r\n</p>', '<p>\r\n	HL018018\r\n</p>', 'HL018018', 'HL018018-10+5', 'HL018018-10+5', 'HL018018-10+5', '12000000', 30, 8400000, 6, 1, 9, '2017-12-26 14:18:22', '2018-06-21 02:28:48'),
+(6, 'HL088070-10+5', 'hl088070-105', 1, 0, 'images/uploads/images/sanpham/phongkhach/phongkhach4.jpg', '<p>\r\n	HL088070-10+5\r\n</p>', '<p>\r\n	HL088070\r\n</p>', 'HL088070', 'HL088070-10+5', 'HL088070', 'HL088070', '15600000', 30, 10920000, 7, 1, 9, '2017-12-26 14:20:02', '2018-06-21 02:28:16'),
+(7, 'HL088006-10+5', 'hl088006-105', 1, 0, 'images/uploads/images/sanpham/phongkhach/phongkhach6.jpg', '<p>\r\n	HL088006-10+5\r\n</p>', '<p>\r\n	HL088006-10+5\r\n</p>', NULL, 'HL088006-10+5', 'HL088006-10+5', 'HL088006-10+5', '15000000', 30, 10500000, 1, 1, 9, '2017-12-26 14:21:38', '2018-06-21 02:27:43'),
+(8, 'HL0121056 L', 'hl0121056-l', 1, 1, 'images/uploads/images/sanpham/phongkhach/phongkhach7.jpg', '<p>\r\n	HL0121056 L\r\n</p>', NULL, NULL, 'HL0121056 L', '<p>HL0121056 L</p>', NULL, '7300000', 30, 5110000, 1, 1, 8, '2017-12-26 14:24:02', '2018-06-28 07:26:15'),
+(9, 'HL0121056 M', 'hl0121056-m', 1, 1, 'images/uploads/images/sanpham/phongkhach/phongkhach8.jpg', '<p>\r\n	HL0121056 M\r\n</p>', NULL, NULL, 'HL0121056 M', '<p>HL0121056 M</p>', NULL, '5860000', 30, 4102000, 1, 1, 8, '2017-12-26 14:24:47', '2018-06-28 07:26:04'),
+(10, 'HL1086048-H2', 'hl1086048-h2', 1, 0, 'images/uploads/images/sanpham/phongngu/phongngu1.jpg', '<p>\r\n	HL1086048-H2\r\n</p>', '<p>\r\n	HL1086048-H2\r\n</p>', NULL, 'HL1086048-H2', 'HL1086048-H2', 'HL1086048-H2', '4750000', 30, 3325000, 1, 1, 6, '2017-12-26 14:32:32', '2018-06-21 02:25:00'),
+(11, 'HL093333-7-61191', 'hl093333-7-61191', 1, 0, 'images/uploads/images/sanpham/phongngu/phongngu2.png', '<p>\r\n	HL093333-7-61191\r\n</p>', '<p>\r\n	HL093333\r\n</p>', 'HL093333', 'HL093333-7-61191', 'HL093333-7-61191', NULL, '3450000', 30, 2415000, 1, 1, 15, '2017-12-26 14:40:18', '2018-06-21 02:24:30'),
+(12, 'HL093333-7-61174', 'hl093333-7-61174', 1, 1, 'images/uploads/images/sanpham/phongngu/phongngu3.png', '<p>\r\n	HL093333-7-61174\r\n</p>', NULL, NULL, 'HL093333-7-61174', 'HL093333-7-61174', NULL, '4000000', 30, 2800000, 1, 1, 15, '2017-12-26 14:42:30', '2018-06-28 07:25:46'),
+(13, 'HL04116', 'hl04116', 1, 1, 'images/uploads/images/sanpham/phongngu/phongngu4.jpg', '<p>\r\n	HL04116\r\n</p>', NULL, NULL, 'HL04116', '<p>HL04116</p>', NULL, '3250000', 30, 2275000, 1, 1, 6, '2017-12-27 03:06:01', '2018-06-28 07:25:38');
 
 -- --------------------------------------------------------
 

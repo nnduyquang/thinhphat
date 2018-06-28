@@ -194,60 +194,86 @@
       //justify-content: space-between;
       margin-top: 20px;
 
-      .one-item {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        height: 250px;
+      .one-product {
+        transition: all 0.2s;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+        border-bottom: solid 2px #5CBE6D;
         position: relative;
         .discount {
           position: absolute;
+          background-color: $main-color;
           color: white;
-          background-color: #ff9c33;
-          padding: 0 10px;
-          height: 22px;
-          line-height: 22px;
-          margin-left: 5px;
-          left: 10px;
-          top: 20px;
-          font-size: 12px;
-        }
-        img {
-          width: 180px;
-          height: 180px;
-        }
-        .item-detail {
-          .title {
-            display: block;
-            text-overflow: ellipsis;
-            overflow: hidden;
+          right: 0;
+          top: 0;
+          .ct {
+            display: inline-block;
+            box-sizing: border-box;
             position: relative;
-            text-align: left;
-            margin: 15px auto 0;
-            letter-spacing: .1px;
+            padding: 2px;
+            width: 30px;
+            text-align: center;
+            color: #fff;
+            .lb {
+              font-size: 14px;
+              line-height: 12px;
+              &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                left: 0;
+                bottom: -4px;
+                border-style: solid;
+                position: absolute;
+                border-width: 0 15px 4px;
+                border-color: transparent $main-color;
+              }
+            }
+          }
+        }
+        a {
+          display: block;
+          height: 150px;
+          overflow: hidden;
+          img.img-one-product {
+            height: auto;
             width: 100%;
-            font-size: 13px;
-            font-weight: 300;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.38;
-            color: rgb(123, 123, 123);
-          }
-          .price-sale {
-            color: #f69419;
-            line-height: 1.5;
-            font-weight: bold;
-          }
-          .price-saving {
-            text-decoration: line-through;
-            color: #cccccc;
+            padding: 5px;
 
           }
-          .price-contact {
-            color: red;
-            font-size: 21px;
-            margin-top: 10px;
+        }
+        h2.title {
+          padding: 20px 20px 15px;
+          a {
+            display: block;
+            color: $color-title;
+            text-transform: capitalize;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.5;
+          }
+        }
+        .info {
+          margin-top: 5px;
+          padding: 10px;
+          i {
+            font-size: 20px;
+            color: $main-color;
+          }
+          span.price-sale, span.price-contact {
+            font-size: 16px;
+            color: #d0021b;
+            font-weight: 600;
             display: block;
           }
+          span.price-original {
+            text-decoration: line-through;
+            font-size: 14px;
+            color: #636b6f;
+          }
+        }
+        &:hover {
+          box-shadow: 0 10px 30px 0 rgba(58, 87, 135, 0.58);
         }
       }
       .one-item:hover {

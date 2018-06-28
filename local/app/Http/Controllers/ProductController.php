@@ -61,6 +61,7 @@ class ProductController extends Controller
         $content = $request->input('content');
         $order = $request->input('order');
         $isActive = $request->input('is_active');
+        $isBestSale = $request->input('is_best_sale');
         $categoryPostID = $request->input('category_product');
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
@@ -106,6 +107,11 @@ class ProductController extends Controller
         }
         if (!IsNullOrEmptyString($seoKeywords)) {
             $product->seo_keywords = $seoKeywords;
+        }
+        if (!IsNullOrEmptyString($isBestSale)) {
+            $product->is_best_sale = 1;
+        } else {
+            $product->is_best_sale = 0;
         }
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
@@ -176,6 +182,7 @@ class ProductController extends Controller
         $content = $request->input('content');
         $order = $request->input('order');
         $isActive = $request->input('is_active');
+        $isBestSale = $request->input('is_best_sale');
         $categoryPostID = $request->input('category_product');
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
@@ -209,6 +216,11 @@ class ProductController extends Controller
             $product->isActive = 1;
         } else {
             $product->isActive = 0;
+        }
+        if (!IsNullOrEmptyString($isBestSale)) {
+            $product->is_best_sale = 1;
+        } else {
+            $product->is_best_sale = 0;
         }
         if (!IsNullOrEmptyString($description)) {
             $product->description = $description;

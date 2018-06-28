@@ -28,7 +28,8 @@ class HomepageController extends Controller
         }
         $menu_horizon= CategoryItem::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
         $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
-        return view('frontend.homepage.index', compact('menu_sidebar','final_array','menu_horizon','catalogues'));
+        $bestSaleProduct=Product::where('is_best_sale',1)->where('isActive',ACTIVE)->orderBy('updated_at','DESC')->take(6)->get();
+        return view('frontend.homepage.index', compact('menu_sidebar','final_array','menu_horizon','catalogues','bestSaleProduct'));
     }
 
     public function showCategoryDropDown($dd_categories, $parent_id = 0, &$newArray)
@@ -46,7 +47,7 @@ class HomepageController extends Controller
     {
         $list = Product::where('category_product_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
-            $data2->path=$category->path.'/san-pham/'.$data2->path;
+            $data2->path='/san-pham/'.$category->path.'/'.$data2->path;
             $data2->price=number_format($data2->price, 0, ',', '.');
             $data2->final_price=number_format($data2->final_price, 0, ',', '.');
             array_push($list_product, $data2);
