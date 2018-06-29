@@ -36,16 +36,16 @@
                                         class="fa fa-home" aria-hidden="true"></i>Danh Sách Sản Phẩm</a>
                             <ul>
                                 <div class="arround">
-                                    @for($i=0;$i<count($menu_sidebar);$i++)
-                                        @if($menu_sidebar[$i]->level==0)
+                                    @for($i=0;$i<count($listMenu['menu_sidebar']);$i++)
+                                        @if($listMenu['menu_sidebar'][$i]->level==0)
                                             <li class="has-left-item"><a
-                                                        href="{{URL::to('danh-muc/'.$menu_sidebar[$i]->path)}}">{{$menu_sidebar[$i]->name}}</a>
+                                                        href="{{URL::to('danh-muc/'.$listMenu['menu_sidebar'][$i]->path)}}">{{$listMenu['menu_sidebar'][$i]->name}}</a>
                                                 <div class="list-sub-menu">
                                                     <div class="row">
                                                         <div class="col-md-8">
                                                             <ul>
-                                                                @foreach($menu_sidebar as $key=>$data)
-                                                                    @if($data->level==1 &&$data->parent_id==$menu_sidebar[$i]->id)
+                                                                @foreach($listMenu['menu_sidebar'] as $key=>$data)
+                                                                    @if($data->level==1 &&$data->parent_id==$listMenu['menu_sidebar'][$i]->id)
                                                                         <li><a href="{{URL::to('danh-muc/'.$data->path)}}">{{$data->name}}</a></li>
                                                                     @endif
                                                                 @endforeach
@@ -68,7 +68,7 @@
                         <li class="sub-menu"><a href="#" data-toggle="dropdown"><i
                                         class="fa fa-home" aria-hidden="true"></i>Báo Giá Và Catalogue</a>
                             <ul>
-                                @foreach($catalogues as $key=>$data)
+                                @foreach($listMenu['catalogues'] as $key=>$data)
                                     <li><a href="{{URL::to('catalogue/'.$data->path)}}">{{$data->title}}</a></li>
                                 @endforeach
                             </ul>

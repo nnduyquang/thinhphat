@@ -37,7 +37,7 @@
                 <div class="col-md-4 mb-3 text-right">
                     <h3 class="mb-4">DANH SÁCH <span>SẢN PHẨM</span></h3>
                     <ul>
-                        @foreach($menu_horizon as $key=>$data)
+                        @foreach($listMenu['menu_horizon'] as $key=>$data)
                             <li style="padding: 2px 0px">
                                 <a href="{{URL::to('danh-muc/'.$data->path)}}">
                                     {{$data->name}}</a>

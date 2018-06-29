@@ -12,11 +12,6 @@ class HomepageController extends Controller
 {
     public function showHomepage()
     {
-        $list_sidebar = CategoryItem::select('id', 'name', 'level', 'parent_id','path')->where(function($query){
-            $query->where('level', '=', 0)->orWhere('level', '=', 1);
-        })->where('isActive','=',1)->orderBy('order')->get();
-        $menu_sidebar = [];
-        self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
         $list_sidebar2 = CategoryItem::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
         $list_product = [];
         $final_array = [];
@@ -26,10 +21,9 @@ class HomepageController extends Controller
             array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(8),"list_subMenu"=>$list_subMenu]));
             $list_product = [];
         }
-        $menu_horizon= CategoryItem::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
-        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
+//        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
         $bestSaleProduct=Product::where('is_best_sale',1)->where('isActive',ACTIVE)->orderBy('updated_at','DESC')->take(6)->get();
-        return view('frontend.homepage.index', compact('menu_sidebar','final_array','menu_horizon','catalogues','bestSaleProduct'));
+        return view('frontend.homepage.index', compact('final_array','bestSaleProduct'));
     }
 
     public function showCategoryDropDown($dd_categories, $parent_id = 0, &$newArray)
@@ -59,21 +53,23 @@ class HomepageController extends Controller
     }
     public function getFrontendContentCategory()
     {
-        $categories =CategoryItem::where('level', '=', 0)->orderBy('order')->get();
-        $menu_horizon= CategoryItem::where('level', '=', 0)->orderBy('order')->get();
-        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
-        return view('frontend.common.menu.m-category', compact('categories','menu_horizon','catalogues'));
+        $list_sidebar2 = CategoryItem::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
+        $final_array = [];
+        foreach ($list_sidebar2 as $key => $data) {
+            $list_subMenu=CategoryItem::where('parent_id','=',$data->id)->get();
+            array_push($final_array, array(["category" => $data,"list_subMenu"=>$list_subMenu]));
+        }
+        return view('frontend.common.menu.m-category', compact('final_array'));
     }
     public function getDetailCatalogue($pathCatalogue){
         $catalogue=Post::where('post_type','=',2)->where('path','=',$pathCatalogue)->first();
-        $menu_horizon= CategoryItem::where('level', '=', 0)->where('isActive','=',1)->orderBy('order')->get();
-        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
-        $list_sidebar = CategoryItem::select('id', 'name', 'level', 'parent_id','path')->where(function($query){
-            $query->where('level', '=', 0)->orWhere('level', '=', 1);
-        })->where('isActive','=',1)->orderBy('order')->get();
-        $menu_sidebar = [];
-        self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
-        return view('frontend.catalogue.catalogue', compact('catalogue','menu_horizon','catalogues','menu_sidebar'));
+//        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
+//        $list_sidebar = CategoryItem::select('id', 'name', 'level', 'parent_id','path')->where(function($query){
+//            $query->where('level', '=', 0)->orWhere('level', '=', 1);
+//        })->where('isActive','=',1)->orderBy('order')->get();
+//        $menu_sidebar = [];
+//        self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
+        return view('frontend.catalogue.catalogue', compact('catalogue'));
     }
 
 }
