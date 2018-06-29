@@ -10,8 +10,25 @@
   margin-right: auto;
 }
 
+div.img-slider{
+  width: 100%;
+  height: 98%;
+  overflow: hidden;
+  transform: scale(1);
+  transition: 1s;
+  background-color: transparent;
+}
+
+img.img-slider1{
+  transition: .3s;
+}
+
+div.img-slider:hover img.img-slider1{
+  transform: scale(1.3);
+}
+
 .nivoSlider img {
-  height: 100% !important;
+  height: auto !important;
 }
 
 .nivo-main-image {
@@ -25,7 +42,7 @@
   .nivoSlider {
     position: relative;
     width: 99%;
-    height: 224px;
+    height: auto;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;

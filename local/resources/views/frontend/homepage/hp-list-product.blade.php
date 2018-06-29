@@ -4,23 +4,23 @@
             <div class="one-category">
                 <div class="title-top">
                     <div class="row justify-content-center h-100">
-                        <div class="col-md-3">
+                        <div class="col-md-12 text-center">
                             <h3 class="header-title">
                                 <span><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">{{$data[0]['category']->name}}</a></span>
                             </h3>
                         </div>
-                        <div class="col-md-7 my-auto">
+                        {{--<div class="col-md-7 my-auto">--}}
 
-                        </div>
-                        <div class="col-md-2 my-auto">
+                        {{--</div>--}}
+                        {{--<div class="col-md-2 my-auto">--}}
 
-                            <div class="row h-100">
-                                <div class="col-sm-12 my-auto text-right">
-                                    <div class="card card-block"><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">Xem Tất Cả</a></div>
-                                </div>
-                            </div>
+                            {{--<div class="row h-100">--}}
+                                {{--<div class="col-sm-12 my-auto text-right">--}}
+                                    {{--<div class="card card-block"><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">Xem Tất Cả</a></div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
-                        </div>
+                        {{--</div>--}}
                     </div>
                 </div>
                 <div id="list-category">

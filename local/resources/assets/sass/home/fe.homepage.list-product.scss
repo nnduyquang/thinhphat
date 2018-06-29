@@ -53,50 +53,47 @@
       border-bottom: 2px solid $main-color;
       margin-bottom: 20px;
       h3.header-title {
-        font-size: 15px;
-        line-height: 4;
+        font-size: 20px;
         text-transform: uppercase;
-        font-weight: bold;
         span {
           color: #444;
           position: relative;
           display: inline-block;
-          padding: 10px 20px 10px 20px;
-          min-width: 268px;
-          width: auto;
+          //padding: 10px 20px 10px 20px;
+          width: fit-content;
           //height: 95px;
           //background-color: #05577a;
-          background: linear-gradient(to right, #02526f, #284445);
+          //background: linear-gradient(to right, #02526f, #284445);
           a {
-            color: white;
+            color: black;
           }
         }
-        span:after {
-          content: '';
-          position: absolute;
-          left: 100%;
-          top: 0;
-          width: 8px;
-          height: 100%;
-          background-color: #284445;
-          margin-left: 3px;
-          //border-left: 25px solid #05577a;
-          //border-top: 23.5px solid transparent;
-          //border-bottom: 23.5px solid transparent;
-        }
-        span:before {
-          content: '';
-          position: absolute;
-          left: 100%;
-          top: 0;
-          width: 8px;
-          height: 100%;
-          background-color: #05577a;
-          margin-left: 3px;
-          //border-left: 25px solid #05577a;
-          //border-top: 23.5px solid transparent;
-          //border-bottom: 23.5px solid transparent;
-        }
+        //span:after {
+        //  content: '';
+        //  position: absolute;
+        //  left: 100%;
+        //  top: 0;
+        //  width: 8px;
+        //  height: 100%;
+        //  background-color: #284445;
+        //  margin-left: 3px;
+        //  //border-left: 25px solid #05577a;
+        //  //border-top: 23.5px solid transparent;
+        //  //border-bottom: 23.5px solid transparent;
+        //}
+        //span:before {
+        //  content: '';
+        //  position: absolute;
+        //  left: 100%;
+        //  top: 0;
+        //  width: 8px;
+        //  height: 100%;
+        //  background-color: #05577a;
+        //  margin-left: 3px;
+        //  //border-left: 25px solid #05577a;
+        //  //border-top: 23.5px solid transparent;
+        //  //border-bottom: 23.5px solid transparent;
+        //}
         ul {
           float: right;
           padding-top: 10px;

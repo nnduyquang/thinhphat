@@ -4,7 +4,7 @@
         <div id="list-product">
             <div class="row">
                 @foreach($bestSaleProduct as $key=>$data)
-                    <div class="col-md-2 col-6 mb-4 pr-1 pl-1">
+                    <div class="col-md-3 col-6 mb-4 pr-1 pl-1">
                         <div class="card one-product h-100">
                             <a href="{{URL::to('san-pham/'.$data->categoryproduct->path.'/'.$data->path)}}">
                                 {{ Html::image($data->image,'',array('class'=>'img-one-product')) }}
