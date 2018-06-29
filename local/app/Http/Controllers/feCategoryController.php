@@ -15,7 +15,6 @@ class feCategoryController extends Controller
         $sub_Category=CategoryItem::where('parent_id','=',$category->id)->get();
         $list_product=[];
         self::getAllProductByCategory($category, $list_product);
-        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
         return view('frontend.category.category', compact('category','sub_Category','list_product'));
     }
 
