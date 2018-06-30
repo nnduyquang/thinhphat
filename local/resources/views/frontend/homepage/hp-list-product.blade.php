@@ -51,7 +51,7 @@
                 <div id="list-product">
                     <div class="row">
                         @foreach($data[0]['list_product'] as $key2=>$data2)
-                            <div class="col-md-2 col-6 mb-4 pr-1 pl-1">
+                            <div class="col-md-3 col-6 mb-4 pr-1 pl-1">
                                 <div class="card one-product h-100">
                                     <a href="{{URL::to($data2->path)}}">
                                         {{ Html::image($data2->image,'',array('class'=>'img-one-product')) }}

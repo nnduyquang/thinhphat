@@ -112,7 +112,8 @@
       }
     }
     #list-category{
-      margin-bottom: 20px;
+      margin-bottom: 50px;
+      margin-top: 38px;
       .product-relative {
         position: relative;
         &:hover {
@@ -232,7 +233,6 @@
         }
         a {
           display: block;
-          height: 150px;
           overflow: hidden;
           img.img-one-product {
             height: auto;

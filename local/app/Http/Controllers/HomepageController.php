@@ -19,7 +19,7 @@ class HomepageController extends Controller
             self::getAllProductByCategory($data, $list_product);
 
             $list_subMenu=CategoryItem::where('parent_id','=',$data->id)->get();
-            array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(12),"list_subMenu"=>$list_subMenu]));
+            array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(8),"list_subMenu"=>$list_subMenu]));
             $list_product = [];
         }
         $bestSaleProduct=Product::where('is_best_sale',1)->where('isActive',ACTIVE)->orderBy('updated_at','DESC')->take(8)->get();

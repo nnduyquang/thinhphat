@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width">
-    {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"--}}
-          {{--integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">--}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="font/flaticon.css">
     <link rel="shortcut icon" href="{{URL::to('images/icon/logo_ico.ico')}}">
     {{ Html::style('css/core.common.css') }}
@@ -23,7 +23,7 @@
 
 </header>
 <div id="blurrMe">
-    @include('frontend.common.menu.loi-m-menu')
+    @include('frontend.common.menu.m-menu')
     @include('frontend.common.menu.menu')
     @yield('slider')
     @yield('container')
