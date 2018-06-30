@@ -41,7 +41,7 @@
                                             <li class="has-left-item"><a
                                                         href="{{URL::to('danh-muc/'.$listMenu['menu_sidebar'][$i]->path)}}">{{$listMenu['menu_sidebar'][$i]->name}}</a>
                                                 <div class="list-sub-menu">
-                                                    <div class="row">
+                                                    <div class="row h-100">
                                                         <div class="col-md-8">
                                                             <ul>
                                                                 @foreach($listMenu['menu_sidebar'] as $key=>$data)
@@ -51,8 +51,8 @@
                                                                 @endforeach
                                                             </ul>
                                                         </div>
-                                                        <div class="col-md-4">
-                                                            {{ Html::image('images/temp/tmp_slider_left.png','',array('class'=>'h-100 pb-2')) }}
+                                                        <div class="col-md-4 h-100">
+                                                            {{ Html::image($listMenu['menu_sidebar'][$i]->image,'',array('class'=>'h-100 w-100')) }}
                                                         </div>
                                                     </div>
                                                 </div>

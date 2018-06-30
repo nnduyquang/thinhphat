@@ -16,7 +16,7 @@ class MenuRepository extends EloquentRepository implements MenuRepositoryInterfa
 
     public function getAllMenu()
     {
-        $list_sidebar = CategoryItem::select('id', 'name', 'level', 'parent_id','path')->where(function($query){
+        $list_sidebar = CategoryItem::select('id', 'name','image', 'level', 'parent_id','path')->where(function($query){
             $query->where('level', '=', 0)->orWhere('level', '=', 1);
         })->where('isActive','=',1)->orderBy('order')->get();
         $menu_sidebar = [];

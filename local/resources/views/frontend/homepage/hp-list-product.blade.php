@@ -14,11 +14,11 @@
                         {{--</div>--}}
                         {{--<div class="col-md-2 my-auto">--}}
 
-                            {{--<div class="row h-100">--}}
-                                {{--<div class="col-sm-12 my-auto text-right">--}}
-                                    {{--<div class="card card-block"><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">Xem Tất Cả</a></div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
+                        {{--<div class="row h-100">--}}
+                        {{--<div class="col-sm-12 my-auto text-right">--}}
+                        {{--<div class="card card-block"><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">Xem Tất Cả</a></div>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
 
                         {{--</div>--}}
                     </div>
@@ -29,8 +29,8 @@
                             @foreach($data[0]['list_subMenu'] as $key2=>$data2)
                                 <div class="one-product">
                                     <div class="img-wrap">
-
-                                        {{ Html::image($data2->image,'',array('class'=>'img-one-category ')) }}
+                                        <a href="{{URL::to('danh-muc/'.$data2->path)}}">
+                                            {{ Html::image($data2->image,'',array('class'=>'img-one-category ')) }}</a>
                                     </div>
                                     <div class="info">
                                         <h2 class="title"><a
