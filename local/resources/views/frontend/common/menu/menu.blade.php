@@ -75,7 +75,7 @@
                         </li>
                         <li><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Thiết Kế Thi Công</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Liên Hệ</a></li>
+                        <li><a href="{{URL::to('lien-he')}}"><i class="fa fa-map-marker" aria-hidden="true"></i>Liên Hệ</a></li>
                     </ul>
 
                 </div>

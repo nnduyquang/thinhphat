@@ -29,7 +29,7 @@
                             height="186px"
                             frameborder="0" style="border:0"
                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCz9f8H5wjJIac5LrePbowoDN8Vp2FEEZ8
-    &q=145%20l%C3%AA%20quang%20%C4%91%E1%BB%8Bnh&zoom=17" allowfullscreen>
+    &q=55+Hà+Huy+Giáp,+Q.12,+TPHCM&zoom=17" allowfullscreen>
                     </iframe>
                 </div>
 

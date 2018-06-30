@@ -19,6 +19,9 @@ Route::get('/san-pham/{pathCategory}/{pathProduct}', 'feProductController@getDet
 
 Route::get('/catalogue/{pathCatalogue}', 'HomepageController@getDetailCatalogue');
 
+Route::get('/lien-he','HomepageController@getPage')->defaults('type','1');
+Route::get('/gioi-thieu','HomepageController@getPage')->defaults('type','2');
+
 /////////////////////////////////////////////
 /// BACKEND
 
@@ -92,7 +95,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('sml_admin/san-pham/{id}', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy', 'middleware' => ['permission:product-delete']]);
 
     //CONFIG
-    Route::get('sml_admin/config/', ['as' => 'config.index', 'uses' => 'ConfigController@getConfig']);
-    Route::post('sml_admin/config/', ['as' => 'config.store', 'uses' => 'ConfigController@saveConfig']);
+    //CONFIG
+    //------GENERAL
+    Route::get('sml_admin/config/', ['as' => 'config.general.index', 'uses' => 'ConfigGeneralController@getConfig']);
+    Route::post('sml_admin/config/', ['as' => 'config.general.store', 'uses' => 'ConfigGeneralController@saveConfig']);
 
 });

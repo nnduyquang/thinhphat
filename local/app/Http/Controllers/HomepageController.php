@@ -67,13 +67,16 @@ class HomepageController extends Controller
     }
     public function getDetailCatalogue($pathCatalogue){
         $catalogue=Post::where('post_type','=',2)->where('path','=',$pathCatalogue)->first();
-//        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
-//        $list_sidebar = CategoryItem::select('id', 'name', 'level', 'parent_id','path')->where(function($query){
-//            $query->where('level', '=', 0)->orWhere('level', '=', 1);
-//        })->where('isActive','=',1)->orderBy('order')->get();
-//        $menu_sidebar = [];
-//        self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
         return view('frontend.catalogue.catalogue', compact('catalogue'));
+    }
+    public function getPage($type)
+    {
+        if($type==2){
+            $configs = Config::whereIn('name', ['config-introduce'])->first();
+            $data['content']=$configs->content;
+        }
+        $data['type'] = $type;
+        return view('frontend.page.index', compact('data'));
     }
 
 }
