@@ -8,7 +8,8 @@
                             <h3 class="header-title">
                                 <span><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">{{$data[0]['category']->name}}</a></span>
                                 <p>Thông tin thêm về thiết bị đèn chiếu sáng ....!</p>
-                                <img src="{{URL::asset('images/temp/line-break.png')}}" alt="" style="width: 60px;height: auto;">
+                                <img src="{{URL::asset('images/temp/line-break.png')}}" alt=""
+                                     style="width: 60px;height: auto;">
                             </h3>
                         </div>
                         {{--<div class="col-md-7 my-auto">--}}
@@ -93,6 +94,29 @@
                     </div>
                 </div>
             </div>
+            {{--Nút xem thêm--}}
+            <style>
+                div#view_morebtn a{
+                    padding: 10px 20px;
+                    border-radius: 2px;
+                    background: linear-gradient(#06628c, #058ccb);
+                    color: white;
+                }
+            </style>
+            <div class="row mb-5 text-center" id="view_morebtn">
+                <div class="col-md-12 text-center">
+                    <a href="">XEM THÊM</a>
+                </div>
+                {{--<div class="col-md-12 text-center mt-5">--}}
+                {{--<div style="width: 30%;border-bottom: 2px dotted #9a9b9b;margin: auto">--}}
+
+                {{--</div>--}}
+                {{--</div>--}}
+            </div>
+
+            {{--ENd Nút xem thêm--}}
+
+
             @if($data[0]['category']->id==1)
                 <div class="row mb-3">
                     <div class="col-md-12">
