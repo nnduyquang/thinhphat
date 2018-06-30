@@ -17,12 +17,16 @@ class HomepageController extends Controller
         $final_array = [];
         foreach ($list_sidebar2 as $key => $data) {
             self::getAllProductByCategory($data, $list_product);
+
             $list_subMenu=CategoryItem::where('parent_id','=',$data->id)->get();
             array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(8),"list_subMenu"=>$list_subMenu]));
             $list_product = [];
         }
-//        $catalogues=Post::where('post_type','=',2)->where('isActive','=',1)->get();
         $bestSaleProduct=Product::where('is_best_sale',1)->where('isActive',ACTIVE)->orderBy('updated_at','DESC')->take(6)->get();
+        foreach ($bestSaleProduct as $key=>$data){
+            $data->price=chuyen_thap_phan($data->price);
+            $data->final_price=chuyen_thap_phan($data->final_price);
+        }
         return view('frontend.homepage.index', compact('final_array','bestSaleProduct'));
     }
 
