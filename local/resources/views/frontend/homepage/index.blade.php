@@ -30,7 +30,7 @@
     {{--@include('frontend.homepage.hp-bannermenu')--}}
     @include('frontend.homepage.hp-bottom')
     @include('frontend.homepage.hp-list-top-sale')
-
+    @include('frontend.homepage.line-break')
     @include('frontend.homepage.hp-list-product')
 
 @stop

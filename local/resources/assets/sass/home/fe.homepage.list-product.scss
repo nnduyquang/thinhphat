@@ -50,12 +50,13 @@
   .one-category {
     margin-bottom: 20px;
     .title-top {
-      border-bottom: 2px solid $main-color;
+      //border-bottom: 2px solid $main-color;
       margin-bottom: 20px;
       h3.header-title {
-        font-size: 20px;
-        text-transform: uppercase;
+
         span {
+          font-size: 22px;
+          text-transform: uppercase;
           color: #444;
           position: relative;
           display: inline-block;

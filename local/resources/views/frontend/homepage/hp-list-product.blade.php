@@ -7,6 +7,8 @@
                         <div class="col-md-12 text-center">
                             <h3 class="header-title">
                                 <span><a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">{{$data[0]['category']->name}}</a></span>
+                                <p>Thông tin thêm về thiết bị đèn chiếu sáng ....!</p>
+                                <img src="{{URL::asset('images/temp/line-break.png')}}" alt="" style="width: 60px;height: auto;">
                             </h3>
                         </div>
                         {{--<div class="col-md-7 my-auto">--}}
