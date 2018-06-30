@@ -69,7 +69,7 @@
 
 
                                         </p></div>
-                                    <input class="btn-confirm btn" type="button" value="Liên Hệ : 0965322239">
+                                    <input class="btn-confirm btn" type="button" value="Liên Hệ : 0965.322.239">
                                 </div>
                             </div>
                         </div>

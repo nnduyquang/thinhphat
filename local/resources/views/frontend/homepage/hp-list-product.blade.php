@@ -95,25 +95,26 @@
                 </div>
             </div>
             {{--Nút xem thêm--}}
-            <style>
-                div#view_morebtn a{
-                    padding: 10px 20px;
-                    border-radius: 2px;
-                    background: linear-gradient(#06628c, #058ccb);
-                    color: white;
-                }
-            </style>
-            <div class="row mb-5 text-center" id="view_morebtn">
-                <div class="col-md-12 text-center">
-                    <a href="">XEM THÊM</a>
+            @if(count($data[0]['list_product'])>=8)
+                <style>
+                    div#view_morebtn a {
+                        padding: 10px 20px;
+                        border-radius: 2px;
+                        background: linear-gradient(#06628c, #058ccb);
+                        color: white;
+                    }
+                </style>
+                <div class="row mb-5 text-center" id="view_morebtn">
+                    <div class="col-md-12 text-center">
+                        <a href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">XEM THÊM</a>
+                    </div>
+                    {{--<div class="col-md-12 text-center mt-5">--}}
+                    {{--<div style="width: 30%;border-bottom: 2px dotted #9a9b9b;margin: auto">--}}
+
+                    {{--</div>--}}
+                    {{--</div>--}}
                 </div>
-                {{--<div class="col-md-12 text-center mt-5">--}}
-                {{--<div style="width: 30%;border-bottom: 2px dotted #9a9b9b;margin: auto">--}}
-
-                {{--</div>--}}
-                {{--</div>--}}
-            </div>
-
+            @endif
             {{--ENd Nút xem thêm--}}
 
 
