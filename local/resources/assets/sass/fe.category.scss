@@ -1,31 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Cuprum|Dancing+Script|Pacifico|Sedgwick+Ave');
 
+
+
 #category {
-  div#category_banner .col-md-12 {
+  div#category_banner > .col-md-12 {
     position: relative;
     img {
       width: 100%;
       height: auto;
     }
+    div#cover_slogan{
+      position: absolute;
+      top: 0;
+      right: 16px;
+      height: 99%;
+      width: 32%;
+      background-color: rgba(00, 00, 00, 0.3);
+    }
     p {
       position: absolute;
+      padding-top: 10px;
+      line-height: 28px;
       top: 10%;
       right: 5%;
       text-align: right;
       font-size: 23px;
-      z-index: 2;
+      z-index: 3;
       color: white;
       text-transform: uppercase;
-      font-family: 'Sedgwick Ave', cursive;
-      max-height: 93px;
+      max-height: 138px;
       overflow: hidden;
       text-overflow:ellipsis ;
       white-space: normal;
-      width: 30%;
-      padding-left: 10px;
+      width: 100%;
+      padding-left: 15px;
+      text-shadow: 3px 1px #0a0a0a;
       span {
-        font-size: 13px;
+        padding-right: 5px;
+        font-size: 16px;
         font-family: 'Dancing Script', cursive;
+        text-shadow: 3px 1px #0a0a0a;
       }
     }
 
@@ -94,54 +108,56 @@
   .category-top {
     .title-top {
       h3.header-title {
-        font-size: 15px;
+
+
         line-height: 1.8;
         text-transform: uppercase;
-        font-weight: bold;
+        //font-weight: bold;
         padding-bottom: 8px;
         border-bottom: 1px solid #F68C22;
         margin-top: 10px;
         margin-bottom: 20px;
         span {
-          color: white;
+          color: #002752;
+          font-size: 20px;
           position: relative;
           display: inline-block;
-          padding: 10px 20px 10px 20px;
+          padding: 10px 0px 10px 0px;
           min-width: 268px;
           width: auto;
           //background-color: #05577a;
-          background: linear-gradient(to right, #02526f, #284445);
+          //background: linear-gradient(to right, #02526f, #284445);
           a {
             float: left;
             color: white;
           }
         }
         span:after {
-          content: '';
-          position: absolute;
-          left: 100%;
-          top: 0;
-          width: 8px;
-          height: 100%;
-          background-color: #284445;
-          margin-left: 3px;
-          color: white;
+          //content: '';
+          //position: absolute;
+          //left: 100%;
+          //top: 0;
+          //width: 8px;
+          //height: 100%;
+          //background-color: #284445;
+          //margin-left: 3px;
+          //color: white;
           //border-left: 25px solid #05577a;
           //border-top: 23.5px solid transparent;
           //border-bottom: 23.5px solid transparent;
         }
         span:before {
-          content: '';
-          position: absolute;
-          left: 100%;
-          top: 0;
-          width: 8px;
-          height: 100%;
-          background-color: #05577a;
-          margin-left: 3px;
-          //border-left: 25px solid #05577a;
-          //border-top: 23.5px solid transparent;
-          //border-bottom: 23.5px solid transparent;
+          //content: '';
+          //position: absolute;
+          //left: 100%;
+          //top: 0;
+          //width: 8px;
+          //height: 100%;
+          //background-color: #05577a;
+          //margin-left: 3px;
+          ////border-left: 25px solid #05577a;
+          ////border-top: 23.5px solid transparent;
+          ////border-bottom: 23.5px solid transparent;
         }
         ul {
           float: right;
@@ -283,7 +299,32 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+
+  #category
+  div#category_banner > .col-md-12{
+    margin-top: 30px;
+    div#cover_slogan{
+      height: 98%;
+      width: 62%;
+      background-color: rgba(00, 00, 00, 0.3);
+    }
+
+  }
+
+  #category
+  div#category_banner > .col-md-12 p {
+    width: 100%;
+    text-shadow: 2px 2px 2px #0a0a0a;
+    span{
+      display: none;
+    }
+  }
+
+}
+
 @media screen and (max-width: 768px) {
+
   #category {
     .category-top {
       #list-category {
@@ -307,4 +348,9 @@
       float: left;
     }
   }
+}
+
+@media screen and (max-width: 760px){
+
+
 }
