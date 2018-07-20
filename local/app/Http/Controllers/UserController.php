@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id', 'DESC')->paginate(5);
-        return view('backend.user.user', compact('data'))
+        return view('backend.admin.user.user', compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -34,7 +34,7 @@ class UserController extends Controller
             $roles = Role::pluck('display_name', 'id');
         else
             $roles = Role::where('id', '<>', 1)->pluck('display_name', 'id');
-        return view('backend.user.create', compact('roles'));
+        return view('backend.admin.user.create', compact('roles'));
     }
 
     /**
@@ -72,7 +72,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('backend.user.show', compact('user'));
+        return view('backend.admin.user.show', compact('user'));
     }
 
     /**
@@ -87,7 +87,7 @@ class UserController extends Controller
         $roles = Role::pluck('display_name', 'id');
         $userRole = $user->roles->pluck('id', 'id')->toArray();
 
-        return view('backend.user.edit', compact('user', 'roles', 'userRole'));
+        return view('backend.admin.user.edit', compact('user', 'roles', 'userRole'));
     }
 
     /**

@@ -18,7 +18,7 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         $roles = Role::orderBy('id', 'DESC')->paginate(5);
-        return view('backend.role.role', compact('roles'))
+        return view('backend.admin.role.role', compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +31,7 @@ class RoleController extends Controller
     {
         $permission = Permission::get();
         $category_permissions = CategoryPermission::get();
-        return view('backend.role.create', compact('permission','category_permissions'));
+        return view('backend.admin.role.create', compact('permission','category_permissions'));
     }
 
     /**
@@ -76,7 +76,7 @@ class RoleController extends Controller
             ->where("permission_role.role_id", $id)
             ->get();
 
-        return view('backend.role.show', compact('role', 'rolePermissions'));
+        return view('backend.admin.role.show', compact('role', 'rolePermissions'));
     }
 
     /**
@@ -92,7 +92,7 @@ class RoleController extends Controller
         $category_permissions = CategoryPermission::get();
         $rolePermissions = DB::table("permission_role")->where("permission_role.role_id", $id)
             ->pluck('permission_role.permission_id', 'permission_role.permission_id');
-        return view('backend.role.edit', compact('role', 'permission','category_permissions', 'rolePermissions'));
+        return view('backend.admin.role.edit', compact('role', 'permission','category_permissions', 'rolePermissions'));
     }
 
     /**
