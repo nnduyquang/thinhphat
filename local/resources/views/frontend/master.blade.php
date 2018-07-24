@@ -59,7 +59,7 @@
                                                                                                    aria-hidden="true"></i></a>
     </div>
 </div>
-<div class="mess_desk_bot d-none d-md-block" style="position: fixed;bottom:40px;right: 0px;">
+<div class="mess_desk_bot d-none d-md-block" style="position: fixed;bottom:40px;right: 0px;z-index: 2">
     <a href="tel:0965322239" style="display: block;width: 260px;height: 56px;background: url({{URL::to('images/nenhot.png')}}) no-repeat;text-align: center;padding-top: 10px;color:#fff;font-size: 20px;font-family: 'roboto-bold'">
     </a>
 </div>
