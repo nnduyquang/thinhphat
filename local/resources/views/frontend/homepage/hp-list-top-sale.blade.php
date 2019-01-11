@@ -1,6 +1,6 @@
 <div id="hp-list-top-sale">
     <div class="container">
-        <h3 class="title"><i class="fab fa-gripfire"></i>Sản Phẩm Bán Chạy</h3>
+        <h3 class="title"><i class="fab fa-gripfire"></i>SẢN PHẨM BÁN CHẠY</h3>
         <div id="list-product">
             <div class="row">
                 @foreach($bestSaleProduct as $key=>$data)

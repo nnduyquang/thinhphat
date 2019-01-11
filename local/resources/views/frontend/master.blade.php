@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="font/flaticon.css">
+    <link rel="shortcut icon" href="{{URL::to('images/icon/logo_ico.ico')}}">
     {{ Html::style('css/core.common.css') }}
     {{ Html::style('css/core.frontend.css') }}
     {{ Html::style('css/frontend.css') }}
@@ -22,7 +23,7 @@
 
 </header>
 <div id="blurrMe">
-    @include('frontend.common.menu.loi-m-menu')
+    @include('frontend.common.menu.m-menu')
     @include('frontend.common.menu.menu')
     @yield('slider')
     @yield('container')
@@ -43,12 +44,24 @@
 </script>
 @yield('scripts')
 {{ Html::script('js/scripts.js') }}
-<div class="callback hidden-lg hidden-md">
+<div class="callback d-lg-none d-md-none">
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
         <a href="tel:0965322239" class="phone_animation_circle_fill_img"><i class="fa fa-phone" aria-hidden="true"></i></a>
     </div>
+</div>
+<div class="callback d-none d-md-block" style="right: 150px;bottom: -30px;left:inherit">
+    <div class="phone_animation">
+        <div class="phone_animation_circle"></div>
+        <div class="phone_animation_circle_fill"></div>
+        <a href="tel:0965322239" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+                                                                                                   aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="mess_desk_bot d-none d-md-block" style="position: fixed;bottom:40px;right: 0px;z-index: 2">
+    <a href="tel:0965322239" style="display: block;width: 260px;height: 56px;background: url({{URL::to('images/nenhot.png')}}) no-repeat;text-align: center;padding-top: 10px;color:#fff;font-size: 20px;font-family: 'roboto-bold'">
+    </a>
 </div>
 <!--End of Tawk.to Script-->
 

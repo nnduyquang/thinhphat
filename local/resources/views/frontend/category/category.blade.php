@@ -13,12 +13,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row mt-3" id="category_banner">
+
                             <div class="col-md-12">
-                                {{ Html::image('images/uploads/banner/Zino-banner.jpg','',array('class'=>'no-style')) }}
-                                <p>{{$category->name}} <br>
+                                {{ Html::image('images/temp/bannergiua3-189450f15688.jpg','',array('class'=>'no-style','style'=>'width:100%;height:auto')) }}
+                                <div id="cover_slogan">
+                                <p id="cate-banner-title">{{$category->name}} <br>
                                     <span>Thời trang - Sang trọng - Đẳng cấp</span>
                                 </p>
-                                <div class="category-banner-blur"></div>
+                                </div>
                             </div>
 
                         </div>

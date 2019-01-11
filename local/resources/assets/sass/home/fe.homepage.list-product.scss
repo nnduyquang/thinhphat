@@ -50,12 +50,13 @@
   .one-category {
     margin-bottom: 20px;
     .title-top {
-      border-bottom: 2px solid $main-color;
+      //border-bottom: 2px solid $main-color;
       margin-bottom: 20px;
       h3.header-title {
-        font-size: 20px;
-        text-transform: uppercase;
+
         span {
+          font-size: 22px;
+          text-transform: uppercase;
           color: #444;
           position: relative;
           display: inline-block;
@@ -111,7 +112,8 @@
       }
     }
     #list-category{
-      margin-bottom: 20px;
+      margin-bottom: 50px;
+      margin-top: 38px;
       .product-relative {
         position: relative;
         &:hover {
@@ -231,7 +233,6 @@
         }
         a {
           display: block;
-          height: 150px;
           overflow: hidden;
           img.img-one-product {
             height: auto;

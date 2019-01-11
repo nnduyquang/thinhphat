@@ -1,0 +1,58 @@
+#contact_info {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  .contact_top {
+    line-height: 1.5!important;
+    h3.title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    p {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    h4 {
+      font-size: 20px;
+      color: #0d51db;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      li{
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .contact_bottom {
+    .input-group {
+      margin-bottom: 20px;
+      input, textarea {
+        border-radius: inherit;
+      }
+    }
+    button {
+      border-radius: inherit;
+      background-color: #0d51db;
+      color: white;
+      font-weight: bold;
+      .successSending,.loadingSending{
+        margin-left: 5px;
+      }
+    }
+
+  }
+}
+@media (max-width: 575.98px) {
+  #contact_info{
+    .contact_top{
+      margin-top: 20px;
+    }
+    .contact_bottom{
+      .button-group{
+        text-align: center;
+      }
+    }
+  }
+}

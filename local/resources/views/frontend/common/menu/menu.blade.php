@@ -15,10 +15,10 @@
                 </div>
                 <div class="menu-top-r col-md-4 text-right ">
                     <ul class="list-unstyled">
-                        <li><span><i class="fa fa-phone" aria-hidden="true"></i> 0965.322.239 - 0901.196.676</span></li>
+                        <li><span><i class="fa fa-phone" aria-hidden="true"></i>{{$dataConfig['config-phone']}}</span></li>
                         <li><span>
                                 <i class="fas fa-map-marker"></i>
-                                55/4 KP3 HÀ HUY GIÁP, Q.12, TPHCM</span></li>
+                                {{$dataConfig['config-address']}}</span></li>
                     </ul>
 
 
@@ -41,7 +41,7 @@
                                             <li class="has-left-item"><a
                                                         href="{{URL::to('danh-muc/'.$listMenu['menu_sidebar'][$i]->path)}}">{{$listMenu['menu_sidebar'][$i]->name}}</a>
                                                 <div class="list-sub-menu">
-                                                    <div class="row">
+                                                    <div class="row h-100">
                                                         <div class="col-md-8">
                                                             <ul>
                                                                 @foreach($listMenu['menu_sidebar'] as $key=>$data)
@@ -51,8 +51,8 @@
                                                                 @endforeach
                                                             </ul>
                                                         </div>
-                                                        <div class="col-md-4">
-                                                            {{ Html::image('images/temp/tmp_slider_left.png','',array('class'=>'h-100 pb-2')) }}
+                                                        <div class="col-md-4 h-100">
+                                                            {{ Html::image($listMenu['menu_sidebar'][$i]->image,'',array('class'=>'h-100 w-100')) }}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -75,7 +75,7 @@
                         </li>
                         <li><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Thiết Kế Thi Công</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Liên Hệ</a></li>
+                        <li><a href="{{URL::to('lien-he')}}"><i class="fa fa-map-marker" aria-hidden="true"></i>Liên Hệ</a></li>
                     </ul>
 
                 </div>
